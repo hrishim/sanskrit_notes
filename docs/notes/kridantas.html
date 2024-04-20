@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Kridantas - My Sanskrit Notes</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../notes_intro.html"><strong aria-hidden="true">1.</strong> Sanskrit Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/sandhi.html"><strong aria-hidden="true">1.1.</strong> Sandhi</a></li><li class="chapter-item expanded "><a href="../subashitam/subashitam1.html"><strong aria-hidden="true">1.2.</strong> Subashitam</a></li><li class="chapter-item expanded "><a href="../notes/lakaras.html"><strong aria-hidden="true">1.3.</strong> Tenses and Moods - लकार</a></li><li class="chapter-item expanded "><a href="../notes/shabd_roop.html"><strong aria-hidden="true">1.4.</strong> शब्द रुप</a></li><li class="chapter-item expanded "><a href="../notes/dhatu_roop.html"><strong aria-hidden="true">1.5.</strong> धातु रूप</a></li><li class="chapter-item expanded "><a href="../notes/grammer.html"><strong aria-hidden="true">1.6.</strong> Grammer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/verbs.html"><strong aria-hidden="true">1.6.1.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="../notes/grammer_npa.html"><strong aria-hidden="true">1.6.2.</strong> Nouns, Pronouns, and Adjectives</a></li><li class="chapter-item expanded "><a href="../notes/kridantas.html" class="active"><strong aria-hidden="true">1.6.3.</strong> Kridantas</a></li></ol></li><li class="chapter-item expanded "><a href="../notes/using_vibhaktis.html"><strong aria-hidden="true">1.7.</strong> Using Vibhaktis</a></li><li class="chapter-item expanded "><a href="../notes/terminology.html"><strong aria-hidden="true">1.8.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">1.9.</strong> Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Sanskrit Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="kridantas"><a class="header" href="#kridantas">Kridantas</a></h1>
+<p>These notes are from the Vyoma Pathasala <a href="https://www.youtube.com/playlist?list=PLmozlYyYE-ERJj2FfX6WfH5t8i3d2fh1Z">Kridanta</a> lessons by Dr. Sowmya Krishnapur.</p>
+<ul>
+<li><a href="#lesson-1">Lesson 1</a></li>
+<li><a href="#lesson-2">Lesson 2</a></li>
+<li><a href="#lesson-3">Lesson 3</a></li>
+</ul>
+<h2 id="lesson-1"><a class="header" href="#lesson-1">Lesson 1</a></h2>
+<h3 id="context"><a class="header" href="#context">Context</a></h3>
+<p>From the <a href="https://youtu.be/Vr-5sJXTS_4">first lesson</a>.</p>
+<p>Generally all words (पदम्) are a combination of two components पदम् = <span style="color:blue">प्रकृतिः</span> + <span style="color:red">प्रत्ययः</span>. Where प्रकृतिः is the root word and प्रत्ययः is the suffix. Both components have their own meanings.</p>
+<p>Example: संस्कृतम् = <span style="color:blue">संस्कृत</span> + <span style="color:red">सुँ</span></p>
+<p>Generally we understand sentences (वाक्य) and words (पद). But to go into a पद we need to know grammar (व्याकरणम्). It is व्याकरण that makes these divisions of प्रकृति and प्रत्यय.</p>
+<p>Now संस्कृत can also be separated into two प्रकृति and प्रत्यय.</p>
+<p>संस्कृत = <span style="color:blue">सम्</span> <span style="color:red">सुँ</span> + <span style="color:blue">कृत</span> <span style="color:red">सुँ</span></p>
+<p>The word कृत can be further divided कृत = <span style="color:blue">कृ</span> + <span style="color:red">क्त</span></p>
+<p>Generally a पदम् is not just simply one combination of प्रकृति and प्रत्यय. Quite often the प्रकृति can be divided further and further until we get to indivisible components.</p>
+<p><strong>Another example:</strong> वैदेह्याः (from Vaidehi or Vaidehi's - i.e. 6th and 7th विभक्ति)</p>
+<p>वैदेह्याः = <span style="color:blue">वैदेही</span> + <span style="color:red">ङस्</span></p>
+<p>वैदेही = <span style="color:blue">वैदेह</span> + <span style="color:red">ङीप्</span></p>
+<p>वैदेह = <span style="color:blue">विदेह</span> + <span style="color:red">अण्</span></p>
+<p>विदेह = <span style="color:blue">वि</span> <span style="color:red">सुँ</span> + <span style="color:blue">देह</span> <span style="color:red">ङसिँ</span></p>
+<p>देह = <span style="color:blue">दिह्</span> <span style="color:red">अच्</span></p>
+<p>So essentially the word वैदेह्याः is formed using two प्रकृतिः  - <span style="color:blue">वि</span> and <span style="color:blue">दिह्</span> and joining them with many प्रत्ययः. Note: I think वि is उपसर्ग. Not sure if that is also a प्रकृतिः.</p>
+<p>Generally Sanskrit व्याकरण ज्ञानम् is प्रकृति प्रत्यय ज्ञानम्. The derivation of पदम् from प्रकृति and प्रत्यय is called निष्पत्ति.</p>
+<p><strong>There are only two kinds of words in Sanskrit:</strong></p>
+<ol>
+<li>तिङन्तम् (aka क्रिया पदम्)</li>
+<li>सुबन्तम्</li>
+</ol>
+<p>The teacher says &quot;Any word we see in Sanskrit is one of these. Anything is 100% covered as one of these.&quot; अव्ययानि अपि सुबन्तानि (avyayas are all <em>subanthas</em>).</p>
+<p>तिङन्ते धातुः प्रकृतिः तिङ् इति प्रत्ययः अथेव तिङन्तम्। यस्य अन्ते तिङ् प्रत्ययः अस्ति तत् पदम् तिङन्तम् इत्युच्यते।</p>
+<p>तिङन्तानि - पठति, पठिष्यति, पठतु etc</p>
+<p><strong>सुबन्ते</strong> प्रातिपदिकम् प्रकृतिः सुप् इति प्रत्ययः। सुप् अन्ते यस्य तत् सुबन्तम्। अतः सुबन्तम् नाम नाम पदम्। <em>Subanthas</em> are nouns (adjectives, adverbs also I think).</p>
+<p>सुबन्तानि - रामः, रामौ, रामाः etc</p>
+<p><strong>तिङन्तम्</strong> - Verbal forms. It's प्रकृति for this form is called धातु. </p>
+<p><strong>सुबन्तम्</strong> - Noun forms. It's प्रकृति for this form is called प्रातिपदिकम्।</p>
+<p>अतः धातोः तिङ् प्रत्ययस्य योजनेन तिङन्तम् भवति। प्रातिपदिकात् सुप् प्रत्ययस्य योजनेन सुबन्तम् भवति।</p>
+<p>धातु examples पठ्, लिख्, वन्द्, नृत् and तिङन्तानि are - पठति, लिखति, वन्दते, नृत्यति</p>
+<p><strong>किन्तु धातुः त्रिविधः भवति -</strong> </p>
+<ol>
+<li><strong>केवलधातुः</strong> - normal simple धातवः like पठ्, लिख्, वन्द्, नृत्। एते केवल धातवः द्विसहस्रं सन्ति (२०००)। धातुपाठे पठिताः २००० धातवः। These are the major root forms of संस्कृतम्. संस्कृते प्रायः सर्वेशाम् अपि शब्दानाम् पदानाम् केवलधातुः एव मूलम्।</li>
+<li><strong>सनाद्यन्तधातुः</strong> - <span style="color:blue">चिकीर्ष</span> <span style="color:red">ति</span> = <span style="color:green">चिकीर्षति</span>। चिकीर्षति अर्थात् कर्तुम् इच्छति (he wishes to do something). In Sanskrit single words usually cover things like &quot;wishes to read&quot;, &quot;wishes to write&quot;, &quot;wishes to...&quot; etc. Now चिकीर्षति is not in the list of 2000 केवलधातवः. It is a derived धातु. It can be divided into प्रकृति + प्रत्यय. यः केवल धातुः अस्ति तस्मात् धातोः केचन प्रत्ययाः योज्यन्ते। To the original Dhatus we add some pratyaya's called सनादि। तेषाम् योजनेन पुनः धातु भवति। सनाद्यन्तधातुः = <span style="color:blue">केवलधातुः</span> + <span style="color:red">णिच्/सन्/यङ्...</span>. Examples: पाठयति, गमयति, नर्तयाति (these are all verbs that show making someone else do the action). These dhatus are formed using णिच् प्रत्यय. Another set - चिकीर्षति (wishes to see), पिपठिष्ति (wishes to read), जिगमिष्ति (wants to go) are formed using सन् प्रत्यय. Yet another set - पुनः पुनः पठति इत्यर्थे पापठयते,  पुनः पुनः वन्दते इत्यर्थे वावन्दते - these are formed using यङ् प्रत्यय. There are a series of <em>pratyayas</em> that are used to derive a <em>dhatu</em> from <em>dhatu</em>.</li>
+<li><strong>नामधातुः</strong> - नामपदात् धातुः। From a noun we get a verb using some <em>pratyayas</em>. <span style="color:blue">पुत्रीय</span> <span style="color:red">ति</span> = <span style="color:green">पुत्रीयति</span> (he who wants to have a son/child). सुबन्तम् + सनादि प्रत्यय (<span style="color:red">काच्/काम्यच्...</span>). </li>
+</ol>
+<p><strong><span style="color:green">सुबन्तम्</span> are a combination of two components - <span style="color:purple">प्रातिपदिकम्</span> + <span style="color:red">सुप्</strong></span></p>
+<ol>
+<li>
+<p><strong>केवलप्रातिपदिकम्</strong> - Example:  <span style="color:purple">डित्थ</span> + <span style="color:red">सु</span> = <span style="color:green">डित्थः</span>. Now <span style="color:purple">डित्थ</span> cannot be broken further. It is a name that does not mean anything. If it is a meaningful name it can be further divided. अव्युत्पन्नानि शब्दस्वरूपाणि - those केवलप्रातिपदिकम् which cannot be further divided. Unlike केवलधातुः there is no list of these words. They are very few.</p>
+</li>
+<li>
+<p><strong>कृदन्तम्</strong> - It is a kind of nominal stem. E.g. <span style="color:purple">राम</span> + <span style="color:red">सु</span> = <span style="color:green">रामः</span>। धातोः कृत् प्रत्ययस्य योजनेन कृदन्तं भवति।</p>
+</li>
+<li>
+<p><strong>तद्धितान्तम्</strong> - Example: <span style="color:purple">दाशरथि</span> +  <span style="color:red">सु</span> = <span style="color:green">दाशरथिः</span>।  तद्धितान्तम् कथं भवति? दशरथ इति सुबन्तम् अस्ति तस्मात् तद्धित इति प्रत्यय भवति तदा प्रातिपदिकम् भवति। तद्धितान्तम् are words that are formed by adding तद्धित प्रत्यय to <strong>subanthas</strong>. You already have a noun (सुबन्तम्) and add this प्रत्यय to form another noun. Examples: कौन्तेय (from कन्तेः), धनवान् (from धनम्-&gt;धनवत्-&gt;धनवान्), जनता (from जनानाम्)</p>
+</li>
+<li>
+<p><strong>समासः</strong> - Example: <span style="color:purple">सीतापति</span> <span style="color:red">सु</span> = <span style="color:green">सीतापतिः</span>. द्वयोः सुबन्तयोः योजनेन समासः भवति। <em>Samasa</em> kind of प्रातिपदिक is derived by joining two <em>subanthas</em>. गज + आनन = गजानन, राज्ञः + पुत्रः = राजपुत्रः, राधा + कृष्णः = राधाकृष्णौ</p>
+</li>
+</ol>
+<p><strong>Summary so far:</strong> The diagram below (concisely and excellently) summarizes the lecture so far.</p>
+<p>Words in Sanskrit are of two kinds - तिङन्तम् and सुबन्तम्। धातुः तिङन्तस्य मूलम्। <em>Dhatu</em> is the root of <em>thingantham</em>. सुबन्तस्य प्रकृतिः प्रातिपदिकम। The root of a <em>subantham</em> is <em>prathipadhikam</em>. </p>
+<p>धातोः तिङ् प्रतययस्य योजनेन तिङन्तम् भवति। प्रातिपदिकात् सुप् प्रत्ययस्य योजनेन सुबन्तम् भवति। Attaching a <em>thing-pratyaya</em> to a <em>dhatu</em> makes it a <em>thingantham</em>. Attaching a <em>sup-pratyaya</em> to a <em>pratipadikam</em> makes it a <em>subantham</em>. These are the two main words in Sanskrit - verb forms and noun forms.</p>
+<p><img src="./images/word_diagram.png" alt="Words diagram" /></p>
+<p>धातोः कृत् प्रतययस्य योजनेन प्रातिपदिकम् भवति। Adding a <em>krit pratyaya</em> converts a <em>dhatu</em> to a <em>pratipadhikam</em>. A <em>dhatu</em> can be converted to another <em>dhatu</em> by adding a <em>sanadhi pratyaya</em>. सुबन्तात् सनादि प्रत्यय योजनेन अपि धातुः भवति। <em>Subantha</em> can be converted to <em>dhatu</em> by adding a <em>sanadhi pratyaya</em>. सुबन्तात् प्रातिपदिकम् भवति तद्धित प्रत्यय योजनेन। ़From <em>subantha</em> adding <em>thadhita pratyaya</em> will make it <em>pratipathikam</em>. <em>Samasa</em> will convert multiple (two or  more) to a <em>prathipadhikam</em>.</p>
+<p>In the above diagram the red lines achieve inter-conversion. One cannot convert <em>subanta</em> directly to <em>tinganta</em>. You have to first make it a <em>dhatu</em>. Similarly, you can convert a <em>subanta</em> to a <em>pratipadika</em> and then back to <em>subanta</em> to get a new word. A <em>dhatu</em> can be converted to another <em>dhatu</em> using a <em>snadaya pratyaya</em>.</p>
+<p>The above covers all words in Sanskrit. Knowing Sanskrit is knowing all the above. There are other things like <em>Sandhi</em> etc but they are just changing the letters. Of the above there are three steps which are very basic: <em>dhatu</em> -&gt; <em>pratipadikam</em>, <em>dhatu</em> -&gt; <em>tingantam</em> and <em>pratipadikam</em>-&gt;<em>subantam</em></p>
+<p><img src="./images/word_diagram2.png" alt="Words diagram" /></p>
+<p><a href="https://www.youtube.com/playlist?list=PLmozlYyYE-ERJj2FfX6WfH5t8i3d2fh1Z">This Kridanta</a> lesson series is about converting <em>dhatu</em> -&gt; <em>pratipadikam</em> by adding <em>krt pratyaya</em> (कृत्). This conversion will give 95% of <em>pratipadikas</em> - just an estimate. There is another view - सर्वम् नाम् धातिजमाः - all nouns are from <em>dhatus</em>.</p>
+<p>Within कृत् प्रत्ययाः there are two categories. One is the <em>pratyayas</em> directly given by Panini which we call कृत् प्रत्यय. Panini specifically says this is the <em>dhatu</em> and you add this <em>krit pratyaya</em> and you get this <em>pratipadika</em>. There are also another set of <em>pratyayas</em> called उणादि प्रत्यय. They are also added to <em>dhatus</em> to get <em>pratipadikas</em>. Example: गौः is derived from गम् धातु। गच्छति इति गौः। Derived from <span style="color:blue">गम्</span> + <span style="color:red">डोस्</span>. Such <em>pratyayas</em> (like <span style="color:red">डोस्</span>) are called उणादि। <strong>Is गो उणादि or डोस्? Later the teacher says गो is उणादि.</strong></p>
+<p>There are two views regarding उणादि - </p>
+<ol>
+<li>we accept the derivation of उणादि from <em>dhatu</em> then 100%, or at least 99% of <em>pratipadikas</em> will be derived from <em>dhatus</em>. </li>
+<li>those that consider उणादि as something that cannot be split further - meaning they take गो as something that cannot be divided - say that there is a set of केवल प्रातिपतिकः that cannot be split further. Most words come from <em>dhatus</em> and a smaller set come from <em>kevala pratipadikam</em>.</li>
+</ol>
+<p><em>Kridantas</em> are always <em>pratipadikas</em>. We cannot use <em>kridantas</em> directly because <em>pratipadikas</em> cannot be used in sentences. They have to be converted to <em>subanta</em> by adding a सुप् <em>pratyaya</em> to form a <em>padam</em>. </p>
+<hr />
+<p><strong>कृदन्ताः</strong></p>
+<ul>
+<li>कृत् इति प्रत्ययः।</li>
+<li>कृत् अन्ते यस्य सः कृदन्तः।</li>
+<li>कृत् प्रत्ययाः धातुभ्यः विहिताः<span style="color:red"><sup>1</sup></span>।</li>
+<li>कृदन्ताः प्रातिपदिकसंज्ञकाः<span style="color:red"><sup>2</sup></span>।</li>
+<li>कृदन्तेभ्यः सुप्-प्रत्ययस्य योजनेन सुबन्ताः भवन्ति।</li>
+</ul>
+<p><span style="color:red"><sup>1</sup></span>विहिताः = ordained, supplied, made  
+<span style="color:red"><sup>2</sup></span>संज्ञका = named, termed</p>
+<p>There are ~140 कृत् प्रत्ययाः in <em>Ashtadyayi</em>. भिन्नेषु अर्थेषु भवन्ति। These <em>pratyayas</em> are added in specific meanings. </p>
+<p>Below are examples of what कृत् <em>pratyayas</em> do and how they change meaning. You dont have to remember all of this. The examples are not comprehensive. Only a sample for understanding.</p>
+<p><strong>Example 1 : कर्ता (the one who does action): पाचकः, वक्ता, गतवान्</strong></p>
+<p>धातवः कृयाम् बोधयति। A <em>dhatu</em> is something that tells you an action. यदा कृत् प्रत्ययः योज्यते तदा कर्ता भवति। पच् धातु (cooking) -&gt; पाचकः (यः पाक कार्यं करोति सः। The one who does cooking.)</p>
+<p>यः वदते सः वक्ता। यः गच्छति - भूत कालि गमन कार्यं कृतवान् - सः गतवान्। All these words refer to the person who performed the action. We get that meaning because of the <em>pratyaya</em>.</p>
+<p><span style="color:blue">पच्</span> + <span style="color:red">अक</span> = <span style="color:green">पाचकः</span></p>
+<p><strong>Example 2: कर्म the object of action - पठितः, खाद्यम्</strong></p>
+<p>The word पठित (पठितः, पठिता, पठितम्) says what was read (not who read).</p>
+<p>किम् पठितम्? (What was read?) कृदन्ताः पठिताः। व्याकरणम् पठितम्।</p>
+<p>पठित्वान् is the person who did the action of reading whereas पठित refers to the object. The change in meaning is because of the <em>pratyaya</em>.</p>
+<p><strong>Example 3: भावः (क्रिया) action - कृतिः, गतिः, बुभुक्षा</strong></p>
+<p><em>Pratyayas</em> can be used to convert a <em>dhatu</em> to give you the meaning of कर्ता (does), कर्म (object) and also क्रिया (the action).</p>
+<p>कृतिः = doing   गतिः = going   बुभुक्षा = to desire to eat</p>
+<p><strong>Example 4: क्रियाणाम् परस्परसम्बन्धः - the inter-relationship between क्रिया</strong></p>
+<p>कृत्वा = having done something you move on to another क्रिया</p>
+<p>कर्तुम् = gives the purpose कर्तुम गच्छति (goes for doing)</p>
+<p><strong>Example 5: पौनः पुन्यम्</strong></p>
+<p>कारं कारम् = doing it again and again</p>
+<p>दर्शं दर्शम् = seeing again and again</p>
+<hr />
+<p><em>Kridantas</em> are nouns that still have a portion of an action. Not all <em>krit pratyayas</em> are added to all <em>dhatus</em>. Some are general and applied to all <em>dhatus</em> and some are applied to specific <em>dhatus</em>.</p>
+<p>These are the major <em>pratyayas</em> we will be studying in the course. We will study about 25  that are common and important. Most of these are general and can be applied to all <em>dhatus</em>.</p>
+<table><thead><tr><th>कृत्प्रत्ययविभागः (अर्थमनुसृत्य)</th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>कर्तरि</strong></td><td><strong>भावे</strong></td><td><strong>भूते</strong></td><td><strong>विध्यादिषु</strong></td></tr>
+<tr><td>ण्वुल्</td><td>ल्युट्</td><td>क्तवतु</td><td>अनीयर्</td></tr>
+<tr><td>तृच्</td><td>क्तिन्</td><td>क्त</td><td>तव्य</td></tr>
+<tr><td>शतृ / शानच्</td><td>अ</td><td></td><td>यत् / ण्यत्</td></tr>
+<tr><td>क्किप्</td><td>घञ्</td><td></td><td></td></tr>
+<tr><td></td><td>अच्</td><td></td><td></td></tr>
+</tbody></table>
+<table><thead><tr><th><strong>कृदनताव्ययानि</strong></th><th><strong>उपपदकृतन्दाः</strong></th></tr></thead><tbody>
+<tr><td>क्तवा-ल्यप्</td><td>अण</td></tr>
+<tr><td>तुमुन</td><td>क</td></tr>
+<tr><td>णमुल्</td><td>ट</td></tr>
+<tr><td></td><td>ड</td></tr>
+<tr><td></td><td>खश्</td></tr>
+</tbody></table>
+<h3 id="परतययः-१---लयुट-अन"><a class="header" href="#परतययः-१---लयुट-अन">प्रत्ययः १ - ल्युट् (अन)</a></h3>
+<p>ल्युट् इति प्रत्ययः रूपेतु अन इति श्रुयते।</p>
+<p>Here are some example usages of this प्रत्यय</p>
+<p>All the words in red color are <em>kridantas</em>. Specifically they are ल्यटन्ताः or words ending in ल्युट्.</p>
+<p>पूर्वं रामतपोवनादि<span style="color:red">गमनं</span> हत्वा मृगं काञ्चनम् <br>
+वैदेही<span style="color:red">हरणं</span> जटायु<span style="color:red">मरणं</span> सुग्रीव<span style="color:red">सम्भाषणम्</span>। <br>
+वाली<span style="color:red">निग्रहणं</span> समुद्र<span style="color:red">तरणं</span> लङ्कापुरी<span style="color:red">दाहनं</span> <br>
+पश्चाद्रावणकुम्भकर्ण<span style="color:red">हननम्</span> एतद्धि रामायणम्॥ <a href="https://youtu.be/Vr-5sJXTS_4?t=3791">Listen here</a></p>
+<p>दाहनम् - to make something burn</p>
+<p><span style="color:red">करणं</span> मधुरं <span style="color:red">तरणं</span> मधुरं <span style="color:red">हरणं</span> मधुरं <span style="color:red">रमणं</span> मधुरम्।<br>
+वमितं मधुरं शमितं मधुरं मधुराधिपतेरखिलं मधुरम्॥ <a href="https://youtu.be/Vr-5sJXTS_4?t=3974">Listen here</a></p>
+<br>
+<p>आदौ देवकिदेविगर्भ<span style="color:blue">जननम्</span> गोपीगृहे<span style="color:blue">वर्धनम्</span><br>
+मायापूतनिजीवित <span style="color:blue">अपहरणम्</span> गोवर्धन <span style="color:blue">उद्धारणम्</span>।<br>
+कंसच्छेदनकौरवादि (<span style="color:blue">छेदनम्</span>) <span style="color:blue">हननम्</span> कुन्तीसुत <span style="color:blue">आपालनम्</span><br>
+एतद्भागवतं पुराणकथितं श्रीकृष्णलिलामृतम्॥ <a href="https://youtu.be/Vr-5sJXTS_4?t=4854">Listen here</a></p>
+<p>Valmiki Ramayana third sarga has a lot of ल्युट् (अन) <em>kridantas</em>.</p>
+<p>Why are the <em>pratyayas</em> named the way they are? Pannini tries to add some identifying letters into each <em>pratyaya</em>. So the <em>pratyaya</em> will have its own letters and some other letters for identification. They help us in doing many things. That is not strictly in the purview of this class. Can email teacher (sowmya dot krishnapur at gmail).</p>
+<h2 id="lesson-2"><a class="header" href="#lesson-2">Lesson 2</a></h2>
+<p><a href="https://www.youtube.com/watch?v=O3AVVXRz2aI">Second Lesson Video</a></p>
+<p>अद्य वयम ल्यट् प्रत्ययस्य रूपाणि तेषाम् प्रयोगाणाम च अभ्यासम् कुर्मः।</p>
+<p><strong>Recap of previous lesson:</strong></p>
+<p>What all things can <em>krit pratyayas</em> convey meaning of - कर्ता (doer), कर्म (object), करणम् (the instrument), क्रिया (the action), कालः (the tense), पौन पुन्यम् (repeatedy doing something), विधिः (the injunction to do something) and many more.</p>
+<p><strong>ल्युट् प्रत्ययः</strong> गमनम्, पठनम्, जननम्, मरणम्, तरणम्, करणम्...</p>
+<p>यत्र यत्र अयं प्रत्ययः भवति तत्र अन्ते अनम् अथवा अणम् इति श्रूयते। अयं भावार्थकः प्रत्ययः इत्युच्छते अर्थात क्रियां बोधयति। Note that the above examples are <em>subantas</em> the <em>kridantas</em> are like गमन, पठन etc.</p>
+<p>This <em>pratyaya</em> is a general <em>pratyaya</em> which is used in the sense of action. The easy way of identifying this <em>pratyaya</em> is by looking at the अनम्/अणम् at the end of it. But not everywhere you see a अनम्/अणम् that is a ल्युट् प्रत्यय.</p>
+<hr />
+<p><strong>षोडशोपचार-पूजायाः अङ्गानि</strong> -  यतः भगवतः पूजा क्रियते तत्र षोडश-अङ्गानि भवति। When we are worshipping the lord we have 16 steps. They are all different actions. किम् किम् भवति षोडशोपचारे -</p>
+<ol>
+<li>ध्यानम् - we pray to the deity</li>
+<li>आवाहनम् - we bring the deity into the idol or kalasha</li>
+<li>आसनम् - sitting. आसनप्रदानम् we are giving him a seat</li>
+<li>पाद्यप्रदानम् - पादस्य क्षालनार्थं जलम्</li>
+<li>अर्घ्यप्रदानम् - अर्घ्यम् is हस्त प्रक्षालनार्थं जलम् प्रदानम्</li>
+<li>आचमनीयप्रदानम् - पातुम जलम् आचमनीयमित्युच्छते </li>
+<li>स्नानम्</li>
+<li>वस्त्रधारणम्</li>
+<li>यज्ञोपवीतधारणम्</li>
+<li>गन्धलेपनम् - लिपनम् is to anoint. गन्ध is fragrant </li>
+<li>पुष्पार्चनम् - पुष्पैः अर्चनम् (worshipping with flowers)</li>
+<li>धूपाराधनम् - worshipping (आराधनम्) with धूपा</li>
+<li>दीपदर्शनम् - showing deepam</li>
+<li>निवेदनम् - giving नैवेद्यम् (action of offering food)</li>
+<li>नीराजनम् - aarati</li>
+<li>प्रार्थनम् - praying</li>
+</ol>
+<p>1-6 above are <em>kridantas</em> but a different kind. After 6 are ल्यट् <em>kridantas</em>.</p>
+<hr />
+<p><strong>कुत्र अनम्? कुत्र अणम्?</strong></p>
+<p>णत्वं कुत्र भवति? In grammatiचal parlance this is called णत्व. Here is a general rule that works most of the time- </p>
+<p>नकारात् पूर्वम् -</p>
+<ul>
+<li>
+<p>रेफः/ ऋकारः / षकारः अस्ति चेत् णत्वम् भवति। Example: In त<span style="color:red">रन</span>म् there is र् before न्। In this rule you dont have to worry if there are any स्वाराः (vowels) in betwee. <em>Swaras</em> will not obstruct णत्व. That word becomes त<span style="color:red">र</span><span style="color:green">ण</span>म्. Similarly पे<span style="color:red">षन</span>म् becomes पे<span style="color:गरेेन">ष</span><span style="color:red">ण</span>म्</p>
+</li>
+<li>
+<p>Second rule: If there is a consonent between the रेफः/ ऋकारः / षकारः and नकार. Examples: <span style="color:red">क्र</span>य<span style="color:red">न</span>म्, <span style="color:red">बृं</span>ह<span style="color:red">न</span>म्, <span style="color:red">क्षे</span>प<span style="color:red">न</span>म् - If the व्यञ्जनानि (consonants) are one of कवर्ग-पवर्ग-ह्-य्-व्-र् then णत्वम् happens. All three examples qualify and they become क्रयणम्, बृंहणम्, and क्षेपणम्</p>
+</li>
+<li>
+<p>If there are other consonants between रेफः/ ऋकारः / षकारः and नकार then णत्व does not happen. Examples: ग्रथनम्, अर्चनम्, गृञ्जनम्, क्षालनम्, रटनम्, क्रीडनम्, मूर्च्छनम्, क्रोशनम्</p>
+</li>
+</ul>
+<p>The above is the most general rule for णत्व. There are other rules also. This rule holds for simple cases.</p>
+<p>वृक्षेन / वृक्षेण ? वृक्षेण</p>
+<p>ऋृषबेन / ऋृषबेण ? ऋृषबेन</p>
+<p>Both above are not ending in अनम् so this rule does not apply. A different rule applies. See Sandhi notes &quot;Word Internal Sandhi rule&quot;.</p>
+<hr />
+<p><strong>ल्युट्-प्रत्यत्यान्तस्य रूपाणि १</strong></p>
+<p>How do we get the forms of ल्युट् प्रत्यय from the <em>dhatu</em>? For most <em>dhatus</em> adding अन् will give a ल्युट् प्रत्यय.</p>
+<table><thead><tr><th>गणित-क्रियाः</th><th>गति-क्रियाः</th></tr></thead><tbody>
+<tr><td>गण् - गणनम् (counting)</td><td>गम् - गमनम् (going)</td></tr>
+<tr><td>सङ्कल् - सङ्कलनम् (addition)</td><td>चल् - चलनम् (moving)</td></tr>
+<tr><td>व्यवकल् - व्यवकलनम् (subtraction)</td><td>धाव् - धावनम् (running)</td></tr>
+<tr><td>गुण् - गुणनम् (multiplication)</td><td>भ्रम् - भ्रनणम् (rotating)</td></tr>
+<tr><td>विभज् - विभजनम् (division)</td><td>कम्प् - कम्पनम् (shaking)</td></tr>
+</tbody></table>
+<p>These words only give क्रिया and there is no reference to any काला.</p>
+<p>गमनम् अस्ति। - Present tense</p>
+<p>गमनम् भविष्यति - Will go - Future tense</p>
+<p>गमनम् आसीत् - Was going. - Past tense.</p>
+<p>Some <em>krit pratyayas</em> do convey tense. E.g. गतवान्. This ल्युट् <em>pratyaya</em> does not convey tense.</p>
+<hr />
+<p><strong>ल्युट्-प्रत्यत्यान्तस्य रूपाणि २</strong></p>
+<table><thead><tr><th>इकारान्ताः/ईकारान्ताः</th><th>उकारान्ताः/ऊकारान्ताः</th></tr></thead><tbody>
+<tr><td>चि - चयनम्  (collect/pluck)</td><td>प्लु - प्लवनम् (jump)</td></tr>
+<tr><td>स्मि - स्मयनम् (smile)</td><td>स्तु - स्तवनम् (praise)</td></tr>
+<tr><td>नी - नयनम् (take/carry)</td><td>हु - हवनम् (homam/havan, perform a sacrifice/ritual)</td></tr>
+<tr><td>शी - शयनम् (sleep)</td><td>भू - भवनम् (existance)</td></tr>
+<tr><td>डी - डयनम् (fly)</td><td>पू - पवनम् (clean, purify)</td></tr>
+</tbody></table>
+<p>If the words ends in इकारान्ताः/ईकारान्ताः we add अयनम्</p>
+<p>If the words ends in उकारान्ताः/ऊकारान्ताः we add अवनम्</p>
+<hr />
+<p><strong>ल्युट् प्रत्यत्यान्तस्य रूपाणि - ३</strong></p>
+<p>उपान्त्ये - last but one letter</p>
+<p>If the ह्रस्वः (small vowel) इकारः or उकारः  is the last but one letter then </p>
+<ul>
+<li>इ becomes ए </li>
+<li>उ becomes ओ</li>
+</ul>
+<p>Note: Short vowel is ह्रस्वम् and long vowel is धीर्गम्</p>
+<table><thead><tr><th>ह्रस्वः इकारः उपान्त्यः</th><th>ह्रस्वः उकारः उपान्त्यः</th></tr></thead><tbody>
+<tr><td>लिख् - लेखनम् (write)</td><td>मुद् - मोदनम् (rejoice)</td></tr>
+<tr><td>क्षिप् - क्षेपनम् (throw)</td><td>स्फुट् - सफोटनम् (burst)</td></tr>
+<tr><td>मिल् - मेलनम् (meet)</td><td>घुष् - घोषणम् (announce)</td></tr>
+<tr><td>छिद् - छेदनम् (cut)</td><td>रुद् - रोदनम् (cry)</td></tr>
+<tr><td>पिष् - पेषणम् (pound, in Tamizh <em>araikarathu</em>)</td><td>युज् - योजनम् (join)</td></tr>
+<tr><td>त्रुट् - त्रोटनम् (plucking or cutting of fruits)</td><td>नुद् - नोदनम् (पुसह)</td></tr>
+</tbody></table>
+<ol>
+<li>फलानां त्रोटनम्।</li>
+<li>यानस्य नोदनम्।</li>
+</ol>
+<p><strong>Question from student:</strong> Are words that are formed by using ल्युट् all नपुंसकलिंग? Answer is <strong>YES</strong>.</p>
+<hr />
+<p><strong>ल्युट् प्रत्यत्यान्तस्य रूपाणि - ४</strong></p>
+<p><a href="https://youtu.be/O3AVVXRz2aI?t=4639">Video Section</a></p>
+<ul>
+<li>यदि ऋकारः अन्ते अस्ति तर्हि अन् इति भवति (also apply णत्वम्)</li>
+<li>यदि ऋकारः उपान्त्यः अस्ति तर्हि अर् इति भवति</li>
+</ul>
+<table><thead><tr><th>ऋकारान्ताः/ॠकारान्ताः</th><th>ह्रस्वः ऋकारः उपान्त्यः</th></tr></thead><tbody>
+<tr><td>कृ - करणम् (doing)</td><td>नृत् - नर्तनम् (dance)</td></tr>
+<tr><td>भृ - भरणम् (bear, nourish)</td><td>वृध् - वर्धनम् (grow)</td></tr>
+<tr><td>वृ - वरणम् (choose)</td><td>भृज् - भर्जनम् (frying - chips, vada etc)</td></tr>
+<tr><td>मृ - मरणम् (die)</td><td>वृष् - वर्षणम् (raining)</td></tr>
+<tr><td>तॄ - तरणम् (swim, cross over)</td><td>तृप् - तर्पणम् (pleasing, satisfying )</td></tr>
+</tbody></table>
+<p><strong>विषेषः</strong> - मृज् - मार्जनम् (cleaning) is an exception to the above.</p>
+<p>आवृत् - आवर्तनम् (revise)</p>
+<hr />
+<p><strong>One last form</strong></p>
+<p>If the धातु  is ए/ऐ/ओ/औ-कारान्तः then ए/ऐ becomes अकारान्तः</p>
+<p>द्यै - द्यानम्</p>
+<p>गै - गानम्</p>
+<hr />
+<p><strong>Sloka</strong></p>
+<p>Bhakti is of nine kinds</p>
+<p>श्रवणं कीर्तनं विष्णोः स्मरणं पादसेवनम्।<br>
+अर्चनं वन्दनं दास्यं सख्यम् आत्मनिवेदनम्॥</p>
+<table><thead><tr><th>Word</th><th>Meaning</th><th>Word</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>श्रू - श्रवणम्</td><td>listening (i.e. listening to the deeds of Vishnu)</td><td>कीर्त् - कीर्तनं</td><td>chanting (the name of Vishnu)</td></tr>
+<tr><td>स्मृ - स्मरणम्</td><td>remembering (Vishnu)</td><td>सिव् - सेवनम्</td><td>serving (पादसेवनम् - serving the feet of the lord)</td></tr>
+<tr><td>अर्च् - अर्चनम्</td><td>worshipping</td><td>वन्द् - वन्दनम्</td><td>bowing, saluting</td></tr>
+<tr><td>दास्यम्</td><td>feeling of complete surrender (this is not ल्युट्। It is a <em>kridanta</em> we will see later)</td><td>सख्यम्</td><td>having a feeling of friendship</td></tr>
+<tr><td>नि + विद् - निवेदनम्</td><td>आत्मनिवेदनम् - offering oneself to the lord completely</td><td></td><td></td></tr>
+</tbody></table>
+<p>दासस्य भावः दास्यम् - तद्धितान्त कृदन्तः <BR>
+सख्यु भावः सख्यम् - तद्धितान्त कृदन्तः</p>
+<hr />
+<p><strong>Summary</strong></p>
+<p><img src="./images/kridanta2_summary.png" alt="Words diagram" /></p>
+<p><a href="https://youtu.be/O3AVVXRz2aI?t=6122">Student question</a>: Why do we call it ल्युट् when the sound added is अन्/अण्? <br></p>
+<p>The लकार and टकार in ल्युट् has its own purposes of modifying the swara etc of the <em>dhatu</em>. Why we get अन् is because where every यु occurs it is replaced by अन् as per a <em>Panini sutra</em> called <strong>युवोरनाकौ</strong>.</p>
+<h2 id="lesson-3"><a class="header" href="#lesson-3">Lesson 3</a></h2>
+<p><a href="https://youtu.be/K8uLh6ZMBQ8">Video</a></p>
+<p>कृदन्ताः - The term used to refer to a group of प्रत्ययाः. It is not a प्रत्यय by it self but refers to a group.</p>
+<p>कृत् is a name for a set of <em>pratyayas</em>. There are about 140 <em>pratyayas</em> that fall under this group. They are always added to <em>dhatus</em>.</p>
+<p><strong>Start at 4:28</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../notes/grammer_npa.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../notes/using_vibhaktis.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../notes/grammer_npa.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../notes/using_vibhaktis.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

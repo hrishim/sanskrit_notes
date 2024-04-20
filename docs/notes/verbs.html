@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Verbs - My Sanskrit Notes</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../notes_intro.html"><strong aria-hidden="true">1.</strong> Sanskrit Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/sandhi.html"><strong aria-hidden="true">1.1.</strong> Sandhi</a></li><li class="chapter-item expanded "><a href="../subashitam/subashitam1.html"><strong aria-hidden="true">1.2.</strong> Subashitam</a></li><li class="chapter-item expanded "><a href="../notes/lakaras.html"><strong aria-hidden="true">1.3.</strong> Tenses and Moods - लकार</a></li><li class="chapter-item expanded "><a href="../notes/shabd_roop.html"><strong aria-hidden="true">1.4.</strong> शब्द रुप</a></li><li class="chapter-item expanded "><a href="../notes/dhatu_roop.html"><strong aria-hidden="true">1.5.</strong> धातु रूप</a></li><li class="chapter-item expanded "><a href="../notes/grammer.html"><strong aria-hidden="true">1.6.</strong> Grammer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/verbs.html" class="active"><strong aria-hidden="true">1.6.1.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="../notes/grammer_npa.html"><strong aria-hidden="true">1.6.2.</strong> Nouns, Pronouns, and Adjectives</a></li><li class="chapter-item expanded "><a href="../notes/kridantas.html"><strong aria-hidden="true">1.6.3.</strong> Kridantas</a></li></ol></li><li class="chapter-item expanded "><a href="../notes/using_vibhaktis.html"><strong aria-hidden="true">1.7.</strong> Using Vibhaktis</a></li><li class="chapter-item expanded "><a href="../notes/terminology.html"><strong aria-hidden="true">1.8.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">1.9.</strong> Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Sanskrit Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="verbs"><a class="header" href="#verbs">Verbs</a></h1>
+<p>Words in Sanskrit can be either तिङ्न्त (verbs) or सुबन्त (nouns, pronouns, adjectives etc). Words (verbs and nouns) are formed by combining two groups of letters:</p>
+<p>प्रकृति + प्रत्यय</p>
+<p>For verbs the प्रकृति is called धातु and for nouns it is called प्रातिपदिकम्</p>
+<p>Verb forms exist for three numbers - singular, dual, plural - and for three persons - first (उत्तम पुरुष), second (मध्यम पुरुष) and third (प्रथम पुरुष)</p>
+<p>When used in active voice (कर्मणि प्रयोग) verbs can be conjugated in one of two forms - परस्मैपदि or आत्मनेपदि. Some verbs can use both forms (उभयपदि). In passive voide (भावे प्रयोग) all verbs take आत्मनेपदि form.</p>
+<p>There are 18 प्रत्यय for verbs. The first 9 are for परस्मैपदि forms and the second 9 are for the आत्मनेपदि forms. </p>
+<table><thead><tr><th></th><th></th><th>परस्मैपदि</th><th></th></tr></thead><tbody>
+<tr><td></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>तिप्</td><td>तिस्</td><td>झि</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>सिप्</td><td>थस्</td><td>थ</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>मिप्</td><td>वस्</td><td>मस्</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th></th><th></th><th>आत्मनेपदि</th><th></th></tr></thead><tbody>
+<tr><td></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>त</td><td>आताम्</td><td>झ</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>थास्</td><td>आथाम्</td><td>ध्वम्</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>इङ् (इट्)</td><td>वहिङ्</td><td>महिङ्</td></tr>
+</tbody></table>
+<br>
+<p>The verb roots (धातु) are catagorized into 10 गण (groups). Of these, groups 1, 4, 6 and 10 form a related group. </p>
+<p><strong>List of all गण</strong></p>
+<table><thead><tr><th><strong>Number</strong></th><th><strong>Name</strong></th><th><strong>विकरण</strong></th><th><strong>Example</strong></th></tr></thead><tbody>
+<tr><td>1</td><td>भ्वादिः</td><td>अ</td><td>पठ्-<u>अ</u>-ति</td></tr>
+<tr><td>2</td><td>अदादिः</td><td>-</td><td>अद्-ति</td></tr>
+<tr><td>3</td><td>जुहोत्यादिः</td><td>-</td><td>जुहो-ति</td></tr>
+<tr><td>4</td><td>दिवादिः</td><td>य</td><td>नृत्-<u>य</u>-ति</td></tr>
+<tr><td>5</td><td>स्वादिः</td><td>नु</td><td>सु-<u>नु</u>-ते</td></tr>
+<tr><td>6</td><td>तुदादिः</td><td>अ</td><td>लिख्-<u>अ</u>-ति</td></tr>
+<tr><td>7</td><td>रुधादिः</td><td>न</td><td>भि<u>न</u>द्-ति</td></tr>
+<tr><td>8</td><td>तनादिः</td><td>उ</td><td>तन्-<u>उ</u>-ते</td></tr>
+<tr><td>9</td><td>क्र्यादिः</td><td>ना</td><td>पु-<u>ना</u>-ति</td></tr>
+<tr><td>10</td><td>चुरादिः</td><td>अ</td><td>कथय्-<u>अ</u>-ति</td></tr>
+</tbody></table>
+<h2 id="verb-conjugation"><a class="header" href="#verb-conjugation">Verb Conjugation</a></h2>
+<p>वद् is a धातु that means <em>to speak</em>. It belongs to the first गण (भ्वादिः). For these verbs a विकरण is placed between the धातु and the प्रत्यय during conjugation. For भ्वादिः verbs the विकरण is अ/आ. </p>
+<p>The third person (प्रथम पुरुष) singular (एकवचन) form of वद् is forme this way:</p>
+<p>वद् + अ + तिप् = वदति (he/she speaks)</p>
+<p>The प् in तिप् is dropped. </p>
+<p>In गण 1, 4, 6, and 10 the विकरण is lengthened to आ for the terminations in उत्तम पुरुष</p>
+<p>So for present tense (कर्तरि प्रयोग), sigular (एकवचन), first person (उत्तम पुरुष)</p>
+<p>वद् + आ + मिप् = वदामि </p>
+<p>पठति - लट्</p>
+<p>अपठत् - लङ्</p>
+<p>पपाठ - लिट्</p>
+<p>अपाठीत - लुङ्</p>
+<p>पठिष्यति - लृट्</p>
+<p>पठिता - लुट्</p>
+<p>पठतु - लोट्</p>
+<p>पठेत् - लिङ्</p>
+<p>अपठिष्यत - लृङ्</p>
+<p>पठाति - लेट्</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../notes/grammer.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../notes/grammer_npa.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../notes/grammer.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../notes/grammer_npa.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

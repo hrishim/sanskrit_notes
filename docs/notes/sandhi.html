@@ -1,0 +1,525 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Sandhi - My Sanskrit Notes</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../notes_intro.html"><strong aria-hidden="true">1.</strong> Sanskrit Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/sandhi.html" class="active"><strong aria-hidden="true">1.1.</strong> Sandhi</a></li><li class="chapter-item expanded "><a href="../subashitam/subashitam1.html"><strong aria-hidden="true">1.2.</strong> Subashitam</a></li><li class="chapter-item expanded "><a href="../notes/lakaras.html"><strong aria-hidden="true">1.3.</strong> Tenses and Moods - लकार</a></li><li class="chapter-item expanded "><a href="../notes/shabd_roop.html"><strong aria-hidden="true">1.4.</strong> शब्द रुप</a></li><li class="chapter-item expanded "><a href="../notes/dhatu_roop.html"><strong aria-hidden="true">1.5.</strong> धातु रूप</a></li><li class="chapter-item expanded "><a href="../notes/grammer.html"><strong aria-hidden="true">1.6.</strong> Grammer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/verbs.html"><strong aria-hidden="true">1.6.1.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="../notes/grammer_npa.html"><strong aria-hidden="true">1.6.2.</strong> Nouns, Pronouns, and Adjectives</a></li><li class="chapter-item expanded "><a href="../notes/kridantas.html"><strong aria-hidden="true">1.6.3.</strong> Kridantas</a></li></ol></li><li class="chapter-item expanded "><a href="../notes/using_vibhaktis.html"><strong aria-hidden="true">1.7.</strong> Using Vibhaktis</a></li><li class="chapter-item expanded "><a href="../notes/terminology.html"><strong aria-hidden="true">1.8.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">1.9.</strong> Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Sanskrit Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="sandhi"><a class="header" href="#sandhi">Sandhi</a></h1>
+<p><strong>ToC</strong></p>
+<p>Notes from Deshpande</p>
+<ol>
+<li><a href="#anusv%C4%81ra-sandhi-rules">Anusvāra Sandhi Rules</a></li>
+<li><a href="#visarga-sandhi-rules">Visarga Sandhi Rules</a></li>
+<li><a href="#word-internal-sandhi-rule">Word-internal Sandhi rule: Change of न् to ण्</a></li>
+<li><a href="#vowel-sandhi">Vowel Sandhi</a></li>
+<li><a href="#consonant-sandhi-rules">Consonant Sandhi Rules</a></li>
+</ol>
+<p><a href="#notes-from-other-sources">Notes from other sources</a></p>
+<h1 id="notes-from-deshpande"><a class="header" href="#notes-from-deshpande">Notes from Deshpande</a></h1>
+<h2 id="anusvāra-sandhi-rules"><a class="header" href="#anusvāra-sandhi-rules">Anusvāra Sandhi Rules</a></h2>
+<p>अनुस्वार</p>
+<p>Final म् when followed by a consonant is changed to <em>anusvāra</em>. Example: रामम् वदति  -&gt; रामं वदति</p>
+<p>The change does not happen if म् is followed by a vowel or is at the end of a sentence. In that case it has to remain as म्.</p>
+<p>Optionally an <em>anusvāra</em> is further changes to a nasal consonant, which is homorganic with the following consonant. Change of <em>anusvāra</em> before य् व् and ल् is less common.</p>
+<p>रामम् करोति -&gt; रामं करोति -&gt; रामङ्करोति</p>
+<p>रामम् च -&gt; रामं च -&gt; रामञ्च</p>
+<p>रामम् टीका -&gt; रामं टीका -&gt; रामण्टीका</p>
+<p>रामम् तत्र -&gt; रामं तत्र -&gt; रामन्तत्र</p>
+<p>रामम् पश्यति -&gt; रामं पश्यति -&gt; रामम्पश्यति</p>
+<p>रामम् यत्र -&gt; रामं यत्र -&gt; रामय्ँयत्र</p>
+<p>रामम् वा -&gt; रामं वा -&gt; रामव्ँवा</p>
+<p>रामम् लता -&gt; रामं लता -&gt; रामल्ँलता</p>
+<h2 id="visarga-sandhi-rules"><a class="header" href="#visarga-sandhi-rules">Visarga Sandhi Rules</a></h2>
+<p>1) The final <em>visarga</em> remains unchanged before क् ख् प् फ् E.g. रामः पतति।</p>
+<BR>
+<p>2) The final <em>visarga</em> changes to a sibilant homorganic with the following unvoiced consonants marginally before श् ष् and स्.</p>
+<p>A <em>visarga</em> becomes श् before च्, छ्, and श् - जनाः च -&gt; जनाश्च</p>
+<p>A <em>visarga</em> becomes ष् before ट्, ठ्, and ष् - जनाः टीकाम् -&gt; जनाष्टीकाम्</p>
+<p>A <em>visarga</em> becomes स् before त्, थ्, and स् - रामः तत्र -&gt; रामस्तत्र</p>
+<BR>
+<p>3) A <em>visarga</em> when preceded by आ and followed by a voiced consonant or vowel is dropped:</p>
+<p>बालाः धावन्ति -&gt; बाला धावन्ति।</p>
+<p>जनाः अभितः -&gt; जना अभितः।</p>
+<BR>
+<p>4) When a विसर्ग is preceded by अ and followed by a voiced consonant, the sequence अः is changed to ओ :-</p>
+<p>पुत्रः धावति -&gt; पुत्रो धावति।</p>
+<p>जनः वसति -&gt; जनो वसति।</p>
+<BR>
+<p>5) When preceded by अ and followed by any vowel except अ, the विसर्ग is dropped:</p>
+<p>पुत्रः उभयतः -&gt; पुत्र उभयतः।</p>
+<p>धावतः इह -&gt; धावत इह।</p>
+<BR>
+<p>6) When a visarga is preceded by अ and followed by अ, अः is changed to ओ while the following अ is elided. This lost अ is indicated by the unpronounced sign ऽ called <em>Avagraha</em></p>
+<p>धावतः अश्वौ -&gt; धावतोऽश्वौ।</p>
+<p>पुत्रः अत्र -&gt; पुत्रोऽत्र।</p>
+<BR>
+<p>7) An exception to the visarga sandhi</p>
+<p>The <em>visarga</em> after सः and एषः followed by a consonant does not follow any of the above sandhi-rules, but can be dropped optionally. Before vowels, it follows the normal sandhi rules:</p>
+<p>सः तत्र -&gt; स तत्र।</p>
+<p>एषः गच्छति -&gt; एष गच्छति।</p>
+<p>सः अत्र -&gt; सोऽत्र।</p>
+<p>सः उभयतः -&gt; स उभयतः।</p>
+<p>एषः च -&gt; एष च।</p>
+<BR>
+<p>8) A <em>visarga</em> changes to र् if it is preceded by any vowel except अ or आ, and followed by a vowel or a voiced consonant:</p>
+<p>मुनिः अत्र -&gt; मुनिरत्र</p>
+<p>मुनिः गच्छति -&gt; मुनिर्गच्छति</p>
+<p>तरोः + इति -&gt; तरोरिति</p>
+<p>तरोः + धावति -&gt; तरोर्धावति</p>
+<h2 id="word-internal-sandhi-rule"><a class="header" href="#word-internal-sandhi-rule">Word internal Sandhi rule</a></h2>
+<p>Change of न् to ण्</p>
+<p>वन is a neuter gender word. It's प्रथमा विभक्ति बहुवचन form is वनानि. But for शरीर the equivalent form is शरीराणि. The change of न् to ण् is governed by this rule:</p>
+<p>Dental न् changes to retroflex ण् if within the same word न् is preceded by र्, ऋ, or ष्, and is later followed either by a vowel or by व्, न्, म्, or य्. This applies despite the intervention of the following sounds: vowels, semi-vowels (except ल), क-series, प-series, and <em>anusvara</em>. If any other sounds intervene, the rule does not apply. Examples:</p>
+<p>शरीरानि -&gt; शरीराणि</p>
+<p>नरानाम् -&gt; नराणाम्</p>
+<p>नृपानाम् -&gt; नृपाणाम्</p>
+<p>नरान् -&gt; no change since न् is the word-final</p>
+<p>अर्जुनेन -&gt; no change since ज् intervenes</p>
+<h2 id="vowel-sandhi"><a class="header" href="#vowel-sandhi">Vowel Sandhi</a></h2>
+<p><strong>A) Lengthening of similar simple vowels:</strong></p>
+<p>सावर्णदीर्घसन्धिः</p>
+<p>a) अ or आ + अ or आ -&gt; आ</p>
+<p>Examples: राम + अत्र -&gt; रामात्र; माला + आकाशे -&gt; मालाकाशे</p>
+<p>b) इ or ई + इ or ई -&gt; ई</p>
+<p>Examples: उपरि + इति -&gt; उपरीति; नदी + इति -&gt; नदीति</p>
+<p>c) उ or ऊ + उ or ऊ -&gt; ऊ</p>
+<p>Examples: गच्छतु + उपरि -&gt; गच्छतूपरि; गच्छतु + ऊर्मिः -&gt; गच्छतूर्मिः</p>
+<p>d) ऋ or  ॠ + ऋ or  ॠ -&gt; ॠ</p>
+<p>Examples (rare): पितृ + ऋषिः -&gt; पितॄषिः ; पितृ + ॠकारः -&gt;  पितॄकारः</p>
+<br>
+<p><strong>B) Simple vowels folowed by dissimilar vowels:</strong></p>
+<p>यण् सन्धिः - इकोयणचि</p>
+<p>a) इ or ई -&gt; य् if followed by any other vowel.</p>
+<p>Examples: उपरि + अश्वः -&gt; उपर्यश्वः ; नदी + एव -&gt; नद्येव</p>
+<p>b) उ or ऊ -&gt; व् if followed by any other vowel.</p>
+<p>Example: धावतु + अत्र -&gt; धावत्वत्र</p>
+<p>c) ऋ or  ॠ -&gt; र् if followed by any other vowel</p>
+<p>Example: पितृ + अत्र -&gt; पित्रत्र</p>
+<br>
+<p><strong>C) Formation of diphthongs:</strong></p>
+<p>गुणसन्धिः - a and b</p>
+<p>वृद्धिसन्धिः - c and d</p>
+<p>a) अ or आ + इ or ई -&gt; ए</p>
+<p>Examples:
+च + इति -&gt; चेति   मुनिना + इह -&gt; मुनिनेह</p>
+<p>b) अ or आ + उ or ऊ -&gt; ओ</p>
+<p>Examples:
+अत्र + उपरि -&gt; अत्रोपरि   मुनिना + उपरि -&gt; मुनिनोपरि</p>
+<p>c) अ or आ + ए or ऐ -&gt; ऐ</p>
+<p>Examples:
+च + एव -&gt; चैव  
+धेन्वा + एतद् -&gt; धेन्वैतद्</p>
+<p>d) अ or आ + ओ or औ -&gt; औ</p>
+<p>Examples:
+च + ओदनम् -&gt; चौदनम्  
+पिबाम + औषधम् -&gt; पिबामौषधम्</p>
+<BR>
+<p><strong>D) Exceptions</strong></p>
+<p>Long ई, ऊ, and  ए do not change if they occur at the end of dual forms of nouns or verbs. Similarly the final vowels of interjections like आ, हे and अहो remain unchanged.</p>
+<p>Examples:
+मुनी + अत्र -&gt; मुनी अत्र ; धेनू + इति -&gt; धेनू इति; माले अत्र -&gt; माले अत्र</p>
+<BR>
+<p><strong>Vowel sandhi rules (continued)</strong></p>
+<p>a.1 and b.1 are  पूर्वरूपसन्धिः</p>
+<p>a.2, b.2, c, d below are यान्तवान्तादेशसन्धिः as per <em>Panini sutra</em> एचोऽयवायावः</p>
+<BR>
+<p>a.1) ए + अ = ए</p>
+<p>Examples:
+लभते अत्र -&gt; लभतेऽत्र   वने अपि -&gt; वनेऽपि</p>
+<p>a.2) ए -&gt; अय् before any vowel other than अ</p>
+<p>Examples: वने इः -&gt; वनयिह   देवे इति -&gt; देवयिति</p>
+<BR>
+<p>b.1) ओ + अ -&gt; ओ</p>
+<p>Examples: प्रभो + अधुना -&gt; प्रभोऽधुना   गुरो + अत्र -&gt; गोरोऽत्र</p>
+<p>b.2) ओ -&gt; अव् before any vowel other than अ</p>
+<p>Examples: गुरो + इति -&gt; गुरविति   शिशो + इति -&gt; शिशविति</p>
+<BR>
+<p>c) ऐ -&gt; आय्, before any vowel</p>
+<p>Examples: तस्मै + इति -&gt; तस्मायिति   नद्यै + इति -&gt; नद्यायिति</p>
+<BR>
+<p>d) औ -&gt; आव्, before any vowel</p>
+<p>Examples: कवौ + इह -&gt; कवाविह   गुरौ + इति -&gt; गुराविति</p>
+<BR>
+<hr />
+<p><strong>Note:</strong> When words ending in ओ or औ are combined with यादिप्रत्ययः then also ओ/औ will change to अव्/आव्. </p>
+<p>Examples:</p>
+<p>गो + यम् = ग् + अव् + यम् = गव्यम्</p>
+<p>नौ + यम् = न् + आव् + यम् = नाव्यम्</p>
+<hr />
+<br>
+<p>e) य् and व् resulting from changes of ए, ओ, ऐ, and औ may be optionally elided, and in the case of such elision of य् and व्, no further sandhi occurs. Examples:</p>
+<p>वने + इह -&gt; वनयिह or वन इह</p>
+<p>गुरो + इति -&gt; गुरविति or गुर इति</p>
+<p>तस्मै + इति -&gt; तस्मायिति or तस्मा इति</p>
+<p>कवौ + इति -&gt; कवाविति or कवा इति</p>
+<BR>
+<p>Due to various sandhi rules, occasionally identical sequences result from different original sequences, and only the larger sentential context can help identify the originals. Compare and contrast the following:</p>
+<p>(बालाः इह) बाला इह तिष्ठन्ति। &quot;The boys stand here.&quot;</p>
+<p>(बालौ इह) बाला इह तिष्ठतः। &quot;Two boys stand here.&quot;</p>
+<p>(बाला इह) बाला इह तिष्ठति। &quot;A girl stands here.&quot;</p>
+<BR>
+<p>Final is the <strong>last</strong> letter of the <strong>first</strong> word and initial is the <strong>first</strong> letter of the <strong>second</strong> word</p>
+<table><thead><tr><th>Final ↓ / Initial →</th><th><strong>अ</strong></th><th><strong>आ</strong></th><th><strong>इ</strong></th><th><strong>ई</strong></th><th><strong>उ</strong></th><th><strong>ऊ</strong></th><th><strong>ऋ</strong></th><th><strong>ॠ</strong></th><th><strong>ए</strong></th><th><strong>ऐ</strong></th><th><strong>ओ</strong></th><th><strong>औ</strong></th></tr></thead><tbody>
+<tr><td><strong>अ/आ</strong></td><td>आ</td><td>आ</td><td>ए</td><td>ए</td><td>ओ</td><td>ओ</td><td>अर्</td><td>अर्</td><td>ऐ</td><td>ऐ</td><td>औ</td><td>औ</td></tr>
+<tr><td><strong>इ/ई</strong></td><td>य</td><td>या</td><td>इ</td><td>ई</td><td>यु</td><td>यू</td><td>यृ</td><td>यॄ</td><td>ये</td><td>यै</td><td>यो</td><td>यौ</td></tr>
+<tr><td><strong>उ/ऊ</strong></td><td>व</td><td>वा</td><td>वि</td><td>वी</td><td>ऊ</td><td>ऊ</td><td>वृ</td><td>वॄ</td><td>वे</td><td>वै</td><td>वो</td><td>वौ</td></tr>
+<tr><td><strong>ऋ/ॠ</strong></td><td>र</td><td>रा</td><td>रि</td><td>री</td><td>रु</td><td>रू</td><td>ऋृ</td><td>ऋॄ</td><td>रे</td><td>रै</td><td>रो</td><td>रौ</td></tr>
+<tr><td><strong>ए</strong></td><td>एऽ</td><td>अया</td><td>अयि</td><td>अयी</td><td>अयु</td><td>अयू</td><td>अयृ</td><td>अयॄ</td><td>अये</td><td>अयै</td><td>अयो</td><td>अयौ</td></tr>
+<tr><td>or</td><td></td><td>अआ</td><td>अइ</td><td>अई</td><td>अउ</td><td>अऊ</td><td>अऋ</td><td>अऋॄ</td><td>अए</td><td>अऐ</td><td>अओ</td><td>अवौ</td></tr>
+<tr><td><strong>ऐ</strong></td><td>आय</td><td>आया</td><td>आयि</td><td>अयी</td><td>आयु</td><td>आयू</td><td>आयृ</td><td>आयॄ</td><td>आए</td><td>आयै</td><td>आयो</td><td>आयौ</td></tr>
+<tr><td>or</td><td>आअ</td><td>आआ</td><td>आइ</td><td>आई</td><td>आउ</td><td>आऊ</td><td>आऋ</td><td>आऋॄ</td><td>आये</td><td>आऐ</td><td>आओ</td><td>आवौ</td></tr>
+<tr><td><strong>ओ</strong></td><td>ओऽ</td><td>अवा</td><td>अवि</td><td>अवी</td><td>अवु</td><td>अवू</td><td>अवृ</td><td>अवॄ</td><td>अवे</td><td>अवै</td><td>अवो</td><td>अवौ</td></tr>
+<tr><td>or</td><td></td><td>अआ</td><td>अइ</td><td>अई</td><td>अउ</td><td>अऊ</td><td>अऋ</td><td>अऋॄ</td><td>अए</td><td>अऐ</td><td>अओ</td><td>अऔ</td></tr>
+<tr><td><strong>औ</strong></td><td>आव</td><td>आवा</td><td>अवि</td><td>आवी</td><td>आवु</td><td>आवू</td><td>आवृ</td><td>आवॄ</td><td>आवे</td><td>आवै</td><td>आवो</td><td>आवौ</td></tr>
+<tr><td>or</td><td>आअ</td><td>आआ</td><td>आइ</td><td>आई</td><td>आउ</td><td>आऊ</td><td>आऋ</td><td>आऋॄ</td><td>आए</td><td>आऐ</td><td>अओ</td><td>आऔ</td></tr>
+</tbody></table>
+<h2 id="consonant-sandhi-rules"><a class="header" href="#consonant-sandhi-rules">Consonant Sandhi Rules</a></h2>
+<p>1. unvoiced stop -&gt; voiced stop, before a voiced consonant or a vowel</p>
+<p>Examples:</p>
+<p>वृक्षात् + अपतत् = वृक्षादपतत्</p>
+<p>ग्रामात् + वनम् = ग्रामाद्वनम्</p>
+<br>
+<p>2. Voiced stop -&gt; unvoiced stop, before a unvoiced consonant</p>
+<p>Examples:</p>
+<p>तद् + कमलम् = तत्कमलम्</p>
+<p>एतद् + सर्वदा = एतत्सर्वदा</p>
+<br>
+<p>3. Initial श -&gt; छ, optionally if preceded by a dental stop or nasal.</p>
+<p>Examples:</p>
+<p>तत् + शंसति = तच्छंसति</p>
+<p>तान् + शंसति = ताञ्छंसति</p>
+<p>Optionally: तच्शंसति and ताञ्शंसति (rare in texts).</p>
+<br>
+<p>4. Dental Consonant -&gt; <strong>corresponding</strong> retroflex Consonant, before a retroflex Consonant.</p>
+<p>Examples:</p>
+<p>तत् + टीका = तट्टीका</p>
+<p>तद् + डमरुः = तड्डमरुः</p>
+<p>(देवः = ) देवस् + टीका -&gt; देवष्टीका</p>
+<br>
+<p>5. Dental Consonant -&gt; <strong>corresponding</strong> palatal Consonant, before a palatal consonant</p>
+<p>Examples:</p>
+<p>ग्रामात् + च = ग्रामाच्च</p>
+<p>ग्रामात् + जायते = ग्रामाज्जायते</p>
+<p>(देवः = ) देवस् + च = देवश्च</p>
+<br>
+<p>6. Dental stop -&gt; ल् before ल्.</p>
+<p>Examples:</p>
+<p>तद् + लभते = तल्लभते</p>
+<p>ग्रामात् + लोकः = ग्रामाल्लोकः</p>
+<br>
+<p>7. Dental न् -&gt; ल्ँ before ल्</p>
+<p>Examples:</p>
+<p>तान् + लभते = ताल्ँलभते</p>
+<p>देवान् + लोकः = देवाल्ँलोकः</p>
+<br>
+<p>8. Stop -&gt; corresponding nasal, before nasal, optionally</p>
+<p>Examples:</p>
+<p>तद् + न = तन्न</p>
+<p>वाक् + मम = वाङ्मम</p>
+<p>तद् + मित्रम् = तन्मित्रम्</p>
+<p>Optionally: तद्न, वाग्मम, and तद्मित्रम् (rare in texts)</p>
+<br>
+<p>9. ह् after a stop is replaced by the corresponding voiced aspirated stop, optionally:</p>
+<p>Examples:</p>
+<p>तद् + हि = तद्धि</p>
+<p>वाक् + हि = वाग्घि</p>
+<p>Optionally तद्हि and वाग्हि (rare in texts).</p>
+<br>
+<p>10. Final ङ्, ण्, and न् are doubled, after a short vowel and before any vowel</p>
+<p>Examples:</p>
+<p>अपतन् + इह = अपतन्निह</p>
+<p>अगच्छन् + आकाशम् = अगच्छन्नाकाशम्</p>
+<br>
+<p>11. Final न्, before an unvoiced dental, palatal, or retroflex stop, is replaced by an <em>anusvara</em> plus a sibilant homorganic with the stop. Examples:</p>
+<p>देवान् + तत्र = देवांस्तत्र</p>
+<p>देवान् + च = देवांश्च</p>
+<p>देवान् + टीका = देवांष्टीका</p>
+<br>
+<p>12. Final र्, original or derived from a visarga, is deleted, before an initial र्, and the previous simple vowel is lengthened. Examples:</p>
+<p>पुनर् + सामः = पुना रामः</p>
+<p>मतिः + रामः = मती रामः</p>
+<p>शिशुः + रामः = शिशू रामः</p>
+<br>
+<p>13. If a word ending in a short vowel is followed by छ, a च् is inserted between the two. This insertion is optional after a long vowel. Examples:</p>
+<p>कवि + छात्रः = कविच्छात्रः</p>
+<p>लक्षमी + छाया = लक्ष्मीच्छाया or लक्ष्मीछाया</p>
+<hr />
+<h1 id="notes-from-other-sources"><a class="header" href="#notes-from-other-sources">Notes from other sources</a></h1>
+<h2 id="maheshvara-sutra"><a class="header" href="#maheshvara-sutra">Maheshvara Sutra</a></h2>
+<p><strong>महेश्वर सूत्राणि</strong></p>
+<p>अइउण् । ऋऌक् । एओङ् । ऐऔच् ।</p>
+<p>हयवरट् । लण् । ञमङणनम् ।</p>
+<p>झभञ् । घढधष् । जबगडदश् ।</p>
+<p>खफछठथचटतव् । कपय् ।</p>
+<p>शषसर् । हल् ।</p>
+<p>Memorize the above sutras. They are useful in learning Sandhi.</p>
+<h2 id="१-यण-सनधिः---इकोयणचि"><a class="header" href="#१-यण-सनधिः---इकोयणचि">१. यण् सन्धिः - इकोयणचि</a></h2>
+<p>इकोयणचि ६.१.७७ - इकः स्थाने यण् स्यादचि संहितायां विषये। इको यण् स्यादसवर्णेऽचि परे इति सूत्रस्य फलितोऽर्थः इति ज्ञेयम्।</p>
+<p>The <em>Panini</em> sutra for यण्सन्धिः is इकोयणचि. The इक्, यण् and अच् terms in this <em>sutra</em> refer to portions of the Maheshvara sutra highlighted in red below.</p>
+<p>अ<span style="color:red">इउण् । ऋऌक्</span>। - <strong>इक्</strong></p>
+<p>ह<span style="color:red">यवरट् । लण् </span>। -  <strong>यण्</strong></p>
+<p><span style="color:red">अइउण् । ऋऌक् । एओङ् । ऐऔच् ।</span> - <strong>अच्</strong></p>
+<p>इक् refers to vowels इ ई उ ऊ ऋ ॠ लृ</p>
+<p>यण् refers to vowels य व र ल</p>
+<p>अच् refers to all vowels अ आ इ ई उ ऊ ऋ लृ ए ऐ ओ औ</p>
+<p>This <em>sutra</em> says that the vowels इ/ई, उ/ऊ, ऋ/ॠ and लृ if followed by any vowel of different type (i.e. different from this vowel असवर्णस्वरः) it must be (आदेशः) replaced (correspondingly) by य्, व्, र्, or ल्. </p>
+<table><thead><tr><th></th><th>यण् सन्धिः</th><th></th><th></th></tr></thead><tbody>
+<tr><td>इई</td><td>उऊ</td><td>ऋॠ</td><td>ऌ</td></tr>
+<tr><td>य्</td><td>व्</td><td>र्</td><td>ल्</td></tr>
+</tbody></table>
+<p><strong>Examples:</strong> </p>
+<p>प्रति + एकम् = प्रत् + य् + एकम् =  प्रत्येकम्         नदी + अत्र = नद् + य् + अत्र = नद्यत्र</p>
+<p>मनु + अन्तरम् = मन् + व् + अन्तरम् = मन्वन्तरम्        वधू + आगमनम् = वध् + व् + आगमनम् =  वध्वागमनम्</p>
+<p>पितृ + इच्छा = पित् + र् + इच्छा = पित्रिच्छा </p>
+<p>घस्लृ + आदेशः = घस् + ल् + आदेशः = घस्लादेशः (uncommon)</p>
+<hr />
+<h2 id="२-यानतवानतादेशसनधिः"><a class="header" href="#२-यानतवानतादेशसनधिः">२. यान्तवान्तादेशसन्धिः</a></h2>
+<p>एचोऽयवायावः - ६.१.७८ एचः क्रमाद् अय् अव् आय् आव् एते स्युरचि।</p>
+<p>यान्तौ वान्तौ च = अय् आय् अव् आव्</p>
+<table><thead><tr><th></th><th>यान्तवान्तादेशसन्धिः</th><th></th><th></th></tr></thead><tbody>
+<tr><td>ए</td><td>ऐ</td><td>ओ</td><td>औ</td></tr>
+<tr><td>अय्</td><td>आय्</td><td>अव्</td><td>आव्</td></tr>
+</tbody></table>
+<p>If ए ऐ ओ औ are followed by स्वाराः it changes as shown in the above table.</p>
+<p><strong>Examples:</strong></p>
+<p>हरे + ए = हर् + अय् + ए = हरये     हरे + आगच्छ = हर् + अय् + आगच्छ = हरयागच्छ</p>
+<p>नै + अकः = न् + आय् + अकः = नायकः     तस्यै + इदम् = तस्य् + आय् + इदम् = तस्यायिदम्</p>
+<p>विष्णो + ए = विष्ण् + अव् + ए = विषणवे     गुरो + आदिश = गुर् + अ्व + आदिश = गुरावादिश</p>
+<p>पौ + अकः = प् + आव् + अकः = पावकः</p>
+<p>बालकौ + आगतौ = बालक् + आव् + आगतौ = बालकावागतौ</p>
+<p>फले + इच्छा = फलयिच्छा / फल इच्छा</p>
+<p>कटे + उपवेशनम् = कटयुपवेशनम् / कट उपवेशनम्</p>
+<p><strong>Note from teacher:</strong>
+There is another <em>sutra</em> that provides an exception to एचोऽयवायावः. As per सूत्र &quot;एङः पदान्तादति&quot; the एङ् (ए ओ) at the end of the word followed by अत् (ह्रस्व अ) the both will get common replacement of पूर्वरूप (ए, ओ)</p>
+<h2 id="२२-यानतवानतादेशसनधिः"><a class="header" href="#२२-यानतवानतादेशसनधिः">२.२. यान्तवान्तादेशसन्धिः</a></h2>
+<p>यकारादिप्रत्यये परे ओ औ इत्येतयोः स्थाने क्रमाद् अव् आव् एतौ आदेशौ भवतः।</p>
+<p>When a यकार प्रत्यय is added to words ending in ओ or औ then it changes as below</p>
+<p><strong>ओ/औ + यादिप्रत्ययः -</strong></p>
+<table><thead><tr><th>यान्तवान्तादेशसन्धिः</th><th></th></tr></thead><tbody>
+<tr><td>ओ</td><td>औ</td></tr>
+<tr><td>अव्</td><td>आव्</td></tr>
+</tbody></table>
+<p>Examples:</p>
+<p>गो + यम् = ग् + अव् + यम् = गव्यम्</p>
+<p>नौ + यम् = न् + अव् + यम् = नव्यम्</p>
+<hr />
+<p><strong>इदमवधेयम्</strong> - स्वरसन्धिषु यण्सन्धौ यान्तवान्तादेशसन्धौ च एकस्य पूर्वस्थितस्य वर्णस्य आदेशौ भवति। इदं सन्धिद्वयं विहाय अन्यत्र स्वरसन्धिषु पूर्वपरयोः स्थाने एकादेशो भवति। </p>
+<p><strong>Know this:</strong> Among <em>swara sandhis</em> यणसन्धि and यान्तवान्तादेशसन्धि one previous sound (letter) is replaced. Other than these two <em>sandhis</em>  other <em>swara sandhis</em> the last letter (of the first word) and the first letter (of the second woord) are replaced with the same change.</p>
+<hr />
+<p><strong>How do we decide which <em>Panini sutra</em> overrides another one?</strong></p>
+<p>First we have to look for the सूत्र number. If सूत्रs in first 7 अध्यायs and the 1st quarter of 8th अध्याय then first rule is more powerful than later on. In last 3 quarters of 8th अध्याय then it is reverse. Later is powerful than previous.</p>
+<p>In case of one sutra in सपादसप्ताध्यायी (first 7 chapters and 1st quarter of 8th) and another in त्रिपादी (last 3 quarters of 8th अध्यायी) then सपादसप्ताध्यायी is powerful.</p>
+<hr />
+<h2 id="३-गुणसनधिः"><a class="header" href="#३-गुणसनधिः">३. गुणसन्धिः</a></h2>
+<p>गुणः = ए ओ अर् अल् </p>
+<table><thead><tr><th></th><th>गुणसन्धिः</th><th></th><th></th></tr></thead><tbody>
+<tr><td>अ/आ + इ/ई</td><td>अ/आ + उ/ऊ</td><td>अ/आ + ऋ/ॠ</td><td>अ/आ + ऌ</td></tr>
+<tr><td>ए</td><td>ओ</td><td>अर्</td><td>अल्</td></tr>
+</tbody></table>
+<p><strong>१.१.२.</strong> अदेङ्गुणः - अत् एङ् च गुणसंज्ञः स्यात्।</p>
+<p><strong>६.१.८७.</strong> आद् गुणः - अवर्णादचि परे पूर्वपरयोरेको गुणः आदेशः स्यात्संहितायाम्। अवर्णादिकि परे इति सूत्रस्य फलितोऽर्थः इति ज्ञेयम्।</p>
+<BR>
+<p>देव + इन्द्रः = देव् + ए + न्द्रः = देवेन्द्रः</p>
+<p>गण + ईशः = गण् + ए + शः = गणेशः</p>
+<p>महा + इन्द्रः = मह् + ए + न्द्रः = महेन्द्रः</p>
+<p>महा + ईशः = मह + ए + शः = महेशः</p>
+<BR> 
+<p>सूर्य + उदयः = सूर्य् + ओ + दयः = सूर्योदयः</p>
+<p>एक + ऊनविंशतिः = एक् + ओ + नविंशतिः = एकोनविंशतिः</p>
+<p>महा + उत्सवः = मह + ओ + त्सवः = महोत्सवः</p>
+<p>महा + ऊर्मिः = मह + ओ + र्मिः = महोर्मिः</p>
+<BR>
+<p>सप्त + ऋषिः = सप्त् + अर् + षयः = सप्तर्षयः</p>
+<p>महा + ऋषिः = मह + अर् + षिः = महर्षिः</p>
+<BR>
+<p>तव + ऌकारः = तव् + अल् + कारः = तवल्कारः</p>
+<p>महा + ऌकारः = मह् + अल् + कारः = महल्कारः</p>
+<h2 id="वृदधिसनधिः"><a class="header" href="#वृदधिसनधिः">वृद्धिसन्धिः</a></h2>
+<table><thead><tr><th>वृद्धिसन्धिः</th><th></th></tr></thead><tbody>
+<tr><td><strong>अ/आ + ए/ऐ</strong></td><td><strong>अ/आ + ओ/औ</strong></td></tr>
+<tr><td>ऐ</td><td>औ</td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../notes_intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../subashitam/subashitam1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../notes_intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../subashitam/subashitam1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

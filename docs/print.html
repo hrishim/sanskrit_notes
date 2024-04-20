@@ -1,0 +1,1834 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>My Sanskrit Notes</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="notes_intro.html"><strong aria-hidden="true">1.</strong> Sanskrit Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="notes/sandhi.html"><strong aria-hidden="true">1.1.</strong> Sandhi</a></li><li class="chapter-item expanded "><a href="subashitam/subashitam1.html"><strong aria-hidden="true">1.2.</strong> Subashitam</a></li><li class="chapter-item expanded "><a href="notes/lakaras.html"><strong aria-hidden="true">1.3.</strong> Tenses and Moods - लकार</a></li><li class="chapter-item expanded "><a href="notes/shabd_roop.html"><strong aria-hidden="true">1.4.</strong> शब्द रुप</a></li><li class="chapter-item expanded "><a href="notes/dhatu_roop.html"><strong aria-hidden="true">1.5.</strong> धातु रूप</a></li><li class="chapter-item expanded "><a href="notes/grammer.html"><strong aria-hidden="true">1.6.</strong> Grammer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="notes/verbs.html"><strong aria-hidden="true">1.6.1.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="notes/grammer_npa.html"><strong aria-hidden="true">1.6.2.</strong> Nouns, Pronouns, and Adjectives</a></li><li class="chapter-item expanded "><a href="notes/kridantas.html"><strong aria-hidden="true">1.6.3.</strong> Kridantas</a></li></ol></li><li class="chapter-item expanded "><a href="notes/using_vibhaktis.html"><strong aria-hidden="true">1.7.</strong> Using Vibhaktis</a></li><li class="chapter-item expanded "><a href="notes/terminology.html"><strong aria-hidden="true">1.8.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="resources.html"><strong aria-hidden="true">1.9.</strong> Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Sanskrit Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="sanskrit-notes"><a class="header" href="#sanskrit-notes">Sanskrit Notes</a></h1>
+<p>These pages are a collection of my notes, my translations, and other useful things I have collected  as I learn Sanskrit. Click on the three lines on the top left (next to the paintbrush icon) to navigate to specific chapters.</p>
+<ol>
+<li><a href="notes/sandhi.html">Sandhi</a></li>
+<li><a href="notes/lakaras.html">लकार</a></li>
+<li><a href="notes/shabd_roop.html">शब्द रुप</a></li>
+<li><a href="./resources.html">Resources</a></li>
+</ol>
+<h2 id="translations"><a class="header" href="#translations">Translations</a></h2>
+<ol>
+<li>Exercises from <a href="./deshpande/intro.html">Samskrta-Subodhini: A Sanskrit Primer&quot; by Madhav Deshpande</a></li>
+<li>Translations of lessons in <a href="https://hrishim.github.io/sanskrit_reader1/reader1/r1_intro.html">संस्कृतप्रथमादर्शः Reader - I</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sandhi"><a class="header" href="#sandhi">Sandhi</a></h1>
+<p><strong>ToC</strong></p>
+<p>Notes from Deshpande</p>
+<ol>
+<li><a href="notes/sandhi.html#anusv%C4%81ra-sandhi-rules">Anusvāra Sandhi Rules</a></li>
+<li><a href="notes/sandhi.html#visarga-sandhi-rules">Visarga Sandhi Rules</a></li>
+<li><a href="notes/sandhi.html#word-internal-sandhi-rule">Word-internal Sandhi rule: Change of न् to ण्</a></li>
+<li><a href="notes/sandhi.html#vowel-sandhi">Vowel Sandhi</a></li>
+<li><a href="notes/sandhi.html#consonant-sandhi-rules">Consonant Sandhi Rules</a></li>
+</ol>
+<p><a href="notes/sandhi.html#notes-from-other-sources">Notes from other sources</a></p>
+<h1 id="notes-from-deshpande"><a class="header" href="#notes-from-deshpande">Notes from Deshpande</a></h1>
+<h2 id="anusvāra-sandhi-rules"><a class="header" href="#anusvāra-sandhi-rules">Anusvāra Sandhi Rules</a></h2>
+<p>अनुस्वार</p>
+<p>Final म् when followed by a consonant is changed to <em>anusvāra</em>. Example: रामम् वदति  -&gt; रामं वदति</p>
+<p>The change does not happen if म् is followed by a vowel or is at the end of a sentence. In that case it has to remain as म्.</p>
+<p>Optionally an <em>anusvāra</em> is further changes to a nasal consonant, which is homorganic with the following consonant. Change of <em>anusvāra</em> before य् व् and ल् is less common.</p>
+<p>रामम् करोति -&gt; रामं करोति -&gt; रामङ्करोति</p>
+<p>रामम् च -&gt; रामं च -&gt; रामञ्च</p>
+<p>रामम् टीका -&gt; रामं टीका -&gt; रामण्टीका</p>
+<p>रामम् तत्र -&gt; रामं तत्र -&gt; रामन्तत्र</p>
+<p>रामम् पश्यति -&gt; रामं पश्यति -&gt; रामम्पश्यति</p>
+<p>रामम् यत्र -&gt; रामं यत्र -&gt; रामय्ँयत्र</p>
+<p>रामम् वा -&gt; रामं वा -&gt; रामव्ँवा</p>
+<p>रामम् लता -&gt; रामं लता -&gt; रामल्ँलता</p>
+<h2 id="visarga-sandhi-rules"><a class="header" href="#visarga-sandhi-rules">Visarga Sandhi Rules</a></h2>
+<p>1) The final <em>visarga</em> remains unchanged before क् ख् प् फ् E.g. रामः पतति।</p>
+<BR>
+<p>2) The final <em>visarga</em> changes to a sibilant homorganic with the following unvoiced consonants marginally before श् ष् and स्.</p>
+<p>A <em>visarga</em> becomes श् before च्, छ्, and श् - जनाः च -&gt; जनाश्च</p>
+<p>A <em>visarga</em> becomes ष् before ट्, ठ्, and ष् - जनाः टीकाम् -&gt; जनाष्टीकाम्</p>
+<p>A <em>visarga</em> becomes स् before त्, थ्, and स् - रामः तत्र -&gt; रामस्तत्र</p>
+<BR>
+<p>3) A <em>visarga</em> when preceded by आ and followed by a voiced consonant or vowel is dropped:</p>
+<p>बालाः धावन्ति -&gt; बाला धावन्ति।</p>
+<p>जनाः अभितः -&gt; जना अभितः।</p>
+<BR>
+<p>4) When a विसर्ग is preceded by अ and followed by a voiced consonant, the sequence अः is changed to ओ :-</p>
+<p>पुत्रः धावति -&gt; पुत्रो धावति।</p>
+<p>जनः वसति -&gt; जनो वसति।</p>
+<BR>
+<p>5) When preceded by अ and followed by any vowel except अ, the विसर्ग is dropped:</p>
+<p>पुत्रः उभयतः -&gt; पुत्र उभयतः।</p>
+<p>धावतः इह -&gt; धावत इह।</p>
+<BR>
+<p>6) When a visarga is preceded by अ and followed by अ, अः is changed to ओ while the following अ is elided. This lost अ is indicated by the unpronounced sign ऽ called <em>Avagraha</em></p>
+<p>धावतः अश्वौ -&gt; धावतोऽश्वौ।</p>
+<p>पुत्रः अत्र -&gt; पुत्रोऽत्र।</p>
+<BR>
+<p>7) An exception to the visarga sandhi</p>
+<p>The <em>visarga</em> after सः and एषः followed by a consonant does not follow any of the above sandhi-rules, but can be dropped optionally. Before vowels, it follows the normal sandhi rules:</p>
+<p>सः तत्र -&gt; स तत्र।</p>
+<p>एषः गच्छति -&gt; एष गच्छति।</p>
+<p>सः अत्र -&gt; सोऽत्र।</p>
+<p>सः उभयतः -&gt; स उभयतः।</p>
+<p>एषः च -&gt; एष च।</p>
+<BR>
+<p>8) A <em>visarga</em> changes to र् if it is preceded by any vowel except अ or आ, and followed by a vowel or a voiced consonant:</p>
+<p>मुनिः अत्र -&gt; मुनिरत्र</p>
+<p>मुनिः गच्छति -&gt; मुनिर्गच्छति</p>
+<p>तरोः + इति -&gt; तरोरिति</p>
+<p>तरोः + धावति -&gt; तरोर्धावति</p>
+<h2 id="word-internal-sandhi-rule"><a class="header" href="#word-internal-sandhi-rule">Word internal Sandhi rule</a></h2>
+<p>Change of न् to ण्</p>
+<p>वन is a neuter gender word. It's प्रथमा विभक्ति बहुवचन form is वनानि. But for शरीर the equivalent form is शरीराणि. The change of न् to ण् is governed by this rule:</p>
+<p>Dental न् changes to retroflex ण् if within the same word न् is preceded by र्, ऋ, or ष्, and is later followed either by a vowel or by व्, न्, म्, or य्. This applies despite the intervention of the following sounds: vowels, semi-vowels (except ल), क-series, प-series, and <em>anusvara</em>. If any other sounds intervene, the rule does not apply. Examples:</p>
+<p>शरीरानि -&gt; शरीराणि</p>
+<p>नरानाम् -&gt; नराणाम्</p>
+<p>नृपानाम् -&gt; नृपाणाम्</p>
+<p>नरान् -&gt; no change since न् is the word-final</p>
+<p>अर्जुनेन -&gt; no change since ज् intervenes</p>
+<h2 id="vowel-sandhi"><a class="header" href="#vowel-sandhi">Vowel Sandhi</a></h2>
+<p><strong>A) Lengthening of similar simple vowels:</strong></p>
+<p>सावर्णदीर्घसन्धिः</p>
+<p>a) अ or आ + अ or आ -&gt; आ</p>
+<p>Examples: राम + अत्र -&gt; रामात्र; माला + आकाशे -&gt; मालाकाशे</p>
+<p>b) इ or ई + इ or ई -&gt; ई</p>
+<p>Examples: उपरि + इति -&gt; उपरीति; नदी + इति -&gt; नदीति</p>
+<p>c) उ or ऊ + उ or ऊ -&gt; ऊ</p>
+<p>Examples: गच्छतु + उपरि -&gt; गच्छतूपरि; गच्छतु + ऊर्मिः -&gt; गच्छतूर्मिः</p>
+<p>d) ऋ or  ॠ + ऋ or  ॠ -&gt; ॠ</p>
+<p>Examples (rare): पितृ + ऋषिः -&gt; पितॄषिः ; पितृ + ॠकारः -&gt;  पितॄकारः</p>
+<br>
+<p><strong>B) Simple vowels folowed by dissimilar vowels:</strong></p>
+<p>यण् सन्धिः - इकोयणचि</p>
+<p>a) इ or ई -&gt; य् if followed by any other vowel.</p>
+<p>Examples: उपरि + अश्वः -&gt; उपर्यश्वः ; नदी + एव -&gt; नद्येव</p>
+<p>b) उ or ऊ -&gt; व् if followed by any other vowel.</p>
+<p>Example: धावतु + अत्र -&gt; धावत्वत्र</p>
+<p>c) ऋ or  ॠ -&gt; र् if followed by any other vowel</p>
+<p>Example: पितृ + अत्र -&gt; पित्रत्र</p>
+<br>
+<p><strong>C) Formation of diphthongs:</strong></p>
+<p>गुणसन्धिः - a and b</p>
+<p>वृद्धिसन्धिः - c and d</p>
+<p>a) अ or आ + इ or ई -&gt; ए</p>
+<p>Examples:
+च + इति -&gt; चेति   मुनिना + इह -&gt; मुनिनेह</p>
+<p>b) अ or आ + उ or ऊ -&gt; ओ</p>
+<p>Examples:
+अत्र + उपरि -&gt; अत्रोपरि   मुनिना + उपरि -&gt; मुनिनोपरि</p>
+<p>c) अ or आ + ए or ऐ -&gt; ऐ</p>
+<p>Examples:
+च + एव -&gt; चैव  
+धेन्वा + एतद् -&gt; धेन्वैतद्</p>
+<p>d) अ or आ + ओ or औ -&gt; औ</p>
+<p>Examples:
+च + ओदनम् -&gt; चौदनम्  
+पिबाम + औषधम् -&gt; पिबामौषधम्</p>
+<BR>
+<p><strong>D) Exceptions</strong></p>
+<p>Long ई, ऊ, and  ए do not change if they occur at the end of dual forms of nouns or verbs. Similarly the final vowels of interjections like आ, हे and अहो remain unchanged.</p>
+<p>Examples:
+मुनी + अत्र -&gt; मुनी अत्र ; धेनू + इति -&gt; धेनू इति; माले अत्र -&gt; माले अत्र</p>
+<BR>
+<p><strong>Vowel sandhi rules (continued)</strong></p>
+<p>a.1 and b.1 are  पूर्वरूपसन्धिः</p>
+<p>a.2, b.2, c, d below are यान्तवान्तादेशसन्धिः as per <em>Panini sutra</em> एचोऽयवायावः</p>
+<BR>
+<p>a.1) ए + अ = ए</p>
+<p>Examples:
+लभते अत्र -&gt; लभतेऽत्र   वने अपि -&gt; वनेऽपि</p>
+<p>a.2) ए -&gt; अय् before any vowel other than अ</p>
+<p>Examples: वने इः -&gt; वनयिह   देवे इति -&gt; देवयिति</p>
+<BR>
+<p>b.1) ओ + अ -&gt; ओ</p>
+<p>Examples: प्रभो + अधुना -&gt; प्रभोऽधुना   गुरो + अत्र -&gt; गोरोऽत्र</p>
+<p>b.2) ओ -&gt; अव् before any vowel other than अ</p>
+<p>Examples: गुरो + इति -&gt; गुरविति   शिशो + इति -&gt; शिशविति</p>
+<BR>
+<p>c) ऐ -&gt; आय्, before any vowel</p>
+<p>Examples: तस्मै + इति -&gt; तस्मायिति   नद्यै + इति -&gt; नद्यायिति</p>
+<BR>
+<p>d) औ -&gt; आव्, before any vowel</p>
+<p>Examples: कवौ + इह -&gt; कवाविह   गुरौ + इति -&gt; गुराविति</p>
+<BR>
+<hr />
+<p><strong>Note:</strong> When words ending in ओ or औ are combined with यादिप्रत्ययः then also ओ/औ will change to अव्/आव्. </p>
+<p>Examples:</p>
+<p>गो + यम् = ग् + अव् + यम् = गव्यम्</p>
+<p>नौ + यम् = न् + आव् + यम् = नाव्यम्</p>
+<hr />
+<br>
+<p>e) य् and व् resulting from changes of ए, ओ, ऐ, and औ may be optionally elided, and in the case of such elision of य् and व्, no further sandhi occurs. Examples:</p>
+<p>वने + इह -&gt; वनयिह or वन इह</p>
+<p>गुरो + इति -&gt; गुरविति or गुर इति</p>
+<p>तस्मै + इति -&gt; तस्मायिति or तस्मा इति</p>
+<p>कवौ + इति -&gt; कवाविति or कवा इति</p>
+<BR>
+<p>Due to various sandhi rules, occasionally identical sequences result from different original sequences, and only the larger sentential context can help identify the originals. Compare and contrast the following:</p>
+<p>(बालाः इह) बाला इह तिष्ठन्ति। &quot;The boys stand here.&quot;</p>
+<p>(बालौ इह) बाला इह तिष्ठतः। &quot;Two boys stand here.&quot;</p>
+<p>(बाला इह) बाला इह तिष्ठति। &quot;A girl stands here.&quot;</p>
+<BR>
+<p>Final is the <strong>last</strong> letter of the <strong>first</strong> word and initial is the <strong>first</strong> letter of the <strong>second</strong> word</p>
+<table><thead><tr><th>Final ↓ / Initial →</th><th><strong>अ</strong></th><th><strong>आ</strong></th><th><strong>इ</strong></th><th><strong>ई</strong></th><th><strong>उ</strong></th><th><strong>ऊ</strong></th><th><strong>ऋ</strong></th><th><strong>ॠ</strong></th><th><strong>ए</strong></th><th><strong>ऐ</strong></th><th><strong>ओ</strong></th><th><strong>औ</strong></th></tr></thead><tbody>
+<tr><td><strong>अ/आ</strong></td><td>आ</td><td>आ</td><td>ए</td><td>ए</td><td>ओ</td><td>ओ</td><td>अर्</td><td>अर्</td><td>ऐ</td><td>ऐ</td><td>औ</td><td>औ</td></tr>
+<tr><td><strong>इ/ई</strong></td><td>य</td><td>या</td><td>इ</td><td>ई</td><td>यु</td><td>यू</td><td>यृ</td><td>यॄ</td><td>ये</td><td>यै</td><td>यो</td><td>यौ</td></tr>
+<tr><td><strong>उ/ऊ</strong></td><td>व</td><td>वा</td><td>वि</td><td>वी</td><td>ऊ</td><td>ऊ</td><td>वृ</td><td>वॄ</td><td>वे</td><td>वै</td><td>वो</td><td>वौ</td></tr>
+<tr><td><strong>ऋ/ॠ</strong></td><td>र</td><td>रा</td><td>रि</td><td>री</td><td>रु</td><td>रू</td><td>ऋृ</td><td>ऋॄ</td><td>रे</td><td>रै</td><td>रो</td><td>रौ</td></tr>
+<tr><td><strong>ए</strong></td><td>एऽ</td><td>अया</td><td>अयि</td><td>अयी</td><td>अयु</td><td>अयू</td><td>अयृ</td><td>अयॄ</td><td>अये</td><td>अयै</td><td>अयो</td><td>अयौ</td></tr>
+<tr><td>or</td><td></td><td>अआ</td><td>अइ</td><td>अई</td><td>अउ</td><td>अऊ</td><td>अऋ</td><td>अऋॄ</td><td>अए</td><td>अऐ</td><td>अओ</td><td>अवौ</td></tr>
+<tr><td><strong>ऐ</strong></td><td>आय</td><td>आया</td><td>आयि</td><td>अयी</td><td>आयु</td><td>आयू</td><td>आयृ</td><td>आयॄ</td><td>आए</td><td>आयै</td><td>आयो</td><td>आयौ</td></tr>
+<tr><td>or</td><td>आअ</td><td>आआ</td><td>आइ</td><td>आई</td><td>आउ</td><td>आऊ</td><td>आऋ</td><td>आऋॄ</td><td>आये</td><td>आऐ</td><td>आओ</td><td>आवौ</td></tr>
+<tr><td><strong>ओ</strong></td><td>ओऽ</td><td>अवा</td><td>अवि</td><td>अवी</td><td>अवु</td><td>अवू</td><td>अवृ</td><td>अवॄ</td><td>अवे</td><td>अवै</td><td>अवो</td><td>अवौ</td></tr>
+<tr><td>or</td><td></td><td>अआ</td><td>अइ</td><td>अई</td><td>अउ</td><td>अऊ</td><td>अऋ</td><td>अऋॄ</td><td>अए</td><td>अऐ</td><td>अओ</td><td>अऔ</td></tr>
+<tr><td><strong>औ</strong></td><td>आव</td><td>आवा</td><td>अवि</td><td>आवी</td><td>आवु</td><td>आवू</td><td>आवृ</td><td>आवॄ</td><td>आवे</td><td>आवै</td><td>आवो</td><td>आवौ</td></tr>
+<tr><td>or</td><td>आअ</td><td>आआ</td><td>आइ</td><td>आई</td><td>आउ</td><td>आऊ</td><td>आऋ</td><td>आऋॄ</td><td>आए</td><td>आऐ</td><td>अओ</td><td>आऔ</td></tr>
+</tbody></table>
+<h2 id="consonant-sandhi-rules"><a class="header" href="#consonant-sandhi-rules">Consonant Sandhi Rules</a></h2>
+<p>1. unvoiced stop -&gt; voiced stop, before a voiced consonant or a vowel</p>
+<p>Examples:</p>
+<p>वृक्षात् + अपतत् = वृक्षादपतत्</p>
+<p>ग्रामात् + वनम् = ग्रामाद्वनम्</p>
+<br>
+<p>2. Voiced stop -&gt; unvoiced stop, before a unvoiced consonant</p>
+<p>Examples:</p>
+<p>तद् + कमलम् = तत्कमलम्</p>
+<p>एतद् + सर्वदा = एतत्सर्वदा</p>
+<br>
+<p>3. Initial श -&gt; छ, optionally if preceded by a dental stop or nasal.</p>
+<p>Examples:</p>
+<p>तत् + शंसति = तच्छंसति</p>
+<p>तान् + शंसति = ताञ्छंसति</p>
+<p>Optionally: तच्शंसति and ताञ्शंसति (rare in texts).</p>
+<br>
+<p>4. Dental Consonant -&gt; <strong>corresponding</strong> retroflex Consonant, before a retroflex Consonant.</p>
+<p>Examples:</p>
+<p>तत् + टीका = तट्टीका</p>
+<p>तद् + डमरुः = तड्डमरुः</p>
+<p>(देवः = ) देवस् + टीका -&gt; देवष्टीका</p>
+<br>
+<p>5. Dental Consonant -&gt; <strong>corresponding</strong> palatal Consonant, before a palatal consonant</p>
+<p>Examples:</p>
+<p>ग्रामात् + च = ग्रामाच्च</p>
+<p>ग्रामात् + जायते = ग्रामाज्जायते</p>
+<p>(देवः = ) देवस् + च = देवश्च</p>
+<br>
+<p>6. Dental stop -&gt; ल् before ल्.</p>
+<p>Examples:</p>
+<p>तद् + लभते = तल्लभते</p>
+<p>ग्रामात् + लोकः = ग्रामाल्लोकः</p>
+<br>
+<p>7. Dental न् -&gt; ल्ँ before ल्</p>
+<p>Examples:</p>
+<p>तान् + लभते = ताल्ँलभते</p>
+<p>देवान् + लोकः = देवाल्ँलोकः</p>
+<br>
+<p>8. Stop -&gt; corresponding nasal, before nasal, optionally</p>
+<p>Examples:</p>
+<p>तद् + न = तन्न</p>
+<p>वाक् + मम = वाङ्मम</p>
+<p>तद् + मित्रम् = तन्मित्रम्</p>
+<p>Optionally: तद्न, वाग्मम, and तद्मित्रम् (rare in texts)</p>
+<br>
+<p>9. ह् after a stop is replaced by the corresponding voiced aspirated stop, optionally:</p>
+<p>Examples:</p>
+<p>तद् + हि = तद्धि</p>
+<p>वाक् + हि = वाग्घि</p>
+<p>Optionally तद्हि and वाग्हि (rare in texts).</p>
+<br>
+<p>10. Final ङ्, ण्, and न् are doubled, after a short vowel and before any vowel</p>
+<p>Examples:</p>
+<p>अपतन् + इह = अपतन्निह</p>
+<p>अगच्छन् + आकाशम् = अगच्छन्नाकाशम्</p>
+<br>
+<p>11. Final न्, before an unvoiced dental, palatal, or retroflex stop, is replaced by an <em>anusvara</em> plus a sibilant homorganic with the stop. Examples:</p>
+<p>देवान् + तत्र = देवांस्तत्र</p>
+<p>देवान् + च = देवांश्च</p>
+<p>देवान् + टीका = देवांष्टीका</p>
+<br>
+<p>12. Final र्, original or derived from a visarga, is deleted, before an initial र्, and the previous simple vowel is lengthened. Examples:</p>
+<p>पुनर् + सामः = पुना रामः</p>
+<p>मतिः + रामः = मती रामः</p>
+<p>शिशुः + रामः = शिशू रामः</p>
+<br>
+<p>13. If a word ending in a short vowel is followed by छ, a च् is inserted between the two. This insertion is optional after a long vowel. Examples:</p>
+<p>कवि + छात्रः = कविच्छात्रः</p>
+<p>लक्षमी + छाया = लक्ष्मीच्छाया or लक्ष्मीछाया</p>
+<hr />
+<h1 id="notes-from-other-sources"><a class="header" href="#notes-from-other-sources">Notes from other sources</a></h1>
+<h2 id="maheshvara-sutra"><a class="header" href="#maheshvara-sutra">Maheshvara Sutra</a></h2>
+<p><strong>महेश्वर सूत्राणि</strong></p>
+<p>अइउण् । ऋऌक् । एओङ् । ऐऔच् ।</p>
+<p>हयवरट् । लण् । ञमङणनम् ।</p>
+<p>झभञ् । घढधष् । जबगडदश् ।</p>
+<p>खफछठथचटतव् । कपय् ।</p>
+<p>शषसर् । हल् ।</p>
+<p>Memorize the above sutras. They are useful in learning Sandhi.</p>
+<h2 id="१-यण-सनधिः---इकोयणचि"><a class="header" href="#१-यण-सनधिः---इकोयणचि">१. यण् सन्धिः - इकोयणचि</a></h2>
+<p>इकोयणचि ६.१.७७ - इकः स्थाने यण् स्यादचि संहितायां विषये। इको यण् स्यादसवर्णेऽचि परे इति सूत्रस्य फलितोऽर्थः इति ज्ञेयम्।</p>
+<p>The <em>Panini</em> sutra for यण्सन्धिः is इकोयणचि. The इक्, यण् and अच् terms in this <em>sutra</em> refer to portions of the Maheshvara sutra highlighted in red below.</p>
+<p>अ<span style="color:red">इउण् । ऋऌक्</span>। - <strong>इक्</strong></p>
+<p>ह<span style="color:red">यवरट् । लण् </span>। -  <strong>यण्</strong></p>
+<p><span style="color:red">अइउण् । ऋऌक् । एओङ् । ऐऔच् ।</span> - <strong>अच्</strong></p>
+<p>इक् refers to vowels इ ई उ ऊ ऋ ॠ लृ</p>
+<p>यण् refers to vowels य व र ल</p>
+<p>अच् refers to all vowels अ आ इ ई उ ऊ ऋ लृ ए ऐ ओ औ</p>
+<p>This <em>sutra</em> says that the vowels इ/ई, उ/ऊ, ऋ/ॠ and लृ if followed by any vowel of different type (i.e. different from this vowel असवर्णस्वरः) it must be (आदेशः) replaced (correspondingly) by य्, व्, र्, or ल्. </p>
+<table><thead><tr><th></th><th>यण् सन्धिः</th><th></th><th></th></tr></thead><tbody>
+<tr><td>इई</td><td>उऊ</td><td>ऋॠ</td><td>ऌ</td></tr>
+<tr><td>य्</td><td>व्</td><td>र्</td><td>ल्</td></tr>
+</tbody></table>
+<p><strong>Examples:</strong> </p>
+<p>प्रति + एकम् = प्रत् + य् + एकम् =  प्रत्येकम्         नदी + अत्र = नद् + य् + अत्र = नद्यत्र</p>
+<p>मनु + अन्तरम् = मन् + व् + अन्तरम् = मन्वन्तरम्        वधू + आगमनम् = वध् + व् + आगमनम् =  वध्वागमनम्</p>
+<p>पितृ + इच्छा = पित् + र् + इच्छा = पित्रिच्छा </p>
+<p>घस्लृ + आदेशः = घस् + ल् + आदेशः = घस्लादेशः (uncommon)</p>
+<hr />
+<h2 id="२-यानतवानतादेशसनधिः"><a class="header" href="#२-यानतवानतादेशसनधिः">२. यान्तवान्तादेशसन्धिः</a></h2>
+<p>एचोऽयवायावः - ६.१.७८ एचः क्रमाद् अय् अव् आय् आव् एते स्युरचि।</p>
+<p>यान्तौ वान्तौ च = अय् आय् अव् आव्</p>
+<table><thead><tr><th></th><th>यान्तवान्तादेशसन्धिः</th><th></th><th></th></tr></thead><tbody>
+<tr><td>ए</td><td>ऐ</td><td>ओ</td><td>औ</td></tr>
+<tr><td>अय्</td><td>आय्</td><td>अव्</td><td>आव्</td></tr>
+</tbody></table>
+<p>If ए ऐ ओ औ are followed by स्वाराः it changes as shown in the above table.</p>
+<p><strong>Examples:</strong></p>
+<p>हरे + ए = हर् + अय् + ए = हरये     हरे + आगच्छ = हर् + अय् + आगच्छ = हरयागच्छ</p>
+<p>नै + अकः = न् + आय् + अकः = नायकः     तस्यै + इदम् = तस्य् + आय् + इदम् = तस्यायिदम्</p>
+<p>विष्णो + ए = विष्ण् + अव् + ए = विषणवे     गुरो + आदिश = गुर् + अ्व + आदिश = गुरावादिश</p>
+<p>पौ + अकः = प् + आव् + अकः = पावकः</p>
+<p>बालकौ + आगतौ = बालक् + आव् + आगतौ = बालकावागतौ</p>
+<p>फले + इच्छा = फलयिच्छा / फल इच्छा</p>
+<p>कटे + उपवेशनम् = कटयुपवेशनम् / कट उपवेशनम्</p>
+<p><strong>Note from teacher:</strong>
+There is another <em>sutra</em> that provides an exception to एचोऽयवायावः. As per सूत्र &quot;एङः पदान्तादति&quot; the एङ् (ए ओ) at the end of the word followed by अत् (ह्रस्व अ) the both will get common replacement of पूर्वरूप (ए, ओ)</p>
+<h2 id="२२-यानतवानतादेशसनधिः"><a class="header" href="#२२-यानतवानतादेशसनधिः">२.२. यान्तवान्तादेशसन्धिः</a></h2>
+<p>यकारादिप्रत्यये परे ओ औ इत्येतयोः स्थाने क्रमाद् अव् आव् एतौ आदेशौ भवतः।</p>
+<p>When a यकार प्रत्यय is added to words ending in ओ or औ then it changes as below</p>
+<p><strong>ओ/औ + यादिप्रत्ययः -</strong></p>
+<table><thead><tr><th>यान्तवान्तादेशसन्धिः</th><th></th></tr></thead><tbody>
+<tr><td>ओ</td><td>औ</td></tr>
+<tr><td>अव्</td><td>आव्</td></tr>
+</tbody></table>
+<p>Examples:</p>
+<p>गो + यम् = ग् + अव् + यम् = गव्यम्</p>
+<p>नौ + यम् = न् + अव् + यम् = नव्यम्</p>
+<hr />
+<p><strong>इदमवधेयम्</strong> - स्वरसन्धिषु यण्सन्धौ यान्तवान्तादेशसन्धौ च एकस्य पूर्वस्थितस्य वर्णस्य आदेशौ भवति। इदं सन्धिद्वयं विहाय अन्यत्र स्वरसन्धिषु पूर्वपरयोः स्थाने एकादेशो भवति। </p>
+<p><strong>Know this:</strong> Among <em>swara sandhis</em> यणसन्धि and यान्तवान्तादेशसन्धि one previous sound (letter) is replaced. Other than these two <em>sandhis</em>  other <em>swara sandhis</em> the last letter (of the first word) and the first letter (of the second woord) are replaced with the same change.</p>
+<hr />
+<p><strong>How do we decide which <em>Panini sutra</em> overrides another one?</strong></p>
+<p>First we have to look for the सूत्र number. If सूत्रs in first 7 अध्यायs and the 1st quarter of 8th अध्याय then first rule is more powerful than later on. In last 3 quarters of 8th अध्याय then it is reverse. Later is powerful than previous.</p>
+<p>In case of one sutra in सपादसप्ताध्यायी (first 7 chapters and 1st quarter of 8th) and another in त्रिपादी (last 3 quarters of 8th अध्यायी) then सपादसप्ताध्यायी is powerful.</p>
+<hr />
+<h2 id="३-गुणसनधिः"><a class="header" href="#३-गुणसनधिः">३. गुणसन्धिः</a></h2>
+<p>गुणः = ए ओ अर् अल् </p>
+<table><thead><tr><th></th><th>गुणसन्धिः</th><th></th><th></th></tr></thead><tbody>
+<tr><td>अ/आ + इ/ई</td><td>अ/आ + उ/ऊ</td><td>अ/आ + ऋ/ॠ</td><td>अ/आ + ऌ</td></tr>
+<tr><td>ए</td><td>ओ</td><td>अर्</td><td>अल्</td></tr>
+</tbody></table>
+<p><strong>१.१.२.</strong> अदेङ्गुणः - अत् एङ् च गुणसंज्ञः स्यात्।</p>
+<p><strong>६.१.८७.</strong> आद् गुणः - अवर्णादचि परे पूर्वपरयोरेको गुणः आदेशः स्यात्संहितायाम्। अवर्णादिकि परे इति सूत्रस्य फलितोऽर्थः इति ज्ञेयम्।</p>
+<BR>
+<p>देव + इन्द्रः = देव् + ए + न्द्रः = देवेन्द्रः</p>
+<p>गण + ईशः = गण् + ए + शः = गणेशः</p>
+<p>महा + इन्द्रः = मह् + ए + न्द्रः = महेन्द्रः</p>
+<p>महा + ईशः = मह + ए + शः = महेशः</p>
+<BR> 
+<p>सूर्य + उदयः = सूर्य् + ओ + दयः = सूर्योदयः</p>
+<p>एक + ऊनविंशतिः = एक् + ओ + नविंशतिः = एकोनविंशतिः</p>
+<p>महा + उत्सवः = मह + ओ + त्सवः = महोत्सवः</p>
+<p>महा + ऊर्मिः = मह + ओ + र्मिः = महोर्मिः</p>
+<BR>
+<p>सप्त + ऋषिः = सप्त् + अर् + षयः = सप्तर्षयः</p>
+<p>महा + ऋषिः = मह + अर् + षिः = महर्षिः</p>
+<BR>
+<p>तव + ऌकारः = तव् + अल् + कारः = तवल्कारः</p>
+<p>महा + ऌकारः = मह् + अल् + कारः = महल्कारः</p>
+<h2 id="वृदधिसनधिः"><a class="header" href="#वृदधिसनधिः">वृद्धिसन्धिः</a></h2>
+<table><thead><tr><th>वृद्धिसन्धिः</th><th></th></tr></thead><tbody>
+<tr><td><strong>अ/आ + ए/ऐ</strong></td><td><strong>अ/आ + ओ/औ</strong></td></tr>
+<tr><td>ऐ</td><td>औ</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="सुभाषितम"><a class="header" href="#सुभाषितम">सुभाषितम्</a></h1>
+<BR>
+<p>प्राणस्य बीजं सकलस्य वायुर्ध्यानं हरेः सर्वरुजां च जायः।</p>
+<p>आहारशुद्ध्या खल दीर्घमायुः बीजं विकारस्य धियो नु मायुः॥</p>
+<p>- नागराजस्य (12 April 2022 सुधर्मा)</p>
+<p>The basic cause of life of every living being is air. Meditation on Lord Hari is the best medication for all diseased. Long life is attained by consuming clean food. The cause of aberration of intellect is Pitta (bile).</p>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tenses-and-moods---लकार"><a class="header" href="#tenses-and-moods---लकार">Tenses and Moods - लकार</a></h1>
+<p><em>Lakaras</em> convey the sense of time (tense) and sentiment (भाव). They are split into two groups - (1) कालवाचकाः (tense) and (2) भाववाचकाः (mood)</p>
+<p>There are ten <em>lakaras</em> in Sanskrit. </p>
+<ol>
+<li>लट् लकार - Present tense</li>
+<li>लङ् लकार - Past tense (past action but not within a day; अनद्यतनभूतकालः)</li>
+<li>लिट् लकार - Past tense (ancient past, परोक्षभूतकालः)</li>
+<li>लुङ लकार - Past tense (simple past)</li>
+<li>लिङ् लकार - Potential/Optative mood</li>
+<li>लोट् लकार - Imperative mood</li>
+<li>लुट् लकार - Future tense (अनद्यतनभविष्यतकाल)</li>
+<li>लृट् लकार - Future tense (सामान्यभविष्यत्काल, simple future)</li>
+<li>लृङ् लकार - क्रियातिपत्ति (non-realization of an action)</li>
+<li>लेट् लकार - both tense and mood</li>
+</ol>
+<p>Six <em>lakaras</em> are कालवाचकाः. The present tense is called लट् लकार. In Sanskrit there are 3 kinds of past and 2 kinds of future tense. Note: Tenses apply to verbs only.</p>
+<p>लिट् लङ् and लुङ् are past tense. लुट् and लृट् are used for future tense.</p>
+<p>The <em>lakaras</em> लोट्, लिङ् and लृङ् are used to represent moods. These three are भाववाचकाः. लोट् and लिङ् represent the moods/sentiments like - आज्ञा (order), प्रार्थना (request), इच्छा (wish). The लृङ् लकार is used to express non-realization of an action.</p>
+<p>लेट् लकारः is both कालवाचकः and भाववाचकः</p>
+<p><strong>Here is a sloka to remember all the लकार:</strong></p>
+<p>लट् वर्तमाने लेट् वेदे भूते लुङ् लङ् लिटस्तथा। </p>
+<p>विद्याशीषोस्तु लिङ् लोटौ लुट् लृट् लृङ् च भविष्यति।।</p>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<ol>
+<li><a href="https://www.youtube.com/live/bPjs6qyifZk?feature=share">Verbs in Sanskrit - Overview of the 10 Lakaaras by Neelesh Bodas</a></li>
+<li><a href="https://www.youtube.com/live/TgkOHrlq8qg?feature=share">Verbs in Sanskrit - Overview of the 10 Dhaatu Ganas by Neelesh Bodas</a></li>
+</ol>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p>Here are examples with meaning for the same धातु in all लकार. All examples are in प्रथम पुरुष एकवचन</p>
+<table><thead><tr><th><strong>लकार</strong></th><th><strong>Sentence</strong></th><th><strong>Meaning</strong></th><th><strong>Tense</strong></th></tr></thead><tbody>
+<tr><td>लट्</td><td>सः पठति</td><td>He reads.</td><td>Present</td></tr>
+<tr><td>लङ्</td><td>सः अपठत्</td><td>He read.</td><td>Past</td></tr>
+<tr><td>लृट्</td><td>सः पठिष्यति</td><td>He will read.</td><td>Future</td></tr>
+</tbody></table>
+<p>The above three are the commonly used in contemporary Sanskrit.</p>
+<hr />
+<p><strong>Other forms that convey <em>time</em>:</strong> </p>
+<p>The लिट् and लुङ् forms are also for past tense. लिट् is the ancient past and is frequently encountered in texts like Ramayana and Mahabharata</p>
+<p>लिट् - सः पपाठ - He read (in an ancient time)</p>
+<p>लुङ् (past) - अपाठीत </p>
+<p>Future also has an additional form: 
+लुट् (future) - पठिता </p>
+<hr />
+<p>There are three forms that convey mood instead of time.</p>
+<p>पठतु - लोट्</p>
+<p>पठेत् - लिङ्</p>
+<p>अपठिष्यत - लृङ्</p>
+<p><strong>One special form only occurs in the Vedas</strong></p>
+<p>लेट - पठाति This form is encountered only in the Vedas.</p>
+<h2 id="present-tense---वरतमान-काल"><a class="header" href="#present-tense---वरतमान-काल">Present tense - वर्तमान काल</a></h2>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>गम् धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>लभ् धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>गच्छति</td><td>गच्छतः</td><td>गच्छन्ति</td><td><strong>प्रथम पुरुष</strong></td><td>लभते</td><td>लभेते</td><td>लभन्ते</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>गच्छसि</td><td>गच्छथः</td><td>गच्छथ</td><td><strong>मध्यम पुरुष</strong></td><td>लभसे</td><td>लभेथे</td><td>लभध्वे</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>गच्छामि</td><td>गच्छावः</td><td>गच्छामः</td><td><strong>उत्तम पुरुष</strong></td><td>लभे</td><td>लभावहे</td><td>लभामहे</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>आस् धातु आत्मनेपदि</strong> (to sit)</td><td></td><td></td><td></td></tr>
+<tr><td>प्रथम पुरुष</td><td>आस्ते</td><td>आसाते</td><td>आसन्ते</td></tr>
+<tr><td>मध्यम पुरुष</td><td>आस्से</td><td>आसाथे</td><td>आध्वे</td></tr>
+<tr><td>उत्तम पुरुष</td><td>आसे</td><td>आस्वहे</td><td>आस्महे</td></tr>
+</tbody></table>
+<h2 id="past-tense---भूत-काल"><a class="header" href="#past-tense---भूत-काल">Past tense - भूत काल</a></h2>
+<p>All three past tenses are together are called भूत काल. </p>
+<p><strong>Past action that ended before today:</strong> Any past action that ended before today but could have been witnessed by the speaker/listener (<strong>अनद्यतन भूत</strong>). This past is called लङ् लकार. Example: He read. = सः अपठत्। </p>
+<p>Strictly in a grammatical sense अनद्यतन भूत refers to events in the past that are not recent but not ancient. अद्यतन is a 24 hour period - sunrise to sunrise, or midnight to mid-night, or end of day to end of next day. So अनद्यतन भूत  are events that happened in the past but not during the अद्यतन. </p>
+<p>However, in present day usage लङ् लकार is used generally as past tense.</p>
+<p><strong>Distant/ancient past:</strong>
+Events in the distant past that have not been witnessed  by the speaker/listener  (<strong>परोक्ष भूत</strong>) are called <strong>लिट् लकार</strong>. Usually लिट् लकार is encountered in old treatises and texts like Ramayana and Mahabharata. In those texts लङ् लकार is not prominent. Example:</p>
+<p>There was a king named Dasharatha.</p>
+<p>दशरथः नाम राजा बभूव।</p>
+<p><strong>Simple past:</strong>
+Simple past (<strong>सामान्य भूत</strong>), called <strong>लुङ् लकार</strong>, is used for events that happend in the past. </p>
+<table><thead><tr><th>Past Tense</th><th></th></tr></thead><tbody>
+<tr><td>लङ् लकार</td><td>Past events that happened before today but not ancient (अनद्यतन भूत)</td></tr>
+<tr><td>लिट् लकार</td><td>ancient past or events not witnessed by you (परोक्ष भूत)</td></tr>
+<tr><td>लुङ् लकार</td><td>simple past (सामान्य भूत)</td></tr>
+</tbody></table>
+<p>परोक्षः = अक्ष्ण परः - That which is beyond our visibility. i.e. not seen by the speaker but have heard about it.</p>
+<p>लुङ् and लिट् लकार is very common in epics like Ramayana, Mahabharatha, Devi Bhagavatam etc. In that class of poetry and prose लङ् लकार is not usually found.</p>
+<p>Example of लङ् लकार:</p>
+<p>सः ह्यः मन्दिरम् अगच्छत्। - Correct</p>
+<p>सः अद्य प्रातः मन्दिरम् अगच्छत्। - Incorrect from a grammer point of view. But has become generally accepted in spoken Sanskrit. The correct version is सः अद्य प्रातः मन्दितम् अगमत्।</p>
+<p>अगमत् is लुङ् लकार. </p>
+<p>लिट् लकार example: रामः वनं जगाम।</p>
+<p>Note that लिट् can also be used for events that happened yesterday or day before that you did not see. Many people say that लिट् लकार is used for indicating things in the very past <a href="https://youtu.be/bPjs6qyifZk?t=1959">but that is not correct</a>. Anything that you did not see you should use लिट् लकार for indicating it.</p>
+<p>More examples:</p>
+<p>सः वनम् जगाम।</p>
+<p>भवान् किं चकार?</p>
+<p>छात्रः पाठम् पपाठ।</p>
+<p>प्रातः सूर्योदयः बभूव।</p>
+<p>सा उत्तरम् उवाद।</p>
+<p>किं कविः काव्यम् लिलेख?</p>
+<h3 id="लङ-लकार---अनदयतन-भूत-past-imperfect-tense"><a class="header" href="#लङ-लकार---अनदयतन-भूत-past-imperfect-tense">लङ् लकार - अनद्यतन भूत (past imperfect tense)</a></h3>
+<p>Events that happened in the past and prior to one day. This is also referred to as imperfect past and used for events witnessed by the speaker. </p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>लभ् धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>अपठत्</td><td>अपठताम्</td><td>अपठन्</td><td><strong>प्रथम पुरुष</strong></td><td>अलभत</td><td>अलभेताम्</td><td>अलभन्त</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>अपठः</td><td>अपठतम्</td><td>अपठत</td><td><strong>मध्यम पुरुष</strong></td><td>अलभथाः</td><td>अलभेथाम्</td><td>अलभध्वम्</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>अपठम्</td><td>अपठाव</td><td>आपठाम</td><td><strong>उत्तम पुरुष</strong></td><td>अलभे</td><td>अलभावहि</td><td>अलभामहि</td></tr>
+</tbody></table>
+<h3 id="लिट-लकार---परोकष-भूत"><a class="header" href="#लिट-लकार---परोकष-भूत">लिट् लकार - परोक्ष भूत</a></h3>
+<p>The most commonly encountered usage of लिट् लकार will be प्रथम एकवचन and प्रथम बहुवचन. </p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु</strong></td><td></td><td></td><td></td><td><strong>गम् धातु</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>पपाठ</td><td>पेठतुः</td><td>पेठुः</td><td><strong>प्रथम पुरुष</strong></td><td>जगाम</td><td>जग्मतुः</td><td>जग्मुः</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>पेठिथ</td><td>पेठथुः</td><td>पेठ</td><td><strong>मध्यम पुरुष</strong></td><td>जगमिथ</td><td>जग्मथुः</td><td>जग्म</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>पपाठ</td><td>पेठिव</td><td>पेठिम</td><td><strong>उत्तम पुरुष</strong></td><td>जगाम</td><td>जग्मिव</td><td>जग्मिम</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>भू धातु</strong> (to be)</td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>बभूव</td><td>बभूवतुः</td><td>बभूवुः</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>बभूविथ</td><td>बभूवतुः</td><td>बभूव</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>बभूव</td><td>बभूविव</td><td>बभूविम</td></tr>
+</tbody></table>
+<h3 id="लुङ-लकार---सामानय-भूत-simple-past-tense"><a class="header" href="#लुङ-लकार---सामानय-भूत-simple-past-tense">लुङ् लकार - सामान्य भूत (simple past tense)</a></h3>
+<p>सः वनम् अगमत्।</p>
+<p>भवान् किम् अकर्षीत्?</p>
+<p>छात्रः पाठम् अपाठीत्।</p>
+<p>प्रातः सूर्योदयः अभूत्।</p>
+<p>सा उत्तरम् अवादीत्।</p>
+<p>किं कविः काव्यम् अलेखीत्?</p>
+<h2 id="future-tense---भविषयतकाल"><a class="header" href="#future-tense---भविषयतकाल">Future Tense - भविष्यत्काल</a></h2>
+<p>There are two types of future tense in Sanskrit - लृट्लकारः (सामान्यभविष्यत्कालम्) and लुट्लकारः (अनद्यतनभविष्यत्कालम्).</p>
+<p>अनद्यतन = न अद्यतन (not now).</p>
+<p>अनद्यतनभविष्यत्काल are actions that will happen tomorrow or after (day after, next month etc.). If you say &quot;I am going to play cricket in the evening.&quot;, that is not अनद्यतन. </p>
+<p>Example of लुट् लकारः (अनद्यतनभविष्यत्कालः): रामः श्वः वनं गन्ता।</p>
+<p>From a grammer point of view this sentence is incorrect: रामः श्वः वनं गमिष्यति।</p>
+<p>रामः अद्य रात्रौ वनं गमिष्यति। This is correct because the action is happening in the future but today. सामान्यभविष्यत्कालः is used for cases where it is not अनद्यतन or you don't know.</p>
+<p>This sentence is correct: रामः वनं गमिष्यति।</p>
+<p>If there is a reference to when the action is going to happen and that is tomorrow or later then you must use लुट्लकार.</p>
+<p>However, in today's spoken Sanskrit the use of लुट्लकार is almost extinct. लृट् लकार is used universally for future tense.</p>
+<p>प्रयोगशरणाः व्य्याकरणाः। Grammer cannot dicatate the language, the language dictates the grammer. While the grammer recommends using लुट् लकार for events happening after today in practice लृट् लकार is used and accepted in speech and prose.</p>
+<p><strong>लृट् लकार:</strong> </p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>(स्यति - to finish) धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>स्यति</td><td>स्यतः</td><td>स्यन्ति</td><td><strong>प्रथम पुरुष</strong></td><td>स्यते</td><td>स्येते</td><td>स्यन्ते</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>स्यसि</td><td>स्यथः</td><td>स्यथ</td><td><strong>मध्यम पुरुष</strong></td><td>स्यसे</td><td>स्येथे</td><td>स्यध्वे</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>स्यामि</td><td>स्यावः</td><td>स्यामः</td><td><strong>उत्तम पुरुष</strong></td><td>स्ये</td><td>स्यावहे</td><td>स्यामहे</td></tr>
+</tbody></table>
+<p><strong>लुट्लकारः उदाहरणानि</strong></p>
+<p>रामः वनं श्वः गन्ता।</p>
+<p>भवान अग्रिममासे गीतां पठिता वा?</p>
+<p>अहम् परश्वः परीक्षां लेखितास्मि।</p>
+<p>वयम् मङ्लवासरे मिलित्वा यज्ञं कर्तास्मः।</p>
+<p>त्वम् अग्रिमवर्षे कुत्र क्रीडितासि?</p>
+<p>युयम् श्वः परश्वः वा चलचित्रम् द्रष्टास्थ।</p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु आत्मनेपदि</strong> (to read)</td><td></td><td></td><td></td></tr>
+<tr><td>प्रथम पुरुष</td><td>पठिता</td><td>पठितारौ</td><td>पठितारः</td></tr>
+<tr><td>मध्यम पुरुष</td><td>पठितासी</td><td>पठितास्थः</td><td>पठितास्थ</td></tr>
+<tr><td>उत्तम पुरुष</td><td>पठितास्मि</td><td>पठितास्वः</td><td>पठितास्मः</td></tr>
+</tbody></table>
+<h2 id="भाववाचक-लकारः----moods"><a class="header" href="#भाववाचक-लकारः----moods">भाववाचक लकारः  - Moods</a></h2>
+<h3 id="imperative-mood---लोट-लकार"><a class="header" href="#imperative-mood---लोट-लकार">Imperative mood - लोट् लकार</a></h3>
+<p>The imperative mood is used to express a command, advice, a wish. a request etc. A negative command or prohibition is expressed by using मा followed by the imperative form. Example: मा पिबतु (You do not drink).</p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>लभ् धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>पठतु/पठतात्</td><td>पठताम्</td><td>पठन्तु</td><td><strong>प्रथम पुरुष</strong></td><td>लभताम्</td><td>लभेताम्</td><td>लभन्ताम्</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>पठ/पठतात्</td><td>पठतम्</td><td>पठत</td><td><strong>मध्यम पुरुष</strong></td><td>लभस्व</td><td>लभेथाम्</td><td>लभध्वम्</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>पठानि</td><td>पठाव</td><td>पठाम</td><td><strong>उत्तम पुरुष</strong></td><td>लभै</td><td>लभावहै</td><td>लभामहै</td></tr>
+</tbody></table>
+<p>The -तात् forms of प्रथम &amp; मध्यम पुरुष are used in expressing a blessing. Example: सुखं भवतात् - Let there be happiness.</p>
+<BR>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>आस् धातु आत्मनेपदि</strong> (to sit)</td><td></td><td></td><td></td></tr>
+<tr><td>प्रथम पुरुष</td><td>आस्ताम्</td><td>आसाताम्</td><td>आसताम्</td></tr>
+<tr><td>मध्यम पुरुष</td><td>आस्स्व</td><td>आसाथाम्</td><td>आध्वम्</td></tr>
+<tr><td>उत्तम पुरुष</td><td>आसै</td><td>आसावहै</td><td>आसामहै</td></tr>
+</tbody></table>
+<p>Examples:</p>
+<ul>
+<li>सः पठतु। - वह पढे।</li>
+<li>आज्ञा (order) – त्वं गृहं गच्छ। (तुम घर जाओ)</li>
+<li>प्रार्थना (request) – भवान मम गृहं आगच्छतु। (आप मेरे घर मे आयें।)</li>
+<li>अनुमति (permission) – अहं कुत्र गच्छानि? (मै कहाँ जाऊँ?)</li>
+<li>आशीर्वाद (blessing) – त्वं चिरं जीव। (तुम बहुत समय तक जियो।)</li>
+</ul>
+<p><a href="https://www.mycoaching.in/2020/08/lot-lakar.html">Notes from</a></p>
+<p><strong>More examples</strong></p>
+<p>आज्ञा :- शिक्षकः छात्रम् आज्ञापयति - एतत् पुस्तकं पठ।</p>
+<p>प्रश्नः :- छात्रः पृच्छति - किम् अहम् व्याकरणम् पठानि?</p>
+<p>प्रार्थना :- पिता आवार्यं वदति - मम पुत्रं पाठयतु भवान्।</p>
+<p>आमन्त्रणम् :- रामः वदति  - श्वः भवान् मम गृहम् आगच्छतु।</p>
+<p>पद्धतिः (process) :- देहलीनगरं अनेन मार्गेण गच्छतु।</p>
+<p>आशीर्वादः :- विजयी भव।</p>
+<h3 id="potentialoptative-mood---लिङ-लकार"><a class="header" href="#potentialoptative-mood---लिङ-लकार">Potential/Optative mood - लिङ् लकार</a></h3>
+<p>Optative mode is used to indicate wish, advice, a request, a possibility, or the near future. It is also called potential mood. It is also used for conditional clauses, e.g. “If he would go…”. In Sanskrit Optative mood is called लिङ् लकारः (विधिलिङ्)</p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>लभ् धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>पठेत्</td><td>पठेताम्</td><td>पठेयुः</td><td><strong>प्रथम पुरुष</strong></td><td>लभेत</td><td>लभेयाताम्</td><td>लभेरन्</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>पठेः</td><td>पठेतम्</td><td>पठेत</td><td><strong>मध्यम पुरुष</strong></td><td>लभेताः</td><td>लभेयाथाम्</td><td>लभेध्वम्</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>पठेयम्</td><td>पठेव</td><td>पठेम</td><td><strong>उत्तम पुरुष</strong></td><td>लभेय</td><td>लभेवहि</td><td>लभेमहि</td></tr>
+</tbody></table>
+<p>सः पठेत्। (विधिलिङ्)</p>
+<p>उसे पडना चाहिए।</p>
+<p>विधिनिमन्त्रणामन्त्रणाधीष्टसंप्रश्रप्रार्थनेषु लिङ् – विधि (चाहिए), निमन्त्रण, आदेश, विधान, उपदेश, प्रश्र तथा प्रार्थना आदि अर्थों का बोध कराने के लिये विधि लिङ् लाकार का प्रयोग किया जाता है। जैसे – </p>
+<ul>
+<li>विधि – सत्यं ब्रूयात। (सत्य बोलना चाहिये) प्रियं ब्रूयात्। (प्रिय बोलना चाहिये)</li>
+<li>निमन्त्रण – भवान् अद्य अत्र भक्षयेत्। (आप आज यहाँ भोजन करें)</li>
+<li>आदेश – भृत्यः क्षेत्रे गच्छेत्। (नौकर खेत पर जाये।)</li>
+<li>प्रश्र – त्वं किम कुर्याः? (तुमहे क्या करना चाहिये?)</li>
+<li>इच्छा – यूयं सुखि भवेत्। (तुम खुश रहो।)</li>
+</ul>
+<p><a href="https://www.mycoaching.in/2020/08/Vidhiling-Lakar.html">Notes from</a></p>
+<p>There are two types of लिङ्लकार - विधिलिङ् and आशीर्लिङ्.</p>
+<p>विधिलिङ्लकार can be used in every situation a लोट् लकार can be used. The two are completely interchangeable. </p>
+<p>आशीर्लिङ् is used for अप्राप्यस्य इच्छा - something you want but cannot have easily. Examples: </p>
+<ul>
+<li>अहम् राष्ट्रपतिः भूयासम् (I wish to be the President)</li>
+<li>मम शत्रुः म्रियात् (I wish for my enemy to die.)</li>
+<li>विष्णुः मह्यम् आशीषः देयात्</li>
+<li>सा मया सह विवाहं क्रियात्</li>
+<li>अहम् भगवद्गीता स्मर्यासम्</li>
+</ul>
+<BR>
+<h3 id="लृङ-लकारः---करियातिपततिः"><a class="header" href="#लृङ-लकारः---करियातिपततिः">लृङ् लकारः - क्रियातिपत्तिः</a></h3>
+<p>Example: If this happens then that will happen</p>
+<p>१. यदि वर्षा अभविष्यत्, तर्हि सस्यानि अवर्धिष्यन्त।</p>
+<p>If there is rain then the crops will have flourished.</p>
+<p>२. यदि कृष्णः गीतां न अवदिष्यत् तर्हि अर्जुनः न अयोत्स्यत।</p>
+<p>If Krishna had not told the Geetha, Arjuna would not have fought the battle.</p>
+<p>३. यदि कैकयी वरं न अप्राक्षीत् तर्हि रामः वनं न अगमिष्यत्।</p>
+<p>If Kaikeyi had not got the boon, then Rama would not have gone to the forest.</p>
+<p>४. अहम् अध्ययनम् अकरिष्यम् चेत् परीक्षाम् अपि अलेखिष्यम्।</p>
+<p>If I would have studied then I will would have written the exam.</p>
+<p>OR</p>
+<p>If I will study then I will write the exam.</p>
+<p>Both above meanings are correct. The take away is that लृङ् is not referring to past, present or future. It refers to क्रियातिपत्ति (non-realization of an action).</p>
+<p>५. अभिमन्युः चक्रव्यूहं सम्यक् अज्ञास्यत् वेत् सः कौरवेभ्यः न पराजेष्यत।</p>
+<BR>
+<p><strong>Note:</strong> It is not that only लृङ् लकार should be used with यदि-तर्हि. The लृङ् लकार is for situations where you say if something that did  not happen or is difficult to happen happened
+then blah-blah. Generally when using लृङ् लकार the sentence will have यदि-तर्हि and चेत्.</p>
+<h3 id="लेट-लकारः"><a class="header" href="#लेट-लकारः">लेट् लकारः</a></h3>
+<p><a href="https://youtu.be/bPjs6qyifZk?t=3331">लेट् लकारः from 55:31</a></p>
+<p>लेट् लकारः केवलं <strong>वेदेषु</strong> प्रयुज्यते। लौकिकसंस्कृते अस्य प्रयोगः <strong>न भवति</strong>।</p>
+<p>This <em>lakara</em> cannot be used in any of your sentences. This <em>lakara</em> is used only in the <em>Vedas</em>. The forms used in the <em>Vedas</em> are the only examples of लेट् लकार. You cannot create your own examples. </p>
+<p>वेदेषु अयं लकारः भिन्नेषु अर्थेषु प्रयुज्यते - वर्तमानकालः, आज्ञा, विधिः आदयः। Sometimes as कालवाचक and sometimes as भाववाचक.</p>
+<p>उदाहरणानि - </p>
+<p>१. नेता इन्द्रो नेषत्।</p>
+<p>नेता -  leader इन्द्रो - <em>Indra</em> नेषत् - to sprinkle water </p>
+<p>नेषत् is लेट् लाकारः because it cannot be derived from the other 9 <em>lakaras</em>. </p>
+<p>२. विद्युत् पताति।</p>
+<p>विद्युत् - lightning पताति - falls (पतति)</p>
+<p>So in लट् लकार we say विद्युत् पतति but in लेट् we say विद्युत् पताति</p>
+<p>३. प्रजापतिः उदधिं च्यावयाति।</p>
+<p>च्यावयाति - to force to move</p>
+<p>In classical Sanskrit this will be प्रजापतिः उदधिं च्यावयति</p>
+<p>Key take away: The <em>Panini</em> grammer applies to classical Sanskrit. The grammer of the <em>Vedas</em> including लेट् लकारः cannnot be derived using <em>Panini</em> grammer. To understand the meaning we have to ask <em>Veda</em> experts.</p>
+<BR>
+<p><strong>Table template</strong> - do not erase</p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td>प्रथम पुरुष</td><td></td><td></td><td></td></tr>
+<tr><td>मध्यम पुरुष</td><td></td><td></td><td></td></tr>
+<tr><td>उत्तम पुरुष</td><td></td><td></td><td></td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="शबद-रुप"><a class="header" href="#शबद-रुप">शब्द रुप</a></h1>
+<p>This is a list of commonly used and some uncommon शब्द रुप</p>
+<h2 id="masculine-पुंललिङगः-nouns"><a class="header" href="#masculine-पुंललिङगः-nouns">Masculine (पुंल्लिङ्गः) nouns</a></h2>
+<table><thead><tr><th><strong>अकारान्तः पुंल्लिङ्गः राम शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>रामः</td><td>रामौ</td><td>रामाः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>रामम्</td><td>रामौ</td><td>रामान्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>रामेण</td><td>रामाभ्याम्</td><td>रामैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>रामाय</td><td>रामाभ्याम्</td><td>रामेभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>रामात्</td><td>रामाभ्याम्</td><td>रामेभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>रामस्य</td><td>रामयोः</td><td>रामाणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>रामे</td><td>रामयोः</td><td>रामेषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे राम</td><td>हे रामौ</td><td>हे रामाः</td></tr>
+</tbody></table>
+<p><strong>Note:</strong> All अकारान्तः पुंल्लिङ्गः शब्दाः will be like राम शब्दः</p>
+<BR>
+<table><thead><tr><th><strong>इकारान्तः पुंल्लिङ्गः हरि शब्दः (Vishnu)</strong></th><th></th><th></th><th></th><th><strong>इकारान्तः पुंल्लिङ्गः पति शब्दः (Master, Husband)</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>हरिः</td><td>हरी</td><td>हरयः</td><td><strong>प्रथमा</strong></td><td>पतिः</td><td>पती</td><td>पत्यः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>हरिम्</td><td>हरी</td><td>हरीन्</td><td><strong>द्वितीया</strong></td><td>पतिम्</td><td>पती</td><td>पतीन्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>हरिणा</td><td>हरिभ्याम्</td><td>हरिभिः</td><td><strong>तृतीया</strong></td><td>पत्या</td><td>पतिभ्याम्</td><td>पतिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>हरये</td><td>हरीभ्याम्</td><td>हरिभ्यः</td><td><strong>चतुर्थी</strong></td><td>पत्ये</td><td>पतिभ्याम्</td><td>पतिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>हरेः</td><td>हरीभ्याम्</td><td>हरिभ्यः</td><td><strong>पञ्चमी</strong></td><td>पत्युः</td><td>पतीभ्याम्</td><td>पतिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>हरेः</td><td>हर्योः</td><td>हरीणाम्</td><td><strong>षष्ठी</strong></td><td>पत्युः</td><td>पत्योः</td><td>पतीनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>हरौ</td><td>हर्योः</td><td>हरिषु</td><td><strong>सप्तमी</strong></td><td>पत्यौ</td><td>पत्योः</td><td>पतीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे हरे</td><td>हे हरी</td><td>हे हरयः</td><td><strong>सम्बोधन</strong></td><td>हे पते</td><td>हे पती</td><td>हे पतयः</td></tr>
+</tbody></table>
+<p><strong>Note:</strong> Most इकारान्तः पुंल्लिङ्गः शब्दाः will be like हरि. When पति occurs at the end of compounds like नरपति it behaves in a normal fashion and follows the pattern like हरि. The feminine form of पति is पत्नी and it follows the same form as नदी.</p>
+<br>
+<BR>
+<table><thead><tr><th><strong>इकारान्तः पुंल्लिङ्गः सखि (m) (friend) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>सखा</td><td>सखायौ</td><td>सखायः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>सखायम्</td><td>सखायौ</td><td>सखीन्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>सख्या</td><td>सखिभ्याम्</td><td>सखिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>सख्ये</td><td>सखिभ्याम्</td><td>सखिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>सख्युः</td><td>सखिभ्याम्</td><td>सखिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>सख्युः</td><td>सख्योः</td><td>सखीनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>सख्यौ</td><td>सख्योः</td><td>सखिषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे सखे</td><td>हे सखायौ</td><td>हे सखायः</td></tr>
+</tbody></table>
+<p><strong>Note:</strong> Most इकारान्त पुंल्लिङ्गः are similar to हरि शब्दः. But some, like पति and सखि, are different. The word सखि is masculine a form meaning friend. सखी is a feminine word that also means friend (female). It follows the same form as नदी</p>
+<BR>
+<table><thead><tr><th><strong>उकारान्तः पुंल्लिङ्गः गुरु शब्दः (Teacher)</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>गुरुः</td><td>गुरू</td><td>गुरवः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>गुरुम्</td><td>गुरू</td><td>गुरून्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>गुरुणा</td><td>गुरुभ्यां</td><td>गुरुभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>गुरवे</td><td>गुरुभ्यां</td><td>गुरुभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>गुरोः</td><td>गुरुभ्यां</td><td>गुरुभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>गुरोः</td><td>गुर्वोः</td><td>गुरूणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>गुरौ</td><td>गुर्वौः</td><td>गुरुषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे गुरो</td><td>हे गुरू</td><td>हे गुरवः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऋकारान्तः पुंल्लिङ्गः दातृ शब्दः</strong></th><th></th><th></th><th></th><th><strong>ऋकारान्तः पुंल्लिङ्गः पितृ शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>दाता</td><td>दातारौ</td><td>दातारः</td><td><strong>प्रथमा</strong></td><td>पिता</td><td>पितरौ</td><td>पितरः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>दातारम्</td><td>दातारौ</td><td>दातॄन्</td><td><strong>द्वितीया</strong></td><td>पितरम्</td><td>पितरौ</td><td>पितॄन्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>दात्रा</td><td>दातृभ्यां</td><td>दातृभिः</td><td><strong>तृतीया</strong></td><td>पित्रा</td><td>पितृभ्यां</td><td>पितृभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>दात्रे</td><td>दातृभ्यां</td><td>दातृभ्यः</td><td><strong>चतुर्थी</strong></td><td>पित्रे</td><td>पितृभ्यां</td><td>पितृभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>दातुः</td><td>दातृभ्यां</td><td>दातृभ्यः</td><td><strong>पञ्चमी</strong></td><td>पितुः</td><td>पितृभ्यां</td><td>पितृभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>दातुः</td><td>दात्रोः</td><td>दातॄणाम्</td><td><strong>षष्ठी</strong></td><td>पितुः</td><td>पित्रोः</td><td>पितॄणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>दातरि</td><td>दात्रौः</td><td>दातृषु</td><td><strong>सप्तमी</strong></td><td>पितरि</td><td>पित्रोः</td><td>पितृषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे दातः</td><td>हे दातारौ</td><td>हे दातारः</td><td><strong>सम्बोधन</strong></td><td>हे पितः</td><td>हे पितरौ</td><td>हे पितरः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऐकारान्तः पुंल्लिङ्गः रै शब्दः (wealth)</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>राः</td><td>रायौ</td><td>रायः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>रायम्</td><td>रायौ</td><td>रायः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>राया</td><td>राभ्याम्</td><td>राभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>राये</td><td>राभ्याम्</td><td>राभिः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>रायः</td><td>राभ्याम्</td><td>राभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>रायः</td><td>रायोः</td><td>रायाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>रायि</td><td>रायोः</td><td>रासु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे राः</td><td>हे रायौ</td><td>हे रायः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>There are a few masculine words which end in आ, ई, and ऊ. These are also irregular declinations.</p>
+<table><thead><tr><th><strong>आकारान्तः पुंल्लिङ्गः गोपा (cowherd) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ईकारान्तः पुंल्लिङ्गः सुधी (intelligent) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>गोपाः</td><td>गोपौ</td><td>गोपाः</td><td><strong>प्रथमा</strong></td><td>सुधीः</td><td>सुधियौ</td><td>सुधियः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>गोपाम्</td><td>गोपौ</td><td>गोपः</td><td><strong>द्वितीया</strong></td><td>सुधियम्</td><td>सुधियौ</td><td>सुधियः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>गोपा</td><td>गोपाभ्याम्</td><td>गोपाभिः</td><td><strong>तृतीया</strong></td><td>सुधिया</td><td>सुधीभ्याम्</td><td>सुधीभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>गोपे</td><td>गोपाभ्याम्</td><td>गोपाभ्यः</td><td><strong>चतुर्थी</strong></td><td>सुधिये</td><td>सुधीभ्याम्</td><td>सुधीभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>गोपः</td><td>गोपाभ्याम्</td><td>गोपाभ्यः</td><td><strong>पञ्चमी</strong></td><td>सुधियः</td><td>सुधीभ्याम्</td><td>सुधीभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>गोपः</td><td>गोपोः</td><td>गोपाम्</td><td><strong>षष्ठी</strong></td><td>सुधियः</td><td>सुधियोः</td><td>सुधियाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>गोपि</td><td>गोपोः</td><td>गोपासु</td><td><strong>सप्तमी</strong></td><td>सुधियि</td><td>सुधियोः</td><td>सुधीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>गोपाः</td><td>गोपौ</td><td>गोपाः</td><td><strong>सम्बोधन</strong></td><td>सुधीः</td><td>सु़धियौ</td><td>सुधियः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ईकारान्तः पुंल्लिङ्गः सेनानी (army general) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ईकारान्तः पुंल्लिङ्गः वातप्रमी (antelope) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>सेनानीः</td><td>सेनान्यौ</td><td>सेनान्यः</td><td><strong>प्रथमा</strong></td><td>वातप्रमीः</td><td>वातप्रम्यौ</td><td>वातप्रम्यः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>सेनान्यम्</td><td>सेनान्यौ</td><td>सेनान्यः</td><td><strong>द्वितीया</strong></td><td>वातप्रमीम्</td><td>वातप्रम्यौ</td><td>वातप्रमीन्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>सेनान्या</td><td>सेनानीभ्याम्</td><td>सेनानीभिः</td><td><strong>तृतीया</strong></td><td>वातप्रम्या</td><td>वातप्रमीभ्याम्</td><td>वातप्रमीभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>सेनान्ये</td><td>सेनानीभ्याम्</td><td>सेनानीभ्यः</td><td><strong>चतुर्थी</strong></td><td>वातप्रम्ये</td><td>वातप्रमीभ्याम्</td><td>वातप्रमीभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>सेनान्यः</td><td>सेनानीभ्याम्</td><td>सेनानीभ्यः</td><td><strong>पञ्चमी</strong></td><td>वातप्रम्यः</td><td>वातप्रमीभ्याम्</td><td>वातप्रमीभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>सेनान्यः</td><td>सेनान्योः</td><td>सेनान्याम्</td><td><strong>षष्ठी</strong></td><td>वातप्रम्यः</td><td>वातप्रम्योः</td><td>वातप्रम्याम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>सेनान्याम्</td><td>सेनान्योः</td><td>सेनानीषु</td><td><strong>सप्तमी</strong></td><td>वातप्रमी</td><td>वातप्रम्योः</td><td>वातप्रमीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>सेनानीः</td><td>सेनान्यौ</td><td>सेनान्यः</td><td><strong>सम्बोधन</strong></td><td>वातप्रमीः</td><td>वातप्रम्यौ</td><td>वातप्रम्यः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऊकारान्तः पुंल्लिङ्गः खलपू (sweeper) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ऊकारान्तः पुंल्लिङ्गः प्रतिभू (guarantor) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>खलपूः</td><td>खलप्वौ</td><td>खलप्वः</td><td><strong>प्रथमा</strong></td><td>प्रतिभूः</td><td>प्रतिभुवौ</td><td>प्रतिभुवः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>खलप्वम्</td><td>खलप्वौ</td><td>खलप्वः</td><td><strong>द्वितीया</strong></td><td>प्रतिभुवम्</td><td>प्रतिभुवौ</td><td>प्रतिभुवः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>खलप्वा</td><td>खलपूभ्याम्</td><td>खलपूभिः</td><td><strong>तृतीया</strong></td><td>प्रतिभुवा</td><td>प्रतिभूभ्याम्</td><td>प्रतिभूभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>खलप्वे</td><td>खलपूभ्याम्</td><td>खलपूभ्यः</td><td><strong>चतुर्थी</strong></td><td>प्रतिभुवे</td><td>प्रतिभूभ्याम्</td><td>प्रतिभूभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>खलप्वः</td><td>खलपूभ्याम्</td><td>खलपूभ्यः</td><td><strong>पञ्चमी</strong></td><td>प्रतिभुवः</td><td>प्रतिभूभ्याम्</td><td>प्रतिभूभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>खलप्वः</td><td>खलप्वोः</td><td>खलप्वाम्</td><td><strong>षष्ठी</strong></td><td>प्रतिभुवः</td><td>प्रतिभुवोः</td><td>प्रतिभुवाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>खलप्वि</td><td>खलप्वोः</td><td>खलपूषु</td><td><strong>सप्तमी</strong></td><td>प्रतिभुवि</td><td>प्रतिभुवोः</td><td>प्रतिभूषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>खलपूः</td><td>खलप्वौ</td><td>खलप्वः</td><td><strong>सम्बोधन</strong></td><td>प्रतिभूः</td><td>प्रतिभुवौ</td><td>प्रतिभुवः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>The word क्रोष्टु (jackal) is irregular in that several of its forms show the base क्रोष्टृ. </p>
+<table><thead><tr><th><strong>उकारान्तः पुंल्लिङ्गः क्रोष्टु (jackal) शब्दः</strong></th><th></th><th></th><th></th><th><strong>अकारान्तः पुंल्लिङ्गः निर्जर (without old age, god) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>क्रोष्टा</td><td>क्ररोष्टारौ</td><td>क्रोष्टारः</td><td><strong>प्रथमा</strong></td><td>निर्जरः</td><td>निर्जरौ / निर्जरसौ</td><td>निर्जराः / निर्जरसः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>क्रोष्टारम्</td><td>क्रोष्टारौ</td><td>क्रोष्टन्</td><td><strong>द्वितीया</strong></td><td>निर्जरम् / निर्जरसम्</td><td>निर्जरौ / निर्जरसौ</td><td>निर्जरान् / निर्जरसः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>क्रोषट्रा / क्रोष्टुना</td><td>क्रोष्टुभ्याम्</td><td>क्रोष्टुभिः</td><td><strong>तृतीया</strong></td><td>निर्यरेण / निर्जरसा</td><td>निर्जराभ्याम्</td><td>निर्जरैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>क्रोष्ट्रे / क्रोष्टवे</td><td>क्रोष्टुभ्याम्</td><td>क्रोष्टुभ्यः</td><td><strong>चतुर्थी</strong></td><td>निर्जराय / निर्जरसे</td><td>निर्जराभ्याम्</td><td>निर्जरेभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>क्रोष्टुः / क्रोष्टोः</td><td>क्रोष्टुभ्याम्</td><td>क्रोष्टुभ्यः</td><td><strong>पञ्चमी</strong></td><td>निर्जरात् / निर्जरसः</td><td>निर्जराभ्याम्</td><td>निर्जरेभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>क्रोष्टुः / क्रोष्टोः</td><td>क्रोष्ट्रोः / क्रोष्ट्वोः</td><td>क्रोष्टूनाम्</td><td><strong>षष्ठी</strong></td><td>निर्जरस्य / निर्जरसः</td><td>निर्जरयोः / सोः</td><td>निर्जराणाम्/ रसाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>क्रोष्टरि</td><td>क्रोष्ट्रोः / क्रोष्ट्वोः</td><td>क्रोष्टुषु</td><td><strong>सप्तमी</strong></td><td>निर्जरे / निर्जरसि</td><td>निर्जरयोः / सोः</td><td>निर्जरेषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>क्रोष्टो</td><td>क्रोष्टारौ</td><td>क्रोष्टारः</td><td><strong>सम्बोधन</strong></td><td>निर्जर</td><td>निर्जरौ / रसौ</td><td>निर्जराः / निर्जरसः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>There are no masculine nouns ending in ए, but there are ones ending in ओ, औ, and ऐ (see रै above)</p>
+<table><thead><tr><th><strong>औकारान्तः पुंल्लिङ्गः ग्लौ (moon) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ओकारान्तः पुंल्लिङ्गः स्त्रीलिङ्गः च गो (bull, cow) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>ग्लौः</td><td>ग्लावौ</td><td>ग्लावः</td><td><strong>प्रथमा</strong></td><td>गौः</td><td>गावौ</td><td>गावः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>ग्लावम्</td><td>ग्लावौ</td><td>ग्लावः</td><td><strong>द्वितीया</strong></td><td>गाम्</td><td>गावौ</td><td>गाः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>ग्लावा</td><td>ग्लौभ्याम्</td><td>ग्लौभिः</td><td><strong>तृतीया</strong></td><td>गवा</td><td>गोभ्याम्</td><td>गोभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>ग्लावे</td><td>ग्लौभ्याम्</td><td>ग्लौभ्यः</td><td><strong>चतुर्थी</strong></td><td>गवे</td><td>गोभ्याम्</td><td>गोभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>ग्लावः</td><td>ग्लौभ्याम्</td><td>ग्लौभ्यः</td><td><strong>पञ्चमी</strong></td><td>गोः</td><td>गोभ्याम्</td><td>गोभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>ग्लावः</td><td>ग्लावोः</td><td>ग्लावाम्</td><td><strong>षष्ठी</strong></td><td>गोः</td><td>गवोः</td><td>गवाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>ग्लावि</td><td>ग्लावोः</td><td>ग्लौषु</td><td><strong>सप्तमी</strong></td><td>गवि</td><td>गवोः</td><td>गोषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>ग्लौः</td><td>ग्लावौ</td><td>ग्लावः</td><td><strong>सम्बोधन</strong></td><td>गौः</td><td>गावौ</td><td>गावः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>नकारान्तः पुंल्लिङ्गः राजन् शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>राजा</td><td>राजानौ</td><td>राजानः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>राजानम्</td><td>राजानौ</td><td>राज्ञः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>राज्ञा</td><td>राजभ्याम्</td><td>राजभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>राज्ञे</td><td>राजभ्याम्</td><td>राजभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>राज्ञः</td><td>राजभ्याम्</td><td>राजभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>राज्ञः</td><td>राज्ञोः</td><td>राज्ञाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>राज्ञि / राजनि</td><td>राज्ञोः</td><td>राजसु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे राजन</td><td>हे राजानौ</td><td>हे राजानः</td></tr>
+</tbody></table>
+<h2 id="feminine-सतरीलिङगः-nouns"><a class="header" href="#feminine-सतरीलिङगः-nouns">Feminine (स्त्रीलिङ्गः) nouns</a></h2>
+<table><thead><tr><th><strong>आकारान्तः स्त्रीलिङ्गः रमा (Lakshmi) शब्दः</strong></th><th></th><th></th><th></th><th><strong>इकारान्तः स्त्रीलिङ्गः मति (intellect) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>रमा</td><td>रमे</td><td>रमाः</td><td><strong>प्रथमा</strong></td><td>मतिः</td><td>मती</td><td>मतयः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>रमाम्</td><td>रमे</td><td>रमाः</td><td><strong>द्वितीया</strong></td><td>मतिम्</td><td>मती</td><td>मतीः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>रमया</td><td>रमाभ्याम्</td><td>रमाभिः</td><td><strong>तृतीया</strong></td><td>मत्या</td><td>मतिभ्याम्</td><td>मतिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>रमायै</td><td>रमाभ्याम्</td><td>रमाभ्यः</td><td><strong>चतुर्थी</strong></td><td>मत्यै / मत्ये</td><td>मतिभ्याम्</td><td>मतिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>रमायाः</td><td>रमाभ्याम्</td><td>रमाभ्यः</td><td><strong>पञ्चमी</strong></td><td>मत्याः / मतेः</td><td>मतिभ्याम्</td><td>मतिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>रमायाः</td><td>रमयोः</td><td>रमाणाम्</td><td><strong>षष्ठी</strong></td><td>मत्याः / मतेः</td><td>मत्योः</td><td>मतीनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>रमायाम्</td><td>रमयोः</td><td>रमासु</td><td><strong>सप्तमी</strong></td><td>मत्याम् / मतौ</td><td>मत्योः</td><td>मतिषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे रमा</td><td>हे रमे</td><td>हे रमाः</td><td><strong>सम्बोधन</strong></td><td>हे मते</td><td>हे मती</td><td>हे मतयः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>The feminine paradigm जरा &quot;old age&quot; is mixed with alternating forms of जरस्. The same mixture is carried into the masculine paradigms of निर्जर &quot;without old age, gods&quot; (above).</p>
+<table><thead><tr><th><strong>आकारान्तः स्त्रीलिङ्गः जरा (old age) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>जरा</td><td>जरे/जरसौ</td><td>जराः / जरसः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>जराम् / जरसम्</td><td>जरे / जरसौ</td><td>जराः / जरसः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>जरया / जरसा</td><td>जराभ्याम्</td><td>जराभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>जरायै / जरसे</td><td>जराभ्याम्</td><td>जराभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>जरायाः / जरसः</td><td>जराभ्याम्</td><td>जराभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>जरायाः/ जरसः</td><td>जरयोः / जरसोः</td><td>जराणाम् / जरसाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>जरायाम् / जरसि</td><td>जरयोः / जरसोः</td><td>जरासु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>जरे</td><td>जरे / जरसौ</td><td>जराः / जरसः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th>ईकारान्तः स्त्रीलिङ्गः नदी (river) शब्दः</th><th></th><th></th><th></th><th>उकारान्तः स्त्रीलिङ्गः धेनु (cow) शब्दः</th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>नदी</td><td>नद्यौ</td><td>नद्यः</td><td><strong>प्रथमा</strong></td><td>धेनुः</td><td>धेनू</td><td>धेनवः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>नदीम्</td><td>नद्यौ</td><td>नदीः</td><td><strong>द्वितीया</strong></td><td>धेनुम्</td><td>धेनू</td><td>धेनूः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>नद्या</td><td>नदीभ्याम्</td><td>नदीभिः</td><td><strong>तृतीया</strong></td><td>धेन्वा</td><td>धेनुभ्याम्</td><td>धेनुभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>नद्यै</td><td>नदीभ्याम्</td><td>नदीभ्यः</td><td><strong>चतुर्थी</strong></td><td>धेन्वै/धेनवे</td><td>धेनुभ्याम्</td><td>धेनुभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>नद्याः</td><td>नदीभ्याम्</td><td>नदीभ्यः</td><td><strong>पञ्चमी</strong></td><td>धेन्वाः/धेनोः</td><td>धेनुभ्याम्</td><td>धेनुभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>नद्याः</td><td>नद्योः</td><td>नदीनाम्</td><td><strong>षष्ठी</strong></td><td>धेन्वाः/धेनोः</td><td>धेन्वोः</td><td>धेनूनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>नद्याम्</td><td>नद्योः</td><td>नदीषु</td><td><strong>सप्तमी</strong></td><td>धेन्वाम्/धेनौ</td><td>धेनवोः</td><td>धेनुषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे नदि</td><td>हे नद्यौ</td><td>हे नद्यः</td><td><strong>सम्बोधन</strong></td><td>हे धेनो</td><td>हे धेनू</td><td>हे धेनवः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>While नदी represents the normal paradigm for feminine nours in ई, several feminine nominals in ई differ from this paradigm. Words like लक्ष्मी (wealth) तरी (boat), तन्त्री (lute) are declined like नदी, <strong>except that their nominative singular ends in Visarga</strong> i.e. लक्ष्मीः, तरीः, and तन्त्रीः. This class includes monosyllabic words धी (intellect), श्री (wealth), भी (fear) and ह्री (shame). These monosyllabic words also differ in some other aspects (see table below, compare with नदी शब्द रूप). The word स्त्री (woman) has its peculiar forms.</p>
+<table><thead><tr><th><strong>ईकारान्तः स्त्रीलिङ्गः धी (intellect) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ईकारान्तः स्त्रीलिङ्गः स्त्री (woman) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>धीः</td><td>धियौ</td><td>धियः</td><td><strong>प्रथमा</strong></td><td>स्त्री</td><td>स्त्रियौ</td><td>स्त्रियः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>धियम्</td><td>धियौ</td><td>धियः</td><td><strong>द्वितीया</strong></td><td>स्त्रियम्/स्त्रीम्</td><td>स्त्रियौ</td><td>स्त्रियः/स्त्रीः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>धिया</td><td>धीभ्याम्</td><td>धीभिः</td><td><strong>तृतीया</strong></td><td>स्त्रिया</td><td>स्त्रिभ्याम्</td><td>स्त्रीभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>धिये/धियै</td><td>धीभ्याम्</td><td>धीभ्यः</td><td><strong>चतुर्थी</strong></td><td>स्त्रियै</td><td>स्त्रीभ्याम्</td><td>स्त्रीभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>धियः/धियाः</td><td>धीभ्याम्</td><td>धीभ्यः</td><td><strong>पञ्चमी</strong></td><td>स्त्रियाः</td><td>स्त्रीभ्याम्</td><td>स्त्रीभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>धियः/धियाः</td><td>धियोः</td><td>धियाम्/धीनाम्</td><td><strong>षष्ठी</strong></td><td>स्त्रियाः</td><td>स्त्रियोः</td><td>स्त्रीणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>धयि/धियाम्</td><td>धियोः</td><td>धीषु</td><td><strong>सप्तमी</strong></td><td>स्त्रियाम्</td><td>स्त्रियोः</td><td>स्त्रीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>धीः</td><td>धियौ</td><td>धियः</td><td><strong>सम्बोधन</strong></td><td>स्त्रि</td><td>स्त्रियौ</td><td>स्त्रियः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऋकारान्तः स्त्रीलिङ्गः मातृ (mother) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>माता</td><td>मातरौ</td><td>मातरः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>मातरम्</td><td>मातरौ</td><td>मातॄः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>मात्रा</td><td>मातृभ्याम्</td><td>मातृभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>मात्रे</td><td>मातृभ्याम्</td><td>मातृभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>मातुः</td><td>मातृभ्याम्</td><td>मातृभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>मातुः</td><td>मात्रोः</td><td>मातॄणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>मातरि</td><td>मात्रोः</td><td>मातृषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे मातः</td><td>हे मातरौ</td><td>हे मातरः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऊकारान्तः स्त्रीलिङ्गः भू (earth) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ऊकारान्तः स्त्रीलिङ्गः पुनर्भू (remarried widow शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>भूः</td><td>भुवौ</td><td>भुवः</td><td><strong>प्रथमा</strong></td><td>पुनर्भूः</td><td>पुनर्भ्वौ</td><td>पुनर्भ्वः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>भुवम्</td><td>भुवौ</td><td>भुवः</td><td><strong>द्वितीया</strong></td><td>पुनर्भ्वम्</td><td>पुनर्भ्वौ</td><td>पुनर्भ्वः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>भुवा</td><td>भूभ्याम्</td><td>भूभिः</td><td><strong>तृतीया</strong></td><td>पुनर्भ्वा</td><td>पुनर्भूभ्याम्</td><td>पुनर्भूभीः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>भुवे/भुवै</td><td>भूभ्याम्</td><td>भूभ्यः</td><td><strong>चतुर्थी</strong></td><td>पुनर्भ्वै</td><td>पुनर्भूभ्याम्</td><td>पुनर्भूभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>भुवः/भुवाः</td><td>भूभ्याम्</td><td>भूभ्यः</td><td><strong>पञ्चमी</strong></td><td>पुनर्भ्वाः</td><td>पुनर्भूभ्याम्</td><td>पुनर्भूभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>भुवः/भुवाः</td><td>भुवोः</td><td>भुवाम्/भूनाम्</td><td><strong>षष्ठी</strong></td><td>पुनर्भ्वाः</td><td>पुनर्भ्वोः</td><td>पुनर्भूणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>भुवि/भुवाम्</td><td>भुवोः</td><td>भूषु</td><td><strong>सप्तमी</strong></td><td>पुनर्भ्वाम्</td><td>पुनर्भ्वोः</td><td>पुनर्भूषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>भूः</td><td>भुवौ</td><td>भुवः</td><td><strong>सम्बोधन</strong></td><td>पुनर्भु</td><td>पुनर्भ्वौ</td><td>पुनर्भ्वः</td></tr>
+</tbody></table>
+<table><thead><tr><th><strong>वकारान्त स्त्रीलिङ्गः दिव् शब्दः</strong></th><th></th><th></th><th></th><th><strong>ओकारांत स्त्रीलिङ्गः द्यो शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td></td><td></td><td></td><td><strong>प्रथमा</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>द्वितीया</strong></td><td></td><td></td><td></td><td><strong>द्वितीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>तृतीया</strong></td><td></td><td></td><td></td><td><strong>तृतीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>षष्ठी</strong></td><td></td><td></td><td></td><td><strong>षष्ठी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सप्तमी</strong></td><td></td><td></td><td></td><td><strong>सप्तमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h2 id="neuter-नपुंसकलिङगः-nouns"><a class="header" href="#neuter-नपुंसकलिङगः-nouns">Neuter (नपुंसकलिङ्गः) nouns</a></h2>
+<table><thead><tr><th><strong>अकारान्तः नपुंसकलिङ्गः फल (fruit) शब्दः</strong></th><th></th><th></th><th></th><th><strong>उकारान्तः नपुंसकलिङ्गः मधु (honey) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>फलम्</td><td>फले</td><td>फलानि</td><td><strong>प्रथमा</strong></td><td>मधु</td><td>मधुनि</td><td>मधूनि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>फलम्</td><td>फले</td><td>फलानि</td><td><strong>द्वितीया</strong></td><td>मधु</td><td>मधुनि</td><td>मधूनि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>फलेन</td><td>फलाभ्याम्</td><td>फलैः</td><td><strong>तृतीया</strong></td><td>मधुना</td><td>मधुभ्याम्</td><td>मधुभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>फलाय</td><td>फलाभ्याम्</td><td>फलेभ्यः</td><td><strong>चतुर्थी</strong></td><td>मधुने</td><td>मधुभ्याम्</td><td>मधुभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>फलात्</td><td>फलाभ्याम्</td><td>फलेभ्यः</td><td><strong>पञ्चमी</strong></td><td>मधुनः</td><td>मधुभ्याम्</td><td>मधुभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>फलस्य</td><td>फलयोः</td><td>फलानाम्</td><td><strong>षष्ठी</strong></td><td>मधुनः</td><td>मधुनोः</td><td>मधूनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>फले</td><td>फलयोः</td><td>फलेषु</td><td><strong>सप्तमी</strong></td><td>मधुनि</td><td>मधुनोः</td><td>मधुषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे फल</td><td>हे फले</td><td>हे फलानि</td><td><strong>सम्बोधन</strong></td><td>हे मधो/हे मधु</td><td>हे मधुनी</td><td>हे मधूनि</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>इकारान्तः नपुंसकलिङ्गः शुचि (pure) शब्दः</strong></th><th></th><th></th><th></th><th><strong>इकारान्तः नपुंसकलिङ्गः दधि (curd) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>शुचि</td><td>शुचिनी</td><td>शुचीनि</td><td><strong>प्रथमा</strong></td><td>दधि</td><td>दधिनी</td><td>दधीनि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>शुचि</td><td>शुचिनी</td><td>शुचीनि</td><td><strong>द्वितीया</strong></td><td>दधि</td><td>सधिनी</td><td>दधीनि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>शुचिना</td><td>शुचिभ्याम्</td><td>शुचिभिः</td><td><strong>तृतीया</strong></td><td>दध्ना</td><td>दधिभ्याम्</td><td>दधिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>शुचिने / शुचये</td><td>शुचिभ्याम्</td><td>शुचिभ्यः</td><td><strong>चतुर्थी</strong></td><td>दध्ने</td><td>दधिभ्याम्</td><td>दधिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>शुचिनः / शुचेः</td><td>शुचिभ्याम्</td><td>शुचिभ्यः</td><td><strong>पञ्चमी</strong></td><td>दध्नः</td><td>दधिभ्याम्</td><td>दधिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>शुचिनः / शुचेः</td><td>शुचिनोः / शुच्योः</td><td>शुचीनाम्</td><td><strong>षष्ठी</strong></td><td>दध्नः</td><td>दध्नोः</td><td>दध्नाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>शुचिनि / शुचौ</td><td>शुचिनोः / शुच्योः</td><td>शुचिषु</td><td><strong>सप्तमी</strong></td><td>दध्नि / दधनि</td><td>दध्नोः</td><td>दधिषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे शुचे / हे शुचि</td><td>हे शुचिनी</td><td>हे शुचीनि</td><td><strong>सम्बोधन</strong></td><td>हे दधे / हे दधि</td><td>हे दधिनी</td><td>हे दधीनि</td></tr>
+</tbody></table>
+<p><strong>Note:</strong> Most इकारान्तः नपुंसकलिङ्गः शब्दाः will be similar to शुचिशब्दः. The major exceptions are अक्षि, सक्थि, अस्थि which are similar to दधि शब्दः. Another exception is वारि which has its own form.</p>
+<BR>
+<BR>
+<table><thead><tr><th><strong>इकारान्तः नपुंसकलिङ्गः वारि (water) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>वारि</td><td>वारिणी</td><td>वारीणि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>वारि</td><td>वारिणी</td><td>वारीणि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>वारिणा</td><td>वारिभ्याम्</td><td>वारिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>वारिणे</td><td>वारिभ्याम्</td><td>वारिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>वारिणः</td><td>वारिभ्याम्</td><td>वारिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>वारिणः</td><td>वारिणोः</td><td>वारीणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>वारिणि</td><td>वारिणोः</td><td>वारिषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे वारे / हे वारि</td><td>हे वारिणी</td><td>हे वारीणि</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>सकारान्तः नपुंसकलिङ्गः मनस् (mind) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>मनः</td><td>मनसी</td><td>मनांसि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>मनः</td><td>मनसी</td><td>मनांसि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>मनसा</td><td>मनोभ्याम्</td><td>मनोभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>मनसे</td><td>मनोभ्याम्</td><td>मनोभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>मनसः</td><td>मनोभ्याम्</td><td>मनोभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>मनसः</td><td>मनसोः</td><td>मनसाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>मनसि</td><td>मनसोः</td><td>मनस्सु, मनःसु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे मनः</td><td>मनसी</td><td>हे मनांसि</td></tr>
+</tbody></table>
+<br>
+<br>
+<h2 id="सरवनामशबदाः-pronouns"><a class="header" href="#सरवनामशबदाः-pronouns">सर्वनामशब्दाः (Pronouns)</a></h2>
+<table><thead><tr><th><strong>दकारान्तः पुंल्लिङ्गः तद् शब्दः</strong> (He)</th><th></th><th></th><th></th><th><strong>दकारान्तः स्त्रीलिङ्गः तद् शब्दः</strong> (She)</th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>सः</td><td>तौ</td><td>ते</td><td><strong>प्रथमा</strong></td><td>सा</td><td>ते</td><td>ताः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>तम्</td><td>तौ</td><td>तान्</td><td><strong>द्वितीया</strong></td><td>ताम्</td><td>ते</td><td>ताः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>तेन</td><td>ताभ्याम्</td><td>तैः</td><td><strong>तृतीया</strong></td><td>तया</td><td>ताभ्याम्</td><td>ताभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>तस्मै</td><td>ताभ्याम्</td><td>तेभ्यः</td><td><strong>चतुर्थी</strong></td><td>तस्यै</td><td>ताभ्याम्</td><td>ताभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>तस्मात्</td><td>ताभ्याम्</td><td>तेभ्यः</td><td><strong>पञ्चमी</strong></td><td>तस्याः</td><td>ताभ्याम्</td><td>ताभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>तस्य</td><td>तयोः</td><td>तेषाम्</td><td><strong>षष्ठी</strong></td><td>तस्याः</td><td>तयोः</td><td>तासाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>तस्मिन</td><td>तयोः</td><td>तेषु</td><td><strong>सप्तमी</strong></td><td>तस्याम्</td><td>तयोः</td><td>तासु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः नपुंसकलिङ्गः तद् शब्दः</strong> (That)</th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>तत्</td><td>ते</td><td>तानि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>तत्</td><td>ते</td><td>तानि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>तेन</td><td>ताभ्याम्</td><td>तैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>तस्मै</td><td>ताभ्याम्</td><td>तेभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>तस्मात्</td><td>ताभ्याम्</td><td>तेभयः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>तस्य</td><td>तयोः</td><td>तेषाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>तस्मिन्</td><td>तयोः</td><td>तेषु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः पुंल्लिङ्गः एतद् (This) शब्दः</strong></th><th></th><th></th><th></th><th><strong>दकारान्तः स्त्रीलिङ्गः एतद् (This) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>एषः</td><td>एतौ</td><td>एते</td><td><strong>प्रथमा</strong></td><td>एषा</td><td>एते</td><td>एताः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>एतम्/एनम्</td><td>एतौ/एनौ</td><td>एतान्/एनान्</td><td><strong>द्वितीया</strong></td><td>एताम्/एनाम्</td><td>एते/एने</td><td>एताः/एनाः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>एतेन/एनेन</td><td>एताभ्याम्</td><td>एतैः</td><td><strong>तृतीया</strong></td><td>एतया/एनया</td><td>एताभ्याम्</td><td>एताभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>एतस्मै</td><td>एताभ्याम्</td><td>एतेभ्यः</td><td><strong>चतुर्थी</strong></td><td>एतस्यै</td><td>एताभ्याम्</td><td>एताभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>एतस्मात्</td><td>एताभ्याम्</td><td>एतेभ्यः</td><td><strong>पञ्चमी</strong></td><td>एतास्याः</td><td>एताभ्याम्</td><td>एताभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>एतस्य</td><td>एतयोः/एनयोः</td><td>एतेषाम्</td><td><strong>षष्ठी</strong></td><td>एतस्याः</td><td>एतयोः/एनयोः</td><td>एतासाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>एतस्मिन्</td><td>एतयोः/एनयोः</td><td>एतेषु</td><td><strong>सप्तमी</strong></td><td>एतस्याम्</td><td>एतयोः/एनयोः</td><td>एतासु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः नपुंसकलिङ्गः एतद् (This) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>एतत्</td><td>एते</td><td>एतानि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>एतत्/एनत्</td><td>एते/एने</td><td>एतानि/एनानि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>एतेन/एनेन</td><td>एताभ्याम्</td><td>एतैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>एतस्मै</td><td>एताभ्याम्</td><td>एतेभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>एतस्मात्</td><td>एताभ्याम्</td><td>एतेभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>एतस्य</td><td>एतयोः/एनयोः</td><td>एतेषाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>एते</td><td>एतयोः/एनयोः</td><td>एतेषु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः पुंल्लिङ्गः यद् (Who) शब्दः</strong></th><th></th><th></th><th></th><th><strong>दकारान्तः स्त्रीलिङ्गः यद् (Who) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>यः</td><td>यौ</td><td>ये</td><td><strong>प्रथमा</strong></td><td>या</td><td>ये</td><td>याः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>यम्</td><td>यौ</td><td>यान्</td><td><strong>द्वितीया</strong></td><td>याम्</td><td>ये</td><td>याः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>येन</td><td>याभ्याम्</td><td>याभिः</td><td><strong>तृतीया</strong></td><td>यया</td><td>याभ्याम्</td><td>याभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>यस्मै</td><td>याभ्याम्</td><td>याभ्यः</td><td><strong>चतुर्थी</strong></td><td>यस्यै</td><td>याभ्याम्</td><td>याभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>यस्मात्</td><td>याभ्याम्</td><td>याभ्यः</td><td><strong>पञ्चमी</strong></td><td>यस्याः</td><td>याभ्याम्</td><td>याभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>यस्य</td><td>ययोः</td><td>येषाम्</td><td><strong>षष्ठी</strong></td><td>यस्याः</td><td>ययोः</td><td>यासाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>यस्मिन्</td><td>ययोः</td><td>यैषु</td><td><strong>सप्तमी</strong></td><td>यस्याम्</td><td>ययोः</td><td>यासु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः नपुंसकलिङ्गः यद् (Who) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>यत्</td><td>ये</td><td>यानि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>यत्</td><td>ये</td><td>यानि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>येन</td><td>याभ्याम्</td><td>याभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>यस्मै</td><td>याभ्याम्</td><td>याभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>यस्मात्</td><td>याभ्याम्</td><td>याभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>यस्य</td><td>ययोः</td><td>येषाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>यस्मिन्</td><td>ययोः</td><td>यैषु</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः अस्मद् (I) शब्दः त्रीषु लिङ्गेषु</strong></th><th></th><th></th><th></th><th><strong>दकारान्तः युष्मद् (You) शब्दः त्रीषु लिङ्गेषु</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>अहम्</td><td>आवाम्</td><td>वयम्</td><td><strong>प्रथमा</strong></td><td>त्वम्</td><td>युवाम्</td><td>यूयम्</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>माम्/मा</td><td>आवाम्/नौ</td><td>अस्मान्/नः</td><td><strong>द्वितीया</strong></td><td>त्वाम्/त्वा</td><td>युवाम्/वाम्</td><td>युष्मान्/नः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>मया</td><td>आवाभ्याम्</td><td>अस्माभिः</td><td><strong>तृतीया</strong></td><td>त्वया</td><td>युवाभ्याम्</td><td>युष्माभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>मह्यम्/मे</td><td>आवाभ्याम्/नौ</td><td>अस्मभ्यम्/नः</td><td><strong>चतुर्थी</strong></td><td>तुभ्यम्/ते</td><td>युवाभ्याम्/वाम्</td><td>युष्मभ्यम्/वः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>मत्</td><td>आवाभ्यम्</td><td>अस्मत्</td><td><strong>पञ्चमी</strong></td><td>त्वत्</td><td>युवाभ्याम्</td><td>युष्मत</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>मम/मे</td><td>आवयोः/नौ</td><td>अस्माकम्/नः</td><td><strong>षष्ठी</strong></td><td>तव/ते</td><td>युवयोः/वाम्</td><td>युष्माकम्/वः</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>मयि</td><td>आवयोः</td><td>अस्मासु</td><td><strong>सप्तमी</strong></td><td>त्वयि</td><td>युवयोः</td><td>युष्मासु</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th><strong>मकारान्तः पुंल्लिङ्गः किम् (Who?) शब्दः</strong></th><th></th><th></th><th></th><th><strong>मकारान्तः स्त्रीलिङ्गः किम् (Who?) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>कः</td><td>कौ</td><td>के</td><td><strong>प्रथमा</strong></td><td>का</td><td>के</td><td>काः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>किम्</td><td>कौ</td><td>कान्</td><td><strong>द्वितीया</strong></td><td>काम्</td><td>के</td><td>काः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>केन्</td><td>काभ्याम्</td><td>कैः</td><td><strong>तृतीया</strong></td><td>कया</td><td>काभ्याम्</td><td>काभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>कस्मै</td><td>काभ्याम्</td><td>केभ्यः</td><td><strong>चतुर्थी</strong></td><td>कस्यै</td><td>काभ्याम्</td><td>काभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>कस्मात्</td><td>काभ्याम्</td><td>केभ्यः</td><td><strong>पञ्चमी</strong></td><td>कस्याः</td><td>काभ्याम्</td><td>काभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>कस्य</td><td>कयोः</td><td>केषाम्</td><td><strong>षष्ठी</strong></td><td>कस्य</td><td>कयोः</td><td>कासाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>कस्मिन्</td><td>कयोः</td><td>केषु</td><td><strong>सप्तमी</strong></td><td>कस्याम्</td><td>कयोः</td><td>कासु</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th><strong>मकारान्तः नपुंसकलिङ्गः किम् (Who?) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>किम्</td><td>के</td><td>कानि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>किम्</td><td>के</td><td>कानि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>केन्</td><td>काभ्याम्</td><td>कैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>कस्मै</td><td>काभ्याम्</td><td>केभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>कस्मात्</td><td>काभ्याम्</td><td>केभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>कस्य</td><td>कयोः</td><td>केषाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>कस्मिन्</td><td>कयोः</td><td>केषु</td></tr>
+</tbody></table>
+<BR>
+<h2 id="present-active-participles"><a class="header" href="#present-active-participles">Present active participles</a></h2>
+<p>Though these are verbs they are declined as nouns. For example, गच्छन् रामः means the Rama who is going. So in a sentence, structurally, they behave like adjectives. The meaning of the previous sentence is &quot;The going Rama&quot;. This type of expression is not present in English but it is in Sanskrit.</p>
+<p>Active <strong>verbs</strong> form their present active participles with the affix अत्. A simple way to form the present active participle stem is to replace the affix अन्ति in the present 3rd pl by the affix अत्.</p>
+<p>गच्छन्ति -&gt; गच्छत्</p>
+<p>दीव्यन्ति -&gt; दीव्यत्</p>
+<p>तुदन्ति -&gt; तुदत्</p>
+<p>चोरयन्ति -&gt; चोरयत्</p>
+<p>Since these words are like adjectives/nouns they are declined like nouns.</p>
+<table><thead><tr><th>*<strong>तकारान्त पुंल्लिङ्गः गच्छत् m. (He who is) going</strong></th><th></th><th></th><th></th><th><strong>स्त्रीलिङ्गः गच्छन्ती शब्दः f. (She who is) going</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>गच्छन्</td><td>गच्छन्तौ</td><td>गच्छन्तः</td><td><strong>प्रथमा</strong></td><td>गच्छन्ती</td><td>गच्छन्त्यौ</td><td>गच्छन्त्यः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>गच्छन्तम्</td><td>गच्छन्तौ</td><td>गच्छन्तः</td><td><strong>द्वितीया</strong></td><td>गच्छन्तीम्</td><td>गच्छन्त्यौ</td><td>गच्छन्तीः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>गच्छन्ता</td><td>गच्छद्भ्याम्</td><td>गच्छद्भिः</td><td><strong>तृतीया</strong></td><td>गच्छन्त्या</td><td>गच्छन्तीभ्याम्</td><td>गच्छन्तीभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>गच्छते</td><td>गच्छद्भ्याम्</td><td>गच्छद्भ्यः</td><td><strong>चतुर्थी</strong></td><td>गच्छन्त्यै</td><td>गच्छन्तीभ्याम्</td><td>गच्छन्तीभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>गच्छतः</td><td>गच्छद्भ्याम्</td><td>गच्छद्भ्यः</td><td><strong>पञ्चमी</strong></td><td>गच्छन्त्याः</td><td>गच्छन्तीभ्याम्</td><td>गच्छन्तीभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>गच्छतः</td><td>गच्छतोः</td><td>गच्छताम्</td><td><strong>षष्ठी</strong></td><td>गच्छन्त्याः</td><td>गच्छन्त्योः</td><td>गच्छन्तीनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>गच्छति</td><td>गच्छतोः</td><td>गच्छत्सु</td><td><strong>सप्तमी</strong></td><td>गच्छन्त्याम्</td><td>गच्छन्त्योः</td><td>गच्छन्तीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>गच्छन्</td><td>गच्छन्तौ</td><td>गच्छन्तः</td><td><strong>सम्बोधन</strong></td><td>गच्छन्ति</td><td>गच्छन्त्यौ</td><td>गच्छन्त्यः</td></tr>
+</tbody></table>
+<BR>
+<hr />
+<p>Template - Do not use/delete</p>
+<table><thead><tr><th><strong>अकारान्तः पुंल्लिङ्गः राम शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>द्वितीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>तृतीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>षष्ठी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सप्तमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th><strong>ऋकारान्तः पुंल्लिङ्गः दातृ शब्दः</strong></th><th></th><th></th><th></th><th><strong>ऋकारान्तः पुंल्लिङ्गः पितृ शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td></td><td></td><td></td><td><strong>प्रथमा</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>द्वितीया</strong></td><td></td><td></td><td></td><td><strong>द्वितीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>तृतीया</strong></td><td></td><td></td><td></td><td><strong>तृतीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>षष्ठी</strong></td><td></td><td></td><td></td><td><strong>षष्ठी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सप्तमी</strong></td><td></td><td></td><td></td><td><strong>सप्तमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="धातु-रुप"><a class="header" href="#धातु-रुप">धातु रुप</a></h1>
+<h2 id="लट-लकार"><a class="header" href="#लट-लकार">लट् लकार</a></h2>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td>प्रथम पुरुष</td><td>जानाति</td><td>जानीतः</td><td>जानन्ति</td></tr>
+<tr><td>मध्यम पुरुष</td><td>जानासि</td><td>जानीथः</td><td>जानीथ</td></tr>
+<tr><td>उत्तम पुरुष</td><td>जानामि</td><td>जानीवः</td><td>जानीमः</td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="grammer"><a class="header" href="#grammer">Grammer</a></h1>
+<p><strong>Grammer terms</strong></p>
+<p><strong>अक्षरम्</strong> - श्रवणेन्द्रियग्राह्यम् अक्षरम् । तच्च कण्ठताल्वाद्यभिघातेन अभिव्यज्जते। अक्षरस्यैव नामान्तरं ’वर्णः’ इति। That which can be perceived by the faculty of hearing is अक्षरम्. It is classified/separated based on articulation into तच्च, कण्ठ, तालु etc. </p>
+<p><strong>वर्णः</strong> - Same as अक्षरम्</p>
+<p><strong>वर्णः</strong> - sounds (phenomes?)</p>
+<p><strong>वाक्यम्</strong> - sentence</p>
+<p><strong>पदम्</strong> - word</p>
+<p><strong>सन्धिः</strong> - when two वर्णः are joined/combined </p>
+<p><strong>समासम्</strong> - when two पदम् are joined/combined</p>
+<p>In Sanskrit grammar there is an entire branch devoted to the study of the joining of two वर्णः and that is called सन्धिः. Example: नमस्ते, कोपि etc</p>
+<p>Similarly there is a branch devoted to the study of the joining of two पदम् called समासम्. Example: देवालय, वृक्षमूलम, जगत्पति, करपत्रम् etc</p>
+<p>प्रातिपदिकम् - base word/root of (सुबन्तम्) nouns, adjectives and other non-verbs. </p>
+<p>सुबन्तम् - nouns, adjectives and other non-verbs (नाम पदम्)</p>
+<p>तिङन्तम् - verbs (क्रिया पदम)</p>
+<p>धातुः - verb root</p>
+<p>कृदन्तम् - This is a type of नाम पदम्. धातुः + कृत् प्रत्यय forms a new प्रातिपदिकम्. Examples of कृदन्तम् include पठितवान, पठितुम, रामः, सीता etc. Some of the नाम पदम् are कृदन्तम् and some are सुबन्तम्.</p>
+<br>
+<hr />
+<p>Example: Here is a sentence (वाक्यम्)</p>
+<p>अहम् प्रातःकाले उत्तिष्ठामि। </p>
+<p>अहम् - सुबन्तम्। प्रातिपदिकम् = अस्मद्</p>
+<p>प्रातःकाले - सुबन्तम्। प्रातिपदिकम् = प्रातःकाल</p>
+<p>उत्तिष्ठामि - तिङन्तम्। धातु? </p>
+<hr />
+<p>Every प्रातिपदिकम् has a विभक्ति table. In a वाक्यम् only सुबन्त पदम्  or तिङन्त पदम् can be used - प्रातिपदिकम् and धातु cannot be used. This is a Paniniya grammer rule.</p>
+<p>Every word in Sanskrit has an underlying etymology or meaning. For example the word प्रातिपदिकम्  is derived from प्रति and पद. प्रति means every and पद is word. So प्रातिपदिकम् is something related to every word.</p>
+<p>सुबन्तम् is made of two words सुप् + अन्तम्. It means words ending in सुप्. Here सुप् refers to a collection of suffixes (suffix = प्रत्यय).</p>
+<p>When a सुप् प्रत्यय is added to a प्रातिपदिकम् we get सुबन्त पदम् (i.e. word ending in सुप्). There are 21 सुप् प्रत्यय. Each entry in a विभक्ति table is the result of adding a सुप् प्रत्यय at the end of a प्रातिपदिकम्. Example, for the प्रातिपदिकम् called राम we have 21 सुबन्त पदम् - i.e. रामः, रामौ, रामाः, रामम्, रामौ, रामान्...etc.</p>
+<p>How to add a सुप् प्रत्यय to a प्रातिपदिकम् and get a सुबन्त पदम् (नाम पदम्) is a branch of study in Sanskrit grammar.</p>
+<p>तिङन्त पदम् (aka क्रिया पदम्) is a verb. These पदम् are formed by adding a तिङन्तम् to a धातु. For example, गम् धातु takes the forms गच्छति, गच्छतः, गच्छन्ति etc. Deriving the forms of क्रिया पदम् is a separate branch of Sanskrit grammar study.</p>
+<p>Speaking of कृदन्त पदम - रम् is a धातु, if we add a प्रत्यय then we get राम as a new प्रातिपदिकम्. To this new प्रातिपदिकम् we can add a सुप् प्रत्यय to form a सुबन्त पदम्.</p>
+<hr />
+<p><strong>What is कारकम्?</strong></p>
+<p>Let us take a simple sentence. बालकः तस्य गृहे पुस्तकम् पठति। In this sentence:
+क्रिया पदम् =  पठति. <strong>All others are नाम पदम्</strong>. In a sentence the क्रिया पदम् is the most important. </p>
+<p>Note that व्याकरणम् is one shastra. There are other shastras like न्यायशास्त्र मीमांस शास्त्र etc which have a different concept for a वाक्यम्.</p>
+<ul>
+<li>कः पठति? बालकः</li>
+<li>किम् पठति? पुस्तकम्</li>
+<li>कुत्र पठति? गृहे</li>
+<li>कस्य गृहे? तस्य</li>
+</ul>
+<p>These words that are answering the questions are कारक पदम् because they have a relationship with the क्रिया पदम्.</p>
+<p>What is कारकम् ? <strong>क्रियान्वयि कारकम</strong>. क्रिया means action अन्वय means सम्बन्ध (relationship). क्रिया पदेन सह सम्बन्धम् करोति इति कारकम्।</p>
+<p>What is the relationship of तस्य with पठति? It has a relationship with गृहे but none with पठति. So it is not a कारकम्.</p>
+<p><strong>New sentence:</strong> बालकः ग्रन्थालये स्यूतात् लेखकस्य पुस्तकम् हस्तेन मित्राय ददाति।</p>
+<p>कः ददाति? बालकः</p>
+<p>In the above sentence बालकः is कर्ता and its relationship with the क्रिया पदम् is कतृकारकम्. </p>
+<br>
+<p>किम् ददाति? पुस्तकम्</p>
+<p>पुस्तकम् has relationship of कर्म with ददाति. So it is called कर्म कारकम्. </p>
+<br>
+<p>केन ददाति? हस्तेन - Relationship is करणम् - करण कारकम्</p>
+<br>
+<p>कस्मै ददाति? मित्राय - Relationship is सम्प्रदानम् - सम्प्रदान कारकम्</p>
+<br>
+कस्मात् ददाति? स्यूतात् - Relationship is अपादानम् - अपादान कारकम्
+<br>
+<p>कस्मिन् ददाति? ग्रन्थालये  - Relationship is अधिकरणम् - अधिकरण कारकम्</p>
+<p>Some नाम पदम् in a sentence have different relationship to क्रिया पदम्. These are called कारकम्. To indicate that relationship we add different विभक्ति प्रत्यय to the प्रातिपदिकम् of that नाम पदम्.</p>
+<p><strong>How many काराक are there?</strong> Six (above)</p>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="verbs"><a class="header" href="#verbs">Verbs</a></h1>
+<p>Words in Sanskrit can be either तिङ्न्त (verbs) or सुबन्त (nouns, pronouns, adjectives etc). Words (verbs and nouns) are formed by combining two groups of letters:</p>
+<p>प्रकृति + प्रत्यय</p>
+<p>For verbs the प्रकृति is called धातु and for nouns it is called प्रातिपदिकम्</p>
+<p>Verb forms exist for three numbers - singular, dual, plural - and for three persons - first (उत्तम पुरुष), second (मध्यम पुरुष) and third (प्रथम पुरुष)</p>
+<p>When used in active voice (कर्मणि प्रयोग) verbs can be conjugated in one of two forms - परस्मैपदि or आत्मनेपदि. Some verbs can use both forms (उभयपदि). In passive voide (भावे प्रयोग) all verbs take आत्मनेपदि form.</p>
+<p>There are 18 प्रत्यय for verbs. The first 9 are for परस्मैपदि forms and the second 9 are for the आत्मनेपदि forms. </p>
+<table><thead><tr><th></th><th></th><th>परस्मैपदि</th><th></th></tr></thead><tbody>
+<tr><td></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>तिप्</td><td>तिस्</td><td>झि</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>सिप्</td><td>थस्</td><td>थ</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>मिप्</td><td>वस्</td><td>मस्</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th></th><th></th><th>आत्मनेपदि</th><th></th></tr></thead><tbody>
+<tr><td></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>त</td><td>आताम्</td><td>झ</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>थास्</td><td>आथाम्</td><td>ध्वम्</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>इङ् (इट्)</td><td>वहिङ्</td><td>महिङ्</td></tr>
+</tbody></table>
+<br>
+<p>The verb roots (धातु) are catagorized into 10 गण (groups). Of these, groups 1, 4, 6 and 10 form a related group. </p>
+<p><strong>List of all गण</strong></p>
+<table><thead><tr><th><strong>Number</strong></th><th><strong>Name</strong></th><th><strong>विकरण</strong></th><th><strong>Example</strong></th></tr></thead><tbody>
+<tr><td>1</td><td>भ्वादिः</td><td>अ</td><td>पठ्-<u>अ</u>-ति</td></tr>
+<tr><td>2</td><td>अदादिः</td><td>-</td><td>अद्-ति</td></tr>
+<tr><td>3</td><td>जुहोत्यादिः</td><td>-</td><td>जुहो-ति</td></tr>
+<tr><td>4</td><td>दिवादिः</td><td>य</td><td>नृत्-<u>य</u>-ति</td></tr>
+<tr><td>5</td><td>स्वादिः</td><td>नु</td><td>सु-<u>नु</u>-ते</td></tr>
+<tr><td>6</td><td>तुदादिः</td><td>अ</td><td>लिख्-<u>अ</u>-ति</td></tr>
+<tr><td>7</td><td>रुधादिः</td><td>न</td><td>भि<u>न</u>द्-ति</td></tr>
+<tr><td>8</td><td>तनादिः</td><td>उ</td><td>तन्-<u>उ</u>-ते</td></tr>
+<tr><td>9</td><td>क्र्यादिः</td><td>ना</td><td>पु-<u>ना</u>-ति</td></tr>
+<tr><td>10</td><td>चुरादिः</td><td>अ</td><td>कथय्-<u>अ</u>-ति</td></tr>
+</tbody></table>
+<h2 id="verb-conjugation"><a class="header" href="#verb-conjugation">Verb Conjugation</a></h2>
+<p>वद् is a धातु that means <em>to speak</em>. It belongs to the first गण (भ्वादिः). For these verbs a विकरण is placed between the धातु and the प्रत्यय during conjugation. For भ्वादिः verbs the विकरण is अ/आ. </p>
+<p>The third person (प्रथम पुरुष) singular (एकवचन) form of वद् is forme this way:</p>
+<p>वद् + अ + तिप् = वदति (he/she speaks)</p>
+<p>The प् in तिप् is dropped. </p>
+<p>In गण 1, 4, 6, and 10 the विकरण is lengthened to आ for the terminations in उत्तम पुरुष</p>
+<p>So for present tense (कर्तरि प्रयोग), sigular (एकवचन), first person (उत्तम पुरुष)</p>
+<p>वद् + आ + मिप् = वदामि </p>
+<p>पठति - लट्</p>
+<p>अपठत् - लङ्</p>
+<p>पपाठ - लिट्</p>
+<p>अपाठीत - लुङ्</p>
+<p>पठिष्यति - लृट्</p>
+<p>पठिता - लुट्</p>
+<p>पठतु - लोट्</p>
+<p>पठेत् - लिङ्</p>
+<p>अपठिष्यत - लृङ्</p>
+<p>पठाति - लेट्</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nouns-pronouns-and-adjectives"><a class="header" href="#nouns-pronouns-and-adjectives">Nouns, Pronouns, and adjectives</a></h1>
+<p>Sanskrit nominals (nouns, pronouns, and adjectives) can be one of 8 cases (विभक्ति). These forms are called declensions. They are used to express what is expressed using prepositions in English. Example - with, by, to, for, from, of, in etc. However, there will not be an exact equivalence between the two languages. In English the Sanskrit declensions are called: nominative, accusative, instrumental, dative, ablative, genitive, locative, and vocative.</p>
+<p>Sanskrit nominals have three numbers - singular, dual, and plural. They also have three genders - masculine, feminine, and neuter. The gender is a word is unpredictable and has little semantic significance.</p>
+<p>There are two types of nouns that end in अ - masculine (e.g. राम) and neuter (e.g. फलम)</p>
+<hr />
+<p>Verbs in English are either transitive or intransitive. Transitive verbs use a
+direct object.</p>
+<p>We need a large bag. </p>
+<p>In the above sentence need is a verb that takes the direct object &quot;large bag&quot;. If &quot;large bag&quot; is removed then the sentence is incomplete.</p>
+<p>In the below sentence <em>ran</em> is an intransitive verb. It does not need any objects to be complete. The words &quot;around the house&quot; only describe where the boy ran. </p>
+<p>The boy ran around the house.</p>
+<p>Even if the object is removed &quot;The boy ran.&quot; is a complete sentence.</p>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="kridantas"><a class="header" href="#kridantas">Kridantas</a></h1>
+<p>These notes are from the Vyoma Pathasala <a href="https://www.youtube.com/playlist?list=PLmozlYyYE-ERJj2FfX6WfH5t8i3d2fh1Z">Kridanta</a> lessons by Dr. Sowmya Krishnapur.</p>
+<ul>
+<li><a href="notes/kridantas.html#lesson-1">Lesson 1</a></li>
+<li><a href="notes/kridantas.html#lesson-2">Lesson 2</a></li>
+<li><a href="notes/kridantas.html#lesson-3">Lesson 3</a></li>
+</ul>
+<h2 id="lesson-1"><a class="header" href="#lesson-1">Lesson 1</a></h2>
+<h3 id="context"><a class="header" href="#context">Context</a></h3>
+<p>From the <a href="https://youtu.be/Vr-5sJXTS_4">first lesson</a>.</p>
+<p>Generally all words (पदम्) are a combination of two components पदम् = <span style="color:blue">प्रकृतिः</span> + <span style="color:red">प्रत्ययः</span>. Where प्रकृतिः is the root word and प्रत्ययः is the suffix. Both components have their own meanings.</p>
+<p>Example: संस्कृतम् = <span style="color:blue">संस्कृत</span> + <span style="color:red">सुँ</span></p>
+<p>Generally we understand sentences (वाक्य) and words (पद). But to go into a पद we need to know grammar (व्याकरणम्). It is व्याकरण that makes these divisions of प्रकृति and प्रत्यय.</p>
+<p>Now संस्कृत can also be separated into two प्रकृति and प्रत्यय.</p>
+<p>संस्कृत = <span style="color:blue">सम्</span> <span style="color:red">सुँ</span> + <span style="color:blue">कृत</span> <span style="color:red">सुँ</span></p>
+<p>The word कृत can be further divided कृत = <span style="color:blue">कृ</span> + <span style="color:red">क्त</span></p>
+<p>Generally a पदम् is not just simply one combination of प्रकृति and प्रत्यय. Quite often the प्रकृति can be divided further and further until we get to indivisible components.</p>
+<p><strong>Another example:</strong> वैदेह्याः (from Vaidehi or Vaidehi's - i.e. 6th and 7th विभक्ति)</p>
+<p>वैदेह्याः = <span style="color:blue">वैदेही</span> + <span style="color:red">ङस्</span></p>
+<p>वैदेही = <span style="color:blue">वैदेह</span> + <span style="color:red">ङीप्</span></p>
+<p>वैदेह = <span style="color:blue">विदेह</span> + <span style="color:red">अण्</span></p>
+<p>विदेह = <span style="color:blue">वि</span> <span style="color:red">सुँ</span> + <span style="color:blue">देह</span> <span style="color:red">ङसिँ</span></p>
+<p>देह = <span style="color:blue">दिह्</span> <span style="color:red">अच्</span></p>
+<p>So essentially the word वैदेह्याः is formed using two प्रकृतिः  - <span style="color:blue">वि</span> and <span style="color:blue">दिह्</span> and joining them with many प्रत्ययः. Note: I think वि is उपसर्ग. Not sure if that is also a प्रकृतिः.</p>
+<p>Generally Sanskrit व्याकरण ज्ञानम् is प्रकृति प्रत्यय ज्ञानम्. The derivation of पदम् from प्रकृति and प्रत्यय is called निष्पत्ति.</p>
+<p><strong>There are only two kinds of words in Sanskrit:</strong></p>
+<ol>
+<li>तिङन्तम् (aka क्रिया पदम्)</li>
+<li>सुबन्तम्</li>
+</ol>
+<p>The teacher says &quot;Any word we see in Sanskrit is one of these. Anything is 100% covered as one of these.&quot; अव्ययानि अपि सुबन्तानि (avyayas are all <em>subanthas</em>).</p>
+<p>तिङन्ते धातुः प्रकृतिः तिङ् इति प्रत्ययः अथेव तिङन्तम्। यस्य अन्ते तिङ् प्रत्ययः अस्ति तत् पदम् तिङन्तम् इत्युच्यते।</p>
+<p>तिङन्तानि - पठति, पठिष्यति, पठतु etc</p>
+<p><strong>सुबन्ते</strong> प्रातिपदिकम् प्रकृतिः सुप् इति प्रत्ययः। सुप् अन्ते यस्य तत् सुबन्तम्। अतः सुबन्तम् नाम नाम पदम्। <em>Subanthas</em> are nouns (adjectives, adverbs also I think).</p>
+<p>सुबन्तानि - रामः, रामौ, रामाः etc</p>
+<p><strong>तिङन्तम्</strong> - Verbal forms. It's प्रकृति for this form is called धातु. </p>
+<p><strong>सुबन्तम्</strong> - Noun forms. It's प्रकृति for this form is called प्रातिपदिकम्।</p>
+<p>अतः धातोः तिङ् प्रत्ययस्य योजनेन तिङन्तम् भवति। प्रातिपदिकात् सुप् प्रत्ययस्य योजनेन सुबन्तम् भवति।</p>
+<p>धातु examples पठ्, लिख्, वन्द्, नृत् and तिङन्तानि are - पठति, लिखति, वन्दते, नृत्यति</p>
+<p><strong>किन्तु धातुः त्रिविधः भवति -</strong> </p>
+<ol>
+<li><strong>केवलधातुः</strong> - normal simple धातवः like पठ्, लिख्, वन्द्, नृत्। एते केवल धातवः द्विसहस्रं सन्ति (२०००)। धातुपाठे पठिताः २००० धातवः। These are the major root forms of संस्कृतम्. संस्कृते प्रायः सर्वेशाम् अपि शब्दानाम् पदानाम् केवलधातुः एव मूलम्।</li>
+<li><strong>सनाद्यन्तधातुः</strong> - <span style="color:blue">चिकीर्ष</span> <span style="color:red">ति</span> = <span style="color:green">चिकीर्षति</span>। चिकीर्षति अर्थात् कर्तुम् इच्छति (he wishes to do something). In Sanskrit single words usually cover things like &quot;wishes to read&quot;, &quot;wishes to write&quot;, &quot;wishes to...&quot; etc. Now चिकीर्षति is not in the list of 2000 केवलधातवः. It is a derived धातु. It can be divided into प्रकृति + प्रत्यय. यः केवल धातुः अस्ति तस्मात् धातोः केचन प्रत्ययाः योज्यन्ते। To the original Dhatus we add some pratyaya's called सनादि। तेषाम् योजनेन पुनः धातु भवति। सनाद्यन्तधातुः = <span style="color:blue">केवलधातुः</span> + <span style="color:red">णिच्/सन्/यङ्...</span>. Examples: पाठयति, गमयति, नर्तयाति (these are all verbs that show making someone else do the action). These dhatus are formed using णिच् प्रत्यय. Another set - चिकीर्षति (wishes to see), पिपठिष्ति (wishes to read), जिगमिष्ति (wants to go) are formed using सन् प्रत्यय. Yet another set - पुनः पुनः पठति इत्यर्थे पापठयते,  पुनः पुनः वन्दते इत्यर्थे वावन्दते - these are formed using यङ् प्रत्यय. There are a series of <em>pratyayas</em> that are used to derive a <em>dhatu</em> from <em>dhatu</em>.</li>
+<li><strong>नामधातुः</strong> - नामपदात् धातुः। From a noun we get a verb using some <em>pratyayas</em>. <span style="color:blue">पुत्रीय</span> <span style="color:red">ति</span> = <span style="color:green">पुत्रीयति</span> (he who wants to have a son/child). सुबन्तम् + सनादि प्रत्यय (<span style="color:red">काच्/काम्यच्...</span>). </li>
+</ol>
+<p><strong><span style="color:green">सुबन्तम्</span> are a combination of two components - <span style="color:purple">प्रातिपदिकम्</span> + <span style="color:red">सुप्</strong></span></p>
+<ol>
+<li>
+<p><strong>केवलप्रातिपदिकम्</strong> - Example:  <span style="color:purple">डित्थ</span> + <span style="color:red">सु</span> = <span style="color:green">डित्थः</span>. Now <span style="color:purple">डित्थ</span> cannot be broken further. It is a name that does not mean anything. If it is a meaningful name it can be further divided. अव्युत्पन्नानि शब्दस्वरूपाणि - those केवलप्रातिपदिकम् which cannot be further divided. Unlike केवलधातुः there is no list of these words. They are very few.</p>
+</li>
+<li>
+<p><strong>कृदन्तम्</strong> - It is a kind of nominal stem. E.g. <span style="color:purple">राम</span> + <span style="color:red">सु</span> = <span style="color:green">रामः</span>। धातोः कृत् प्रत्ययस्य योजनेन कृदन्तं भवति।</p>
+</li>
+<li>
+<p><strong>तद्धितान्तम्</strong> - Example: <span style="color:purple">दाशरथि</span> +  <span style="color:red">सु</span> = <span style="color:green">दाशरथिः</span>।  तद्धितान्तम् कथं भवति? दशरथ इति सुबन्तम् अस्ति तस्मात् तद्धित इति प्रत्यय भवति तदा प्रातिपदिकम् भवति। तद्धितान्तम् are words that are formed by adding तद्धित प्रत्यय to <strong>subanthas</strong>. You already have a noun (सुबन्तम्) and add this प्रत्यय to form another noun. Examples: कौन्तेय (from कन्तेः), धनवान् (from धनम्-&gt;धनवत्-&gt;धनवान्), जनता (from जनानाम्)</p>
+</li>
+<li>
+<p><strong>समासः</strong> - Example: <span style="color:purple">सीतापति</span> <span style="color:red">सु</span> = <span style="color:green">सीतापतिः</span>. द्वयोः सुबन्तयोः योजनेन समासः भवति। <em>Samasa</em> kind of प्रातिपदिक is derived by joining two <em>subanthas</em>. गज + आनन = गजानन, राज्ञः + पुत्रः = राजपुत्रः, राधा + कृष्णः = राधाकृष्णौ</p>
+</li>
+</ol>
+<p><strong>Summary so far:</strong> The diagram below (concisely and excellently) summarizes the lecture so far.</p>
+<p>Words in Sanskrit are of two kinds - तिङन्तम् and सुबन्तम्। धातुः तिङन्तस्य मूलम्। <em>Dhatu</em> is the root of <em>thingantham</em>. सुबन्तस्य प्रकृतिः प्रातिपदिकम। The root of a <em>subantham</em> is <em>prathipadhikam</em>. </p>
+<p>धातोः तिङ् प्रतययस्य योजनेन तिङन्तम् भवति। प्रातिपदिकात् सुप् प्रत्ययस्य योजनेन सुबन्तम् भवति। Attaching a <em>thing-pratyaya</em> to a <em>dhatu</em> makes it a <em>thingantham</em>. Attaching a <em>sup-pratyaya</em> to a <em>pratipadikam</em> makes it a <em>subantham</em>. These are the two main words in Sanskrit - verb forms and noun forms.</p>
+<p><img src="notes/./images/word_diagram.png" alt="Words diagram" /></p>
+<p>धातोः कृत् प्रतययस्य योजनेन प्रातिपदिकम् भवति। Adding a <em>krit pratyaya</em> converts a <em>dhatu</em> to a <em>pratipadhikam</em>. A <em>dhatu</em> can be converted to another <em>dhatu</em> by adding a <em>sanadhi pratyaya</em>. सुबन्तात् सनादि प्रत्यय योजनेन अपि धातुः भवति। <em>Subantha</em> can be converted to <em>dhatu</em> by adding a <em>sanadhi pratyaya</em>. सुबन्तात् प्रातिपदिकम् भवति तद्धित प्रत्यय योजनेन। ़From <em>subantha</em> adding <em>thadhita pratyaya</em> will make it <em>pratipathikam</em>. <em>Samasa</em> will convert multiple (two or  more) to a <em>prathipadhikam</em>.</p>
+<p>In the above diagram the red lines achieve inter-conversion. One cannot convert <em>subanta</em> directly to <em>tinganta</em>. You have to first make it a <em>dhatu</em>. Similarly, you can convert a <em>subanta</em> to a <em>pratipadika</em> and then back to <em>subanta</em> to get a new word. A <em>dhatu</em> can be converted to another <em>dhatu</em> using a <em>snadaya pratyaya</em>.</p>
+<p>The above covers all words in Sanskrit. Knowing Sanskrit is knowing all the above. There are other things like <em>Sandhi</em> etc but they are just changing the letters. Of the above there are three steps which are very basic: <em>dhatu</em> -&gt; <em>pratipadikam</em>, <em>dhatu</em> -&gt; <em>tingantam</em> and <em>pratipadikam</em>-&gt;<em>subantam</em></p>
+<p><img src="notes/./images/word_diagram2.png" alt="Words diagram" /></p>
+<p><a href="https://www.youtube.com/playlist?list=PLmozlYyYE-ERJj2FfX6WfH5t8i3d2fh1Z">This Kridanta</a> lesson series is about converting <em>dhatu</em> -&gt; <em>pratipadikam</em> by adding <em>krt pratyaya</em> (कृत्). This conversion will give 95% of <em>pratipadikas</em> - just an estimate. There is another view - सर्वम् नाम् धातिजमाः - all nouns are from <em>dhatus</em>.</p>
+<p>Within कृत् प्रत्ययाः there are two categories. One is the <em>pratyayas</em> directly given by Panini which we call कृत् प्रत्यय. Panini specifically says this is the <em>dhatu</em> and you add this <em>krit pratyaya</em> and you get this <em>pratipadika</em>. There are also another set of <em>pratyayas</em> called उणादि प्रत्यय. They are also added to <em>dhatus</em> to get <em>pratipadikas</em>. Example: गौः is derived from गम् धातु। गच्छति इति गौः। Derived from <span style="color:blue">गम्</span> + <span style="color:red">डोस्</span>. Such <em>pratyayas</em> (like <span style="color:red">डोस्</span>) are called उणादि। <strong>Is गो उणादि or डोस्? Later the teacher says गो is उणादि.</strong></p>
+<p>There are two views regarding उणादि - </p>
+<ol>
+<li>we accept the derivation of उणादि from <em>dhatu</em> then 100%, or at least 99% of <em>pratipadikas</em> will be derived from <em>dhatus</em>. </li>
+<li>those that consider उणादि as something that cannot be split further - meaning they take गो as something that cannot be divided - say that there is a set of केवल प्रातिपतिकः that cannot be split further. Most words come from <em>dhatus</em> and a smaller set come from <em>kevala pratipadikam</em>.</li>
+</ol>
+<p><em>Kridantas</em> are always <em>pratipadikas</em>. We cannot use <em>kridantas</em> directly because <em>pratipadikas</em> cannot be used in sentences. They have to be converted to <em>subanta</em> by adding a सुप् <em>pratyaya</em> to form a <em>padam</em>. </p>
+<hr />
+<p><strong>कृदन्ताः</strong></p>
+<ul>
+<li>कृत् इति प्रत्ययः।</li>
+<li>कृत् अन्ते यस्य सः कृदन्तः।</li>
+<li>कृत् प्रत्ययाः धातुभ्यः विहिताः<span style="color:red"><sup>1</sup></span>।</li>
+<li>कृदन्ताः प्रातिपदिकसंज्ञकाः<span style="color:red"><sup>2</sup></span>।</li>
+<li>कृदन्तेभ्यः सुप्-प्रत्ययस्य योजनेन सुबन्ताः भवन्ति।</li>
+</ul>
+<p><span style="color:red"><sup>1</sup></span>विहिताः = ordained, supplied, made  
+<span style="color:red"><sup>2</sup></span>संज्ञका = named, termed</p>
+<p>There are ~140 कृत् प्रत्ययाः in <em>Ashtadyayi</em>. भिन्नेषु अर्थेषु भवन्ति। These <em>pratyayas</em> are added in specific meanings. </p>
+<p>Below are examples of what कृत् <em>pratyayas</em> do and how they change meaning. You dont have to remember all of this. The examples are not comprehensive. Only a sample for understanding.</p>
+<p><strong>Example 1 : कर्ता (the one who does action): पाचकः, वक्ता, गतवान्</strong></p>
+<p>धातवः कृयाम् बोधयति। A <em>dhatu</em> is something that tells you an action. यदा कृत् प्रत्ययः योज्यते तदा कर्ता भवति। पच् धातु (cooking) -&gt; पाचकः (यः पाक कार्यं करोति सः। The one who does cooking.)</p>
+<p>यः वदते सः वक्ता। यः गच्छति - भूत कालि गमन कार्यं कृतवान् - सः गतवान्। All these words refer to the person who performed the action. We get that meaning because of the <em>pratyaya</em>.</p>
+<p><span style="color:blue">पच्</span> + <span style="color:red">अक</span> = <span style="color:green">पाचकः</span></p>
+<p><strong>Example 2: कर्म the object of action - पठितः, खाद्यम्</strong></p>
+<p>The word पठित (पठितः, पठिता, पठितम्) says what was read (not who read).</p>
+<p>किम् पठितम्? (What was read?) कृदन्ताः पठिताः। व्याकरणम् पठितम्।</p>
+<p>पठित्वान् is the person who did the action of reading whereas पठित refers to the object. The change in meaning is because of the <em>pratyaya</em>.</p>
+<p><strong>Example 3: भावः (क्रिया) action - कृतिः, गतिः, बुभुक्षा</strong></p>
+<p><em>Pratyayas</em> can be used to convert a <em>dhatu</em> to give you the meaning of कर्ता (does), कर्म (object) and also क्रिया (the action).</p>
+<p>कृतिः = doing   गतिः = going   बुभुक्षा = to desire to eat</p>
+<p><strong>Example 4: क्रियाणाम् परस्परसम्बन्धः - the inter-relationship between क्रिया</strong></p>
+<p>कृत्वा = having done something you move on to another क्रिया</p>
+<p>कर्तुम् = gives the purpose कर्तुम गच्छति (goes for doing)</p>
+<p><strong>Example 5: पौनः पुन्यम्</strong></p>
+<p>कारं कारम् = doing it again and again</p>
+<p>दर्शं दर्शम् = seeing again and again</p>
+<hr />
+<p><em>Kridantas</em> are nouns that still have a portion of an action. Not all <em>krit pratyayas</em> are added to all <em>dhatus</em>. Some are general and applied to all <em>dhatus</em> and some are applied to specific <em>dhatus</em>.</p>
+<p>These are the major <em>pratyayas</em> we will be studying in the course. We will study about 25  that are common and important. Most of these are general and can be applied to all <em>dhatus</em>.</p>
+<table><thead><tr><th>कृत्प्रत्ययविभागः (अर्थमनुसृत्य)</th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>कर्तरि</strong></td><td><strong>भावे</strong></td><td><strong>भूते</strong></td><td><strong>विध्यादिषु</strong></td></tr>
+<tr><td>ण्वुल्</td><td>ल्युट्</td><td>क्तवतु</td><td>अनीयर्</td></tr>
+<tr><td>तृच्</td><td>क्तिन्</td><td>क्त</td><td>तव्य</td></tr>
+<tr><td>शतृ / शानच्</td><td>अ</td><td></td><td>यत् / ण्यत्</td></tr>
+<tr><td>क्किप्</td><td>घञ्</td><td></td><td></td></tr>
+<tr><td></td><td>अच्</td><td></td><td></td></tr>
+</tbody></table>
+<table><thead><tr><th><strong>कृदनताव्ययानि</strong></th><th><strong>उपपदकृतन्दाः</strong></th></tr></thead><tbody>
+<tr><td>क्तवा-ल्यप्</td><td>अण</td></tr>
+<tr><td>तुमुन</td><td>क</td></tr>
+<tr><td>णमुल्</td><td>ट</td></tr>
+<tr><td></td><td>ड</td></tr>
+<tr><td></td><td>खश्</td></tr>
+</tbody></table>
+<h3 id="परतययः-१---लयुट-अन"><a class="header" href="#परतययः-१---लयुट-अन">प्रत्ययः १ - ल्युट् (अन)</a></h3>
+<p>ल्युट् इति प्रत्ययः रूपेतु अन इति श्रुयते।</p>
+<p>Here are some example usages of this प्रत्यय</p>
+<p>All the words in red color are <em>kridantas</em>. Specifically they are ल्यटन्ताः or words ending in ल्युट्.</p>
+<p>पूर्वं रामतपोवनादि<span style="color:red">गमनं</span> हत्वा मृगं काञ्चनम् <br>
+वैदेही<span style="color:red">हरणं</span> जटायु<span style="color:red">मरणं</span> सुग्रीव<span style="color:red">सम्भाषणम्</span>। <br>
+वाली<span style="color:red">निग्रहणं</span> समुद्र<span style="color:red">तरणं</span> लङ्कापुरी<span style="color:red">दाहनं</span> <br>
+पश्चाद्रावणकुम्भकर्ण<span style="color:red">हननम्</span> एतद्धि रामायणम्॥ <a href="https://youtu.be/Vr-5sJXTS_4?t=3791">Listen here</a></p>
+<p>दाहनम् - to make something burn</p>
+<p><span style="color:red">करणं</span> मधुरं <span style="color:red">तरणं</span> मधुरं <span style="color:red">हरणं</span> मधुरं <span style="color:red">रमणं</span> मधुरम्।<br>
+वमितं मधुरं शमितं मधुरं मधुराधिपतेरखिलं मधुरम्॥ <a href="https://youtu.be/Vr-5sJXTS_4?t=3974">Listen here</a></p>
+<br>
+<p>आदौ देवकिदेविगर्भ<span style="color:blue">जननम्</span> गोपीगृहे<span style="color:blue">वर्धनम्</span><br>
+मायापूतनिजीवित <span style="color:blue">अपहरणम्</span> गोवर्धन <span style="color:blue">उद्धारणम्</span>।<br>
+कंसच्छेदनकौरवादि (<span style="color:blue">छेदनम्</span>) <span style="color:blue">हननम्</span> कुन्तीसुत <span style="color:blue">आपालनम्</span><br>
+एतद्भागवतं पुराणकथितं श्रीकृष्णलिलामृतम्॥ <a href="https://youtu.be/Vr-5sJXTS_4?t=4854">Listen here</a></p>
+<p>Valmiki Ramayana third sarga has a lot of ल्युट् (अन) <em>kridantas</em>.</p>
+<p>Why are the <em>pratyayas</em> named the way they are? Pannini tries to add some identifying letters into each <em>pratyaya</em>. So the <em>pratyaya</em> will have its own letters and some other letters for identification. They help us in doing many things. That is not strictly in the purview of this class. Can email teacher (sowmya dot krishnapur at gmail).</p>
+<h2 id="lesson-2"><a class="header" href="#lesson-2">Lesson 2</a></h2>
+<p><a href="https://www.youtube.com/watch?v=O3AVVXRz2aI">Second Lesson Video</a></p>
+<p>अद्य वयम ल्यट् प्रत्ययस्य रूपाणि तेषाम् प्रयोगाणाम च अभ्यासम् कुर्मः।</p>
+<p><strong>Recap of previous lesson:</strong></p>
+<p>What all things can <em>krit pratyayas</em> convey meaning of - कर्ता (doer), कर्म (object), करणम् (the instrument), क्रिया (the action), कालः (the tense), पौन पुन्यम् (repeatedy doing something), विधिः (the injunction to do something) and many more.</p>
+<p><strong>ल्युट् प्रत्ययः</strong> गमनम्, पठनम्, जननम्, मरणम्, तरणम्, करणम्...</p>
+<p>यत्र यत्र अयं प्रत्ययः भवति तत्र अन्ते अनम् अथवा अणम् इति श्रूयते। अयं भावार्थकः प्रत्ययः इत्युच्छते अर्थात क्रियां बोधयति। Note that the above examples are <em>subantas</em> the <em>kridantas</em> are like गमन, पठन etc.</p>
+<p>This <em>pratyaya</em> is a general <em>pratyaya</em> which is used in the sense of action. The easy way of identifying this <em>pratyaya</em> is by looking at the अनम्/अणम् at the end of it. But not everywhere you see a अनम्/अणम् that is a ल्युट् प्रत्यय.</p>
+<hr />
+<p><strong>षोडशोपचार-पूजायाः अङ्गानि</strong> -  यतः भगवतः पूजा क्रियते तत्र षोडश-अङ्गानि भवति। When we are worshipping the lord we have 16 steps. They are all different actions. किम् किम् भवति षोडशोपचारे -</p>
+<ol>
+<li>ध्यानम् - we pray to the deity</li>
+<li>आवाहनम् - we bring the deity into the idol or kalasha</li>
+<li>आसनम् - sitting. आसनप्रदानम् we are giving him a seat</li>
+<li>पाद्यप्रदानम् - पादस्य क्षालनार्थं जलम्</li>
+<li>अर्घ्यप्रदानम् - अर्घ्यम् is हस्त प्रक्षालनार्थं जलम् प्रदानम्</li>
+<li>आचमनीयप्रदानम् - पातुम जलम् आचमनीयमित्युच्छते </li>
+<li>स्नानम्</li>
+<li>वस्त्रधारणम्</li>
+<li>यज्ञोपवीतधारणम्</li>
+<li>गन्धलेपनम् - लिपनम् is to anoint. गन्ध is fragrant </li>
+<li>पुष्पार्चनम् - पुष्पैः अर्चनम् (worshipping with flowers)</li>
+<li>धूपाराधनम् - worshipping (आराधनम्) with धूपा</li>
+<li>दीपदर्शनम् - showing deepam</li>
+<li>निवेदनम् - giving नैवेद्यम् (action of offering food)</li>
+<li>नीराजनम् - aarati</li>
+<li>प्रार्थनम् - praying</li>
+</ol>
+<p>1-6 above are <em>kridantas</em> but a different kind. After 6 are ल्यट् <em>kridantas</em>.</p>
+<hr />
+<p><strong>कुत्र अनम्? कुत्र अणम्?</strong></p>
+<p>णत्वं कुत्र भवति? In grammatiचal parlance this is called णत्व. Here is a general rule that works most of the time- </p>
+<p>नकारात् पूर्वम् -</p>
+<ul>
+<li>
+<p>रेफः/ ऋकारः / षकारः अस्ति चेत् णत्वम् भवति। Example: In त<span style="color:red">रन</span>म् there is र् before न्। In this rule you dont have to worry if there are any स्वाराः (vowels) in betwee. <em>Swaras</em> will not obstruct णत्व. That word becomes त<span style="color:red">र</span><span style="color:green">ण</span>म्. Similarly पे<span style="color:red">षन</span>म् becomes पे<span style="color:गरेेन">ष</span><span style="color:red">ण</span>म्</p>
+</li>
+<li>
+<p>Second rule: If there is a consonent between the रेफः/ ऋकारः / षकारः and नकार. Examples: <span style="color:red">क्र</span>य<span style="color:red">न</span>म्, <span style="color:red">बृं</span>ह<span style="color:red">न</span>म्, <span style="color:red">क्षे</span>प<span style="color:red">न</span>म् - If the व्यञ्जनानि (consonants) are one of कवर्ग-पवर्ग-ह्-य्-व्-र् then णत्वम् happens. All three examples qualify and they become क्रयणम्, बृंहणम्, and क्षेपणम्</p>
+</li>
+<li>
+<p>If there are other consonants between रेफः/ ऋकारः / षकारः and नकार then णत्व does not happen. Examples: ग्रथनम्, अर्चनम्, गृञ्जनम्, क्षालनम्, रटनम्, क्रीडनम्, मूर्च्छनम्, क्रोशनम्</p>
+</li>
+</ul>
+<p>The above is the most general rule for णत्व. There are other rules also. This rule holds for simple cases.</p>
+<p>वृक्षेन / वृक्षेण ? वृक्षेण</p>
+<p>ऋृषबेन / ऋृषबेण ? ऋृषबेन</p>
+<p>Both above are not ending in अनम् so this rule does not apply. A different rule applies. See Sandhi notes &quot;Word Internal Sandhi rule&quot;.</p>
+<hr />
+<p><strong>ल्युट्-प्रत्यत्यान्तस्य रूपाणि १</strong></p>
+<p>How do we get the forms of ल्युट् प्रत्यय from the <em>dhatu</em>? For most <em>dhatus</em> adding अन् will give a ल्युट् प्रत्यय.</p>
+<table><thead><tr><th>गणित-क्रियाः</th><th>गति-क्रियाः</th></tr></thead><tbody>
+<tr><td>गण् - गणनम् (counting)</td><td>गम् - गमनम् (going)</td></tr>
+<tr><td>सङ्कल् - सङ्कलनम् (addition)</td><td>चल् - चलनम् (moving)</td></tr>
+<tr><td>व्यवकल् - व्यवकलनम् (subtraction)</td><td>धाव् - धावनम् (running)</td></tr>
+<tr><td>गुण् - गुणनम् (multiplication)</td><td>भ्रम् - भ्रनणम् (rotating)</td></tr>
+<tr><td>विभज् - विभजनम् (division)</td><td>कम्प् - कम्पनम् (shaking)</td></tr>
+</tbody></table>
+<p>These words only give क्रिया and there is no reference to any काला.</p>
+<p>गमनम् अस्ति। - Present tense</p>
+<p>गमनम् भविष्यति - Will go - Future tense</p>
+<p>गमनम् आसीत् - Was going. - Past tense.</p>
+<p>Some <em>krit pratyayas</em> do convey tense. E.g. गतवान्. This ल्युट् <em>pratyaya</em> does not convey tense.</p>
+<hr />
+<p><strong>ल्युट्-प्रत्यत्यान्तस्य रूपाणि २</strong></p>
+<table><thead><tr><th>इकारान्ताः/ईकारान्ताः</th><th>उकारान्ताः/ऊकारान्ताः</th></tr></thead><tbody>
+<tr><td>चि - चयनम्  (collect/pluck)</td><td>प्लु - प्लवनम् (jump)</td></tr>
+<tr><td>स्मि - स्मयनम् (smile)</td><td>स्तु - स्तवनम् (praise)</td></tr>
+<tr><td>नी - नयनम् (take/carry)</td><td>हु - हवनम् (homam/havan, perform a sacrifice/ritual)</td></tr>
+<tr><td>शी - शयनम् (sleep)</td><td>भू - भवनम् (existance)</td></tr>
+<tr><td>डी - डयनम् (fly)</td><td>पू - पवनम् (clean, purify)</td></tr>
+</tbody></table>
+<p>If the words ends in इकारान्ताः/ईकारान्ताः we add अयनम्</p>
+<p>If the words ends in उकारान्ताः/ऊकारान्ताः we add अवनम्</p>
+<hr />
+<p><strong>ल्युट् प्रत्यत्यान्तस्य रूपाणि - ३</strong></p>
+<p>उपान्त्ये - last but one letter</p>
+<p>If the ह्रस्वः (small vowel) इकारः or उकारः  is the last but one letter then </p>
+<ul>
+<li>इ becomes ए </li>
+<li>उ becomes ओ</li>
+</ul>
+<p>Note: Short vowel is ह्रस्वम् and long vowel is धीर्गम्</p>
+<table><thead><tr><th>ह्रस्वः इकारः उपान्त्यः</th><th>ह्रस्वः उकारः उपान्त्यः</th></tr></thead><tbody>
+<tr><td>लिख् - लेखनम् (write)</td><td>मुद् - मोदनम् (rejoice)</td></tr>
+<tr><td>क्षिप् - क्षेपनम् (throw)</td><td>स्फुट् - सफोटनम् (burst)</td></tr>
+<tr><td>मिल् - मेलनम् (meet)</td><td>घुष् - घोषणम् (announce)</td></tr>
+<tr><td>छिद् - छेदनम् (cut)</td><td>रुद् - रोदनम् (cry)</td></tr>
+<tr><td>पिष् - पेषणम् (pound, in Tamizh <em>araikarathu</em>)</td><td>युज् - योजनम् (join)</td></tr>
+<tr><td>त्रुट् - त्रोटनम् (plucking or cutting of fruits)</td><td>नुद् - नोदनम् (पुसह)</td></tr>
+</tbody></table>
+<ol>
+<li>फलानां त्रोटनम्।</li>
+<li>यानस्य नोदनम्।</li>
+</ol>
+<p><strong>Question from student:</strong> Are words that are formed by using ल्युट् all नपुंसकलिंग? Answer is <strong>YES</strong>.</p>
+<hr />
+<p><strong>ल्युट् प्रत्यत्यान्तस्य रूपाणि - ४</strong></p>
+<p><a href="https://youtu.be/O3AVVXRz2aI?t=4639">Video Section</a></p>
+<ul>
+<li>यदि ऋकारः अन्ते अस्ति तर्हि अन् इति भवति (also apply णत्वम्)</li>
+<li>यदि ऋकारः उपान्त्यः अस्ति तर्हि अर् इति भवति</li>
+</ul>
+<table><thead><tr><th>ऋकारान्ताः/ॠकारान्ताः</th><th>ह्रस्वः ऋकारः उपान्त्यः</th></tr></thead><tbody>
+<tr><td>कृ - करणम् (doing)</td><td>नृत् - नर्तनम् (dance)</td></tr>
+<tr><td>भृ - भरणम् (bear, nourish)</td><td>वृध् - वर्धनम् (grow)</td></tr>
+<tr><td>वृ - वरणम् (choose)</td><td>भृज् - भर्जनम् (frying - chips, vada etc)</td></tr>
+<tr><td>मृ - मरणम् (die)</td><td>वृष् - वर्षणम् (raining)</td></tr>
+<tr><td>तॄ - तरणम् (swim, cross over)</td><td>तृप् - तर्पणम् (pleasing, satisfying )</td></tr>
+</tbody></table>
+<p><strong>विषेषः</strong> - मृज् - मार्जनम् (cleaning) is an exception to the above.</p>
+<p>आवृत् - आवर्तनम् (revise)</p>
+<hr />
+<p><strong>One last form</strong></p>
+<p>If the धातु  is ए/ऐ/ओ/औ-कारान्तः then ए/ऐ becomes अकारान्तः</p>
+<p>द्यै - द्यानम्</p>
+<p>गै - गानम्</p>
+<hr />
+<p><strong>Sloka</strong></p>
+<p>Bhakti is of nine kinds</p>
+<p>श्रवणं कीर्तनं विष्णोः स्मरणं पादसेवनम्।<br>
+अर्चनं वन्दनं दास्यं सख्यम् आत्मनिवेदनम्॥</p>
+<table><thead><tr><th>Word</th><th>Meaning</th><th>Word</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>श्रू - श्रवणम्</td><td>listening (i.e. listening to the deeds of Vishnu)</td><td>कीर्त् - कीर्तनं</td><td>chanting (the name of Vishnu)</td></tr>
+<tr><td>स्मृ - स्मरणम्</td><td>remembering (Vishnu)</td><td>सिव् - सेवनम्</td><td>serving (पादसेवनम् - serving the feet of the lord)</td></tr>
+<tr><td>अर्च् - अर्चनम्</td><td>worshipping</td><td>वन्द् - वन्दनम्</td><td>bowing, saluting</td></tr>
+<tr><td>दास्यम्</td><td>feeling of complete surrender (this is not ल्युट्। It is a <em>kridanta</em> we will see later)</td><td>सख्यम्</td><td>having a feeling of friendship</td></tr>
+<tr><td>नि + विद् - निवेदनम्</td><td>आत्मनिवेदनम् - offering oneself to the lord completely</td><td></td><td></td></tr>
+</tbody></table>
+<p>दासस्य भावः दास्यम् - तद्धितान्त कृदन्तः <BR>
+सख्यु भावः सख्यम् - तद्धितान्त कृदन्तः</p>
+<hr />
+<p><strong>Summary</strong></p>
+<p><img src="notes/./images/kridanta2_summary.png" alt="Words diagram" /></p>
+<p><a href="https://youtu.be/O3AVVXRz2aI?t=6122">Student question</a>: Why do we call it ल्युट् when the sound added is अन्/अण्? <br></p>
+<p>The लकार and टकार in ल्युट् has its own purposes of modifying the swara etc of the <em>dhatu</em>. Why we get अन् is because where every यु occurs it is replaced by अन् as per a <em>Panini sutra</em> called <strong>युवोरनाकौ</strong>.</p>
+<h2 id="lesson-3"><a class="header" href="#lesson-3">Lesson 3</a></h2>
+<p><a href="https://youtu.be/K8uLh6ZMBQ8">Video</a></p>
+<p>कृदन्ताः - The term used to refer to a group of प्रत्ययाः. It is not a प्रत्यय by it self but refers to a group.</p>
+<p>कृत् is a name for a set of <em>pratyayas</em>. There are about 140 <em>pratyayas</em> that fall under this group. They are always added to <em>dhatus</em>.</p>
+<p><strong>Start at 4:28</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-vibhaktis"><a class="header" href="#using-vibhaktis">Using Vibhaktis</a></h1>
+<p>The nominative case (प्रथम विभक्ति) is used then the noun is the subject of a sentence in active voice.</p>
+<h2 id="दवितीया-विभकति-accusative-case"><a class="header" href="#दवितीया-विभकति-accusative-case">द्वितीया विभक्ति (accusative case)</a></h2>
+<p>This form is used for the following:</p>
+<ol>
+<li>To indicate the direct object of a transitive verb</li>
+<li>To indicate the object of verbs for actions such as &quot;going&quot;, which are transitive in Sanskrit</li>
+<li>With the word धिक् (&quot;curse upon X&quot;) and with the prepositions below</li>
+</ol>
+<table><thead><tr><th><strong>Preposition</strong></th><th><strong>Meaning</strong></th><th><strong>Preposition</strong></th><th><strong>Meaning</strong></th></tr></thead><tbody>
+<tr><td>अनु</td><td>after, along</td><td>परितः</td><td>around</td></tr>
+<tr><td>अभितः</td><td>near, in front of</td><td>विना</td><td>without</td></tr>
+<tr><td>सर्वतः</td><td>on all sodes of</td><td>अन्तरा</td><td>between</td></tr>
+<tr><td>उभयतः</td><td>on both sides</td><td>प्रति</td><td>to, towards</td></tr>
+<tr><td>अन्तरेण</td><td>without, concerning</td><td></td><td></td></tr>
+</tbody></table>
+<h2 id="तृतीया-विभकति-aka-instrumental-case"><a class="header" href="#तृतीया-विभकति-aka-instrumental-case">तृतीया विभक्ति aka Instrumental Case</a></h2>
+<p><strong>To indicate the instrument of an action</strong>. Example: सः पात्रेण जलं बिबति। He drinks water from a vessel. नरः फलेन तुष्यति। In Sanskrit, the instrument of an action is called करणम्.</p>
+<p>Example:</p>
+<p>छात्रः लेखन्या पाठं लिखति।</p>
+<p>लिखति - क्रियापदम्</p>
+<p>कः लिखति - छात्रः - कर्ता - प्रथमा बिभक्तिः</p>
+<p>किम् लिखति - पाठं - कर्मपदम् - द्वितीया विभक्ति</p>
+<p>केन लिखति - लेखन्या - करणम् - तृतीया विभक्ति</p>
+<p><strong>To indicate the person or thing accompanying an action</strong> where the association is indicated by prepositions like सह (with). Example: दासेन सः नृपः गच्छति। The king goes accompanied by the servant.</p>
+<p>The preposition is optional. So दासेन नृपः गच्छति। Is also correct usage.</p>
+<p><strong>To indicate cause or reason</strong> दुःखेन ग्रामं त्यजामि। I abandon the village out of sorrow/misery.</p>
+<p><strong>With विना and अलम्</strong>. Example: जलेन विना कमलं नश्यति। A lotus perishes without water. अलं दुःखेन। Enough with misery.</p>
+<p><strong>To indicate the agent of a passive verb.</strong></p>
+<h2 id="चतुरथी-विभकति-aka-dative-case"><a class="header" href="#चतुरथी-विभकति-aka-dative-case">चतुर्थी विभक्ति aka Dative Case</a></h2>
+<p>तृतीया विभक्ति is used for the following</p>
+<p><strong>1.</strong> To indicate the indirect object of the verbs meaning &quot;to give&quot;, &quot;to show&quot;, &quot;to send&quot; etc. </p>
+<p>Example: नृपो दासाय कनकं यच्छति। The king gioves gold to the student.</p>
+<BR>
+<p><strong>2.</strong> With verbs meaning &quot;to be angry with&quot;, &quot;to long for&quot;, &quot;to please&quot;/&quot;to like&quot; etc.</p>
+<p>Examples:</p>
+<ul>
+<li>जनकः पुत्राय कुप्यति। The father is angry with the son.</li>
+<li>जनकः पुत्राय स्पृहयति। The father longs for the son.</li>
+<li>कुसुमानि नृपाय रोचन्ते। Flowers please the king.</li>
+</ul>
+<BR>
+<p><strong>3.</strong> With verbs of movement. Example: दासो ग्रामाय गच्छति। </p>
+<p>In this case दासो ग्रामं गच्छति। Is also correct (i.e. द्वितीया विभक्ति)</p>
+<BR>
+<p><strong>4.</strong> To express the purpose of an action. Example: सः सुखाय वनं गच्छति। He goes to the forest for the same of happiness.</p>
+<BR>
+<p><strong>5.</strong> With the particles नमः (salutation to) and स्वस्ति (hail to). Example: नृपाय नमः/स्वस्ति।</p>
+<p><strong>6.</strong> With the particle अलं. Example: अलं मल्लो मल्लाय। Wrestler is able to face (another) wrestler.</p>
+<h2 id="पञचमी-विभकति-aka-ablative-case"><a class="header" href="#पञचमी-विभकति-aka-ablative-case">पञ्चमी विभक्ति aka Ablative Case</a></h2>
+<p>This case is used to indicate the point from where the action begins - नरो ग्रामात् वनं गच्छति। The man goes from the village to the forest.</p>
+<p>It is used to express cause or reason: नृपो दासं दुःखात् तुदति। On account of misery the king strikes the servant. The तृतीया विभक्ति (instrumental case) can also be used for this purpose.</p>
+<p>It is used with the prepositions प्राक् (before, to the east of), पूर्वम् (before), अनन्तरम् (after), आ (until, since), बहिः (outside), ऋते (except) and (विना). The first four prepositions are used in both temporal and spatial sense.</p>
+<h2 id="षषठी-विभकति-aka-genitive-case"><a class="header" href="#षषठी-विभकति-aka-genitive-case">षष्ठी विभक्ति aka Genitive Case</a></h2>
+<p>To indicate the equivalent of possesive case in English. अहं रामस्य दासं अस्मि।  I am Rama's servant.</p>
+<p>The equivalent of &quot;have&quot; in English. The king has gold. नृपस्य कनकं भवति।</p>
+<p>With the prepositions - उपरी (above), अधः (below), पुरतः (in front of), पश्चात् (behind), परतः (beyond), अग्रे, समक्ष् (in the presence of), कृते (for the sake of), and समीपम् (in the vicinity of)</p>
+<h2 id="सपतमी-विभकति-aka-locative-case"><a class="header" href="#सपतमी-विभकति-aka-locative-case">सप्तमी विभक्ति aka Locative Case</a></h2>
+<p>This is used to indicate the place or time where the action takes place. Ex. in, at, on, upon, above, among, etc. फलम् कूपे पतति। The fruit falls in the well.</p>
+<p>For expressions like &quot;concerning&quot;, &quot;in the matter of&quot; etc. पुत्रे जनकः तुष्यति। The father is happy about the son.</p>
+<p>To indicate the object of emotions and feelings. Example जनकः पुत्रे स्निह्यति। The father feels affection for the son.</p>
+<h2 id="समबोधन-aka-vocative-case"><a class="header" href="#समबोधन-aka-vocative-case">सम्बोधन aka Vocative Case</a></h2>
+<p>When addressing. हे नृपे। O King!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="terminology"><a class="header" href="#terminology">Terminology</a></h1>
+<p>वाक्यम् - sentence</p>
+<p>पदम् - word</p>
+<p>वर्णः - sounds (phenomes?)</p>
+<p>अक्षरम - sounds</p>
+<p>सन्धिः - when two वर्णः are joined/combined </p>
+<p>समासम् - when two पदम् are joined/combined</p>
+<p>In Sanskrit grammar there is an entire branch devoted to the study of the joining of two वर्णः and that is called सन्धिः. Example: नमस्ते, कोपि etc</p>
+<p>Similarly there is a branch devoted to the study of the joining of two पदम् called समासम्. Example: देवालय, वृक्षमूलम, जगत्पति, करपत्रम् etc</p>
+<p>प्रातिपदिकम् - base word/root of (सुबन्तम्) nouns, adjectives and other non-verbs</p>
+<p>सुबन्तम् - nouns, adjectives and other non-verbs (नाम पदम्)</p>
+<p>तिङन्तम् - verbs (क्रिया पदम)</p>
+<p>कृदन्तम् - The term used to refer to a group of प्रत्ययाः. It is not a प्रत्यय by it self but refers to a group.</p>
+<hr />
+<h2 id="misc-stuff-not-terminology"><a class="header" href="#misc-stuff-not-terminology">Misc stuff (not terminology)</a></h2>
+<table><thead><tr><th>Four types of buttermilk</th></tr></thead><tbody>
+<tr><td>घोलम् - 100% दधि + 0% जलम्</td></tr>
+<tr><td>तक्रम् - 75% दधि + 25% जलम्</td></tr>
+<tr><td>उदश्वित् - 50% दधि + 50% जलम्</td></tr>
+<tr><td>छच्छिका - 25% दधि + 75% जलम्</td></tr>
+</tbody></table>
+<p>Difference between अर्धम् and अर्धः is that अर्धम् is exactly half and अर्धः is a piece.</p>
+<br>
+<p>भो नवको मक्षिकः </p>
+<p>त्वं दूरात् आगतः</p>
+<p>केवलम्मृत्यवे</p>
+<p>टाश्!!!</p>
+<p>- हैकुः मया कृतम्</p>
+<hr />
+<p>Sayings</p>
+<p>अर्ध मात्रा लाधवेन पुत्रोत्सवम् मन्यन्ते वैयाकरणाः</p>
+<p>Grammarians by saving an half a matra will get joy of getting a baby.</p>
+<hr />
+<p>सूत्रलक्षणम् </p>
+<p>अल्पाक्षरमसन्दिग्धं सारवद्विश्वतोमुखम्।</p>
+<p>अस्तोभमनवद्यं च सूत्रं सूत्रविदो विदुः॥</p>
+<p>The characteristics (or properties) of a Sutra. Only something with these six characteristics can be a Sutram.</p>
+<ol>
+<li>अल्याक्षरम् = सङ्क्षिप्तम् (brevity)</li>
+<li>असन्दिग्धम् = सन्देहरहितम् (lucid, clear, without any doubt) </li>
+<li>सारवत् = बहुगभीरम् (deep and meaningful)</li>
+<li>विश्वतोमुखम् = विस्तृतोपयोगि (usable widely or in many contexts)</li>
+<li>अस्तोभम् = व्यर्थांशरहितम् (only the essential content)</li>
+<li>अनवद्यम् = निर्दोषम् (without errors)</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
+<p>The best way to learn Sanskrit is to learn from a good teacher following whatever text they prescribe. But that may not be possible for all. Here are a list of books and resources I have found useful:</p>
+<p><strong>Courses for beginners:</strong></p>
+<ul>
+<li><a href="https://samskritabharati.in/">Samskrita Bharathi</a> an NGO founded by Shri. Chamu Shastry has distance learning courses. The courses are based on their own books. Recommended if you are motivated, can already read Devnagri script, and can pronounce Sanskrit correctly.</li>
+<li><a href="https://www.sanskritfromhome.org/">Vyoma Labs</a> - Many free and paid courses. The people in this organization are experts in the language and have experience teaching.</li>
+<li><a href="https://ncert.nic.in/textbook.php?fhsk1=0-15">CBSE NCERT Sanskrit books</a> - used to teach school children in India. They are reasonably good.</li>
+<li><a href="https://digital.madrassanskritcollege.edu.in/site/home">Madras Sanskrit College Online Course</a></li>
+<li><a href="http://acharya.gen.in:8080/sanskrit/lessons.php">Sanskrit through self-study - IITM</a></li>
+<li><a href="https://youtube.com/playlist?list=PLFkBI_x3Q_wHeWGqrtTKx6tT0xuDPVUic">Samskrita Shikshanam</a> YouTube Playlist</li>
+<li><a href="https://youtube.com/playlist?list=PLWV98cyTzbXzF0LyF8liA00e2JYcNtCTU">Samskrita Bharati - Pravesha Course</a> YouTube playlist</li>
+<li><a href="https://learnsanskrit.org/">Learn Sanskrit</a></li>
+</ul>
+<p><strong>Magazines etc.:</strong></p>
+<ul>
+<li><a href="https://www.sanskritott.com/guest/home">Sanskrit OTT</a> - Movies and short films</li>
+<li><a href="https://sambhashanasandesha.in/">सम्भाषणसन्देशः</a> - Sanskrit Magazine</li>
+<li><a href="https://sudharmasanskritdaily.in/">सुधर्मा संस्कृतदिनपत्रिका</a> - Sudharma Sanskrit Newspaper</li>
+<li><a href="https://ambuda.org/">Ambuda - Sanskrit library project</a></li>
+<li><a href="https://www.samskritpromotion.in/samvardhini/samvardhini_about">Samvardhini</a></li>
+</ul>
+<p><strong>Books:</strong></p>
+<ul>
+<li><a href="https://www.samskritabharati.in/preview?bharati_books=VmpGU1MwNUdUWGRPV0U1aFVsZDRWMWx0TVRSaFJsSldWbTFHYW1KR2NGWlZWM00xVkd4S2MxZHViRmRpVkVZelZqQmFZVTVzV25WaFIwWlRUVEpvTmxadGVHRmtNRFZ5VFZWV2FHVnFRVGs9&amp;samskrita_bharati=VmpGU1MwNUdUWGRPV0U1aFVsZDRWMWx0TVRSaFJsSldWbTFHYW1KR2NGWlZWM00xVkd4S2MxZHViRmRpVkVZelZqQmFZVTVzV25WaFIwWlRUVEpvTmxadGVHRmtNRFZ5VFZWV2FHVnFRVGs9">कृदन्तरूपनन्दिनी</a></li>
+</ul>
+<p><strong>Dictionaries:</strong></p>
+<ul>
+<li><a href="https://www.learnsanskrit.cc/">learnsanskrit.cc</a></li>
+<li><a href="https://kosha.sanskrit.today/">kosha.sanskrit.today</a></li>
+</ul>
+<p><strong>Useful links:</strong></p>
+<ul>
+<li><a href="https://openpathshala.com/sandhi-in-sanskrit"><em>Sandhi</em> in Sanskrit</a></li>
+<li><a href="https://youtube.com/playlist?list=PLnnFGi5KwfGF89tdSXx7bCLDuUbeQMheL">Sanskrit Stories by Madras Sanskrit College</a></li>
+<li>Ashtadhyayi
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLX9ZmqCHS6MZ2md47AS9T_3kDoLis9WP3">NCT Acharya Youtube Playlist</a></li>
+<li><a href="https://youtube.com/playlist?list=PLmozlYyYE-ETy0niNSEMi4IfW3bqE9Y4A">Learn to chant Ashtadhyayi</a> YouTube Playlist by Vyoma Labs</li>
+<li><a href="https://www.youtube.com/playlist?list=PLjq_FJlkDxOY4u_UrzU1TOlFo9b12IK3R">Ashtadhyayi Sutra SVBP</a></li>
+</ul>
+</li>
+<li><a href="https://youtube.com/playlist?list=PLmozlYyYE-EQyN06EzYJlnRRjE_qSJ-wc">Laghu Siddhanta Kaumudi Part 1</a> - Youtube Playlist by Vyoma Labs</li>
+<li><a href="https://youtube.com/playlist?list=PLWjpkY4mU2RDq1GVq0dQwnNsuYnKXoLkV">Ten day spoken Sanskrit classes by Prof B Mahadevan</a></li>
+<li><a href="https://youtube.com/playlist?list=PLudSN7Po9muLeRM6545s68eakbxwZRpEJ">Learn Sanskrit through Sanskrit (Rashtriya Sanskrit Sansthan)</a></li>
+<li><a href="https://youtube.com/playlist?list=PLmozlYyYE-ETX4yu2uq7vyzzVw29kvWVX">Samskritasri Pathamala Smt. Deepa Rangarajan</a>: The Pathamala Series has a very unique and judicious mix of Vyakarana (Grammer), Kavya (Litrature), Bhakti through Stotras and Bhagavat-katha and essays on various topics. This is a series of Youtube videos from the Vyoma Labs Youtube channel.</li>
+<li><a href="https://youtube.com/playlist?list=PLmozlYyYE-ET72Pz5n8WDtKHH31K06QhW">High School Sanskrit Grammar Made Easy</a> A Youtube playlist from our favorite Vyoma Labs.</li>
+<li><a href="https://youtube.com/playlist?list=PLmozlYyYE-ES0OM9C3NRXRAfWmNjBrkzp">Learn to Chant Amarakosha - Vyoma Labs</a></li>
+<li><a href="https://youtube.com/playlist?list=PLmozlYyYE-EQ3kJmDuXWSZtnEueO29FH">Master Basic Shabdarupas and Dhaturupas - Vyoma Labs</a></li>
+<li><a href="https://sanskritdocuments.org/">Sanskrit Document Collection</a></li>
+<li><a href="https://youtube.com/playlist?list=PL8Y9um-Q0HDEhYh2Y2ewNhV-6o93ZRcae">Learn to Chant Narayaneeyam</a> - Youtube Playlist</li>
+<li><a href="https://www.youtube.com/c/BhashaBodha">Sanskrit Bhasha Bodha</a> - YouTube Channel</li>
+<li><a href="https://youtube.com/playlist?list=PLmozlYyYE-ERJj2FfX6WfH5t8i3d2fh1Z">कृदन्ताः - Kridanta</a></li>
+<li><a href="https://youtube.com/playlist?list=PLmozlYyYE-ESsTZC0uG3rallpDePEzctb">तिङन्तप्रक्रिया Tinanta-prakriya</a></li>
+<li><a href="https://sanskritabhyas.in/">संस्कृत अभ्यासः</a></li>
+</ul>
+<p><strong>Note:</strong> Memorizing Amarakosha or Ashtadhyayi may be attempted by young learners. Older ones may not find it easy.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>

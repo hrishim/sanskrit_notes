@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Grammer - My Sanskrit Notes</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../notes_intro.html"><strong aria-hidden="true">1.</strong> Sanskrit Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/sandhi.html"><strong aria-hidden="true">1.1.</strong> Sandhi</a></li><li class="chapter-item expanded "><a href="../subashitam/subashitam1.html"><strong aria-hidden="true">1.2.</strong> Subashitam</a></li><li class="chapter-item expanded "><a href="../notes/lakaras.html"><strong aria-hidden="true">1.3.</strong> Tenses and Moods - लकार</a></li><li class="chapter-item expanded "><a href="../notes/shabd_roop.html"><strong aria-hidden="true">1.4.</strong> शब्द रुप</a></li><li class="chapter-item expanded "><a href="../notes/dhatu_roop.html"><strong aria-hidden="true">1.5.</strong> धातु रूप</a></li><li class="chapter-item expanded "><a href="../notes/grammer.html" class="active"><strong aria-hidden="true">1.6.</strong> Grammer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/verbs.html"><strong aria-hidden="true">1.6.1.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="../notes/grammer_npa.html"><strong aria-hidden="true">1.6.2.</strong> Nouns, Pronouns, and Adjectives</a></li><li class="chapter-item expanded "><a href="../notes/kridantas.html"><strong aria-hidden="true">1.6.3.</strong> Kridantas</a></li></ol></li><li class="chapter-item expanded "><a href="../notes/using_vibhaktis.html"><strong aria-hidden="true">1.7.</strong> Using Vibhaktis</a></li><li class="chapter-item expanded "><a href="../notes/terminology.html"><strong aria-hidden="true">1.8.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">1.9.</strong> Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Sanskrit Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="grammer"><a class="header" href="#grammer">Grammer</a></h1>
+<p><strong>Grammer terms</strong></p>
+<p><strong>अक्षरम्</strong> - श्रवणेन्द्रियग्राह्यम् अक्षरम् । तच्च कण्ठताल्वाद्यभिघातेन अभिव्यज्जते। अक्षरस्यैव नामान्तरं ’वर्णः’ इति। That which can be perceived by the faculty of hearing is अक्षरम्. It is classified/separated based on articulation into तच्च, कण्ठ, तालु etc. </p>
+<p><strong>वर्णः</strong> - Same as अक्षरम्</p>
+<p><strong>वर्णः</strong> - sounds (phenomes?)</p>
+<p><strong>वाक्यम्</strong> - sentence</p>
+<p><strong>पदम्</strong> - word</p>
+<p><strong>सन्धिः</strong> - when two वर्णः are joined/combined </p>
+<p><strong>समासम्</strong> - when two पदम् are joined/combined</p>
+<p>In Sanskrit grammar there is an entire branch devoted to the study of the joining of two वर्णः and that is called सन्धिः. Example: नमस्ते, कोपि etc</p>
+<p>Similarly there is a branch devoted to the study of the joining of two पदम् called समासम्. Example: देवालय, वृक्षमूलम, जगत्पति, करपत्रम् etc</p>
+<p>प्रातिपदिकम् - base word/root of (सुबन्तम्) nouns, adjectives and other non-verbs. </p>
+<p>सुबन्तम् - nouns, adjectives and other non-verbs (नाम पदम्)</p>
+<p>तिङन्तम् - verbs (क्रिया पदम)</p>
+<p>धातुः - verb root</p>
+<p>कृदन्तम् - This is a type of नाम पदम्. धातुः + कृत् प्रत्यय forms a new प्रातिपदिकम्. Examples of कृदन्तम् include पठितवान, पठितुम, रामः, सीता etc. Some of the नाम पदम् are कृदन्तम् and some are सुबन्तम्.</p>
+<br>
+<hr />
+<p>Example: Here is a sentence (वाक्यम्)</p>
+<p>अहम् प्रातःकाले उत्तिष्ठामि। </p>
+<p>अहम् - सुबन्तम्। प्रातिपदिकम् = अस्मद्</p>
+<p>प्रातःकाले - सुबन्तम्। प्रातिपदिकम् = प्रातःकाल</p>
+<p>उत्तिष्ठामि - तिङन्तम्। धातु? </p>
+<hr />
+<p>Every प्रातिपदिकम् has a विभक्ति table. In a वाक्यम् only सुबन्त पदम्  or तिङन्त पदम् can be used - प्रातिपदिकम् and धातु cannot be used. This is a Paniniya grammer rule.</p>
+<p>Every word in Sanskrit has an underlying etymology or meaning. For example the word प्रातिपदिकम्  is derived from प्रति and पद. प्रति means every and पद is word. So प्रातिपदिकम् is something related to every word.</p>
+<p>सुबन्तम् is made of two words सुप् + अन्तम्. It means words ending in सुप्. Here सुप् refers to a collection of suffixes (suffix = प्रत्यय).</p>
+<p>When a सुप् प्रत्यय is added to a प्रातिपदिकम् we get सुबन्त पदम् (i.e. word ending in सुप्). There are 21 सुप् प्रत्यय. Each entry in a विभक्ति table is the result of adding a सुप् प्रत्यय at the end of a प्रातिपदिकम्. Example, for the प्रातिपदिकम् called राम we have 21 सुबन्त पदम् - i.e. रामः, रामौ, रामाः, रामम्, रामौ, रामान्...etc.</p>
+<p>How to add a सुप् प्रत्यय to a प्रातिपदिकम् and get a सुबन्त पदम् (नाम पदम्) is a branch of study in Sanskrit grammar.</p>
+<p>तिङन्त पदम् (aka क्रिया पदम्) is a verb. These पदम् are formed by adding a तिङन्तम् to a धातु. For example, गम् धातु takes the forms गच्छति, गच्छतः, गच्छन्ति etc. Deriving the forms of क्रिया पदम् is a separate branch of Sanskrit grammar study.</p>
+<p>Speaking of कृदन्त पदम - रम् is a धातु, if we add a प्रत्यय then we get राम as a new प्रातिपदिकम्. To this new प्रातिपदिकम् we can add a सुप् प्रत्यय to form a सुबन्त पदम्.</p>
+<hr />
+<p><strong>What is कारकम्?</strong></p>
+<p>Let us take a simple sentence. बालकः तस्य गृहे पुस्तकम् पठति। In this sentence:
+क्रिया पदम् =  पठति. <strong>All others are नाम पदम्</strong>. In a sentence the क्रिया पदम् is the most important. </p>
+<p>Note that व्याकरणम् is one shastra. There are other shastras like न्यायशास्त्र मीमांस शास्त्र etc which have a different concept for a वाक्यम्.</p>
+<ul>
+<li>कः पठति? बालकः</li>
+<li>किम् पठति? पुस्तकम्</li>
+<li>कुत्र पठति? गृहे</li>
+<li>कस्य गृहे? तस्य</li>
+</ul>
+<p>These words that are answering the questions are कारक पदम् because they have a relationship with the क्रिया पदम्.</p>
+<p>What is कारकम् ? <strong>क्रियान्वयि कारकम</strong>. क्रिया means action अन्वय means सम्बन्ध (relationship). क्रिया पदेन सह सम्बन्धम् करोति इति कारकम्।</p>
+<p>What is the relationship of तस्य with पठति? It has a relationship with गृहे but none with पठति. So it is not a कारकम्.</p>
+<p><strong>New sentence:</strong> बालकः ग्रन्थालये स्यूतात् लेखकस्य पुस्तकम् हस्तेन मित्राय ददाति।</p>
+<p>कः ददाति? बालकः</p>
+<p>In the above sentence बालकः is कर्ता and its relationship with the क्रिया पदम् is कतृकारकम्. </p>
+<br>
+<p>किम् ददाति? पुस्तकम्</p>
+<p>पुस्तकम् has relationship of कर्म with ददाति. So it is called कर्म कारकम्. </p>
+<br>
+<p>केन ददाति? हस्तेन - Relationship is करणम् - करण कारकम्</p>
+<br>
+<p>कस्मै ददाति? मित्राय - Relationship is सम्प्रदानम् - सम्प्रदान कारकम्</p>
+<br>
+कस्मात् ददाति? स्यूतात् - Relationship is अपादानम् - अपादान कारकम्
+<br>
+<p>कस्मिन् ददाति? ग्रन्थालये  - Relationship is अधिकरणम् - अधिकरण कारकम्</p>
+<p>Some नाम पदम् in a sentence have different relationship to क्रिया पदम्. These are called कारकम्. To indicate that relationship we add different विभक्ति प्रत्यय to the प्रातिपदिकम् of that नाम पदम्.</p>
+<p><strong>How many काराक are there?</strong> Six (above)</p>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../notes/dhatu_roop.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../notes/verbs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../notes/dhatu_roop.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../notes/verbs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

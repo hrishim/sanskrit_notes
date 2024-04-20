@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Tenses and Moods - लकार - My Sanskrit Notes</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../notes_intro.html"><strong aria-hidden="true">1.</strong> Sanskrit Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/sandhi.html"><strong aria-hidden="true">1.1.</strong> Sandhi</a></li><li class="chapter-item expanded "><a href="../subashitam/subashitam1.html"><strong aria-hidden="true">1.2.</strong> Subashitam</a></li><li class="chapter-item expanded "><a href="../notes/lakaras.html" class="active"><strong aria-hidden="true">1.3.</strong> Tenses and Moods - लकार</a></li><li class="chapter-item expanded "><a href="../notes/shabd_roop.html"><strong aria-hidden="true">1.4.</strong> शब्द रुप</a></li><li class="chapter-item expanded "><a href="../notes/dhatu_roop.html"><strong aria-hidden="true">1.5.</strong> धातु रूप</a></li><li class="chapter-item expanded "><a href="../notes/grammer.html"><strong aria-hidden="true">1.6.</strong> Grammer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/verbs.html"><strong aria-hidden="true">1.6.1.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="../notes/grammer_npa.html"><strong aria-hidden="true">1.6.2.</strong> Nouns, Pronouns, and Adjectives</a></li><li class="chapter-item expanded "><a href="../notes/kridantas.html"><strong aria-hidden="true">1.6.3.</strong> Kridantas</a></li></ol></li><li class="chapter-item expanded "><a href="../notes/using_vibhaktis.html"><strong aria-hidden="true">1.7.</strong> Using Vibhaktis</a></li><li class="chapter-item expanded "><a href="../notes/terminology.html"><strong aria-hidden="true">1.8.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">1.9.</strong> Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Sanskrit Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="tenses-and-moods---लकार"><a class="header" href="#tenses-and-moods---लकार">Tenses and Moods - लकार</a></h1>
+<p><em>Lakaras</em> convey the sense of time (tense) and sentiment (भाव). They are split into two groups - (1) कालवाचकाः (tense) and (2) भाववाचकाः (mood)</p>
+<p>There are ten <em>lakaras</em> in Sanskrit. </p>
+<ol>
+<li>लट् लकार - Present tense</li>
+<li>लङ् लकार - Past tense (past action but not within a day; अनद्यतनभूतकालः)</li>
+<li>लिट् लकार - Past tense (ancient past, परोक्षभूतकालः)</li>
+<li>लुङ लकार - Past tense (simple past)</li>
+<li>लिङ् लकार - Potential/Optative mood</li>
+<li>लोट् लकार - Imperative mood</li>
+<li>लुट् लकार - Future tense (अनद्यतनभविष्यतकाल)</li>
+<li>लृट् लकार - Future tense (सामान्यभविष्यत्काल, simple future)</li>
+<li>लृङ् लकार - क्रियातिपत्ति (non-realization of an action)</li>
+<li>लेट् लकार - both tense and mood</li>
+</ol>
+<p>Six <em>lakaras</em> are कालवाचकाः. The present tense is called लट् लकार. In Sanskrit there are 3 kinds of past and 2 kinds of future tense. Note: Tenses apply to verbs only.</p>
+<p>लिट् लङ् and लुङ् are past tense. लुट् and लृट् are used for future tense.</p>
+<p>The <em>lakaras</em> लोट्, लिङ् and लृङ् are used to represent moods. These three are भाववाचकाः. लोट् and लिङ् represent the moods/sentiments like - आज्ञा (order), प्रार्थना (request), इच्छा (wish). The लृङ् लकार is used to express non-realization of an action.</p>
+<p>लेट् लकारः is both कालवाचकः and भाववाचकः</p>
+<p><strong>Here is a sloka to remember all the लकार:</strong></p>
+<p>लट् वर्तमाने लेट् वेदे भूते लुङ् लङ् लिटस्तथा। </p>
+<p>विद्याशीषोस्तु लिङ् लोटौ लुट् लृट् लृङ् च भविष्यति।।</p>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<ol>
+<li><a href="https://www.youtube.com/live/bPjs6qyifZk?feature=share">Verbs in Sanskrit - Overview of the 10 Lakaaras by Neelesh Bodas</a></li>
+<li><a href="https://www.youtube.com/live/TgkOHrlq8qg?feature=share">Verbs in Sanskrit - Overview of the 10 Dhaatu Ganas by Neelesh Bodas</a></li>
+</ol>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p>Here are examples with meaning for the same धातु in all लकार. All examples are in प्रथम पुरुष एकवचन</p>
+<table><thead><tr><th><strong>लकार</strong></th><th><strong>Sentence</strong></th><th><strong>Meaning</strong></th><th><strong>Tense</strong></th></tr></thead><tbody>
+<tr><td>लट्</td><td>सः पठति</td><td>He reads.</td><td>Present</td></tr>
+<tr><td>लङ्</td><td>सः अपठत्</td><td>He read.</td><td>Past</td></tr>
+<tr><td>लृट्</td><td>सः पठिष्यति</td><td>He will read.</td><td>Future</td></tr>
+</tbody></table>
+<p>The above three are the commonly used in contemporary Sanskrit.</p>
+<hr />
+<p><strong>Other forms that convey <em>time</em>:</strong> </p>
+<p>The लिट् and लुङ् forms are also for past tense. लिट् is the ancient past and is frequently encountered in texts like Ramayana and Mahabharata</p>
+<p>लिट् - सः पपाठ - He read (in an ancient time)</p>
+<p>लुङ् (past) - अपाठीत </p>
+<p>Future also has an additional form: 
+लुट् (future) - पठिता </p>
+<hr />
+<p>There are three forms that convey mood instead of time.</p>
+<p>पठतु - लोट्</p>
+<p>पठेत् - लिङ्</p>
+<p>अपठिष्यत - लृङ्</p>
+<p><strong>One special form only occurs in the Vedas</strong></p>
+<p>लेट - पठाति This form is encountered only in the Vedas.</p>
+<h2 id="present-tense---वरतमान-काल"><a class="header" href="#present-tense---वरतमान-काल">Present tense - वर्तमान काल</a></h2>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>गम् धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>लभ् धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>गच्छति</td><td>गच्छतः</td><td>गच्छन्ति</td><td><strong>प्रथम पुरुष</strong></td><td>लभते</td><td>लभेते</td><td>लभन्ते</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>गच्छसि</td><td>गच्छथः</td><td>गच्छथ</td><td><strong>मध्यम पुरुष</strong></td><td>लभसे</td><td>लभेथे</td><td>लभध्वे</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>गच्छामि</td><td>गच्छावः</td><td>गच्छामः</td><td><strong>उत्तम पुरुष</strong></td><td>लभे</td><td>लभावहे</td><td>लभामहे</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>आस् धातु आत्मनेपदि</strong> (to sit)</td><td></td><td></td><td></td></tr>
+<tr><td>प्रथम पुरुष</td><td>आस्ते</td><td>आसाते</td><td>आसन्ते</td></tr>
+<tr><td>मध्यम पुरुष</td><td>आस्से</td><td>आसाथे</td><td>आध्वे</td></tr>
+<tr><td>उत्तम पुरुष</td><td>आसे</td><td>आस्वहे</td><td>आस्महे</td></tr>
+</tbody></table>
+<h2 id="past-tense---भूत-काल"><a class="header" href="#past-tense---भूत-काल">Past tense - भूत काल</a></h2>
+<p>All three past tenses are together are called भूत काल. </p>
+<p><strong>Past action that ended before today:</strong> Any past action that ended before today but could have been witnessed by the speaker/listener (<strong>अनद्यतन भूत</strong>). This past is called लङ् लकार. Example: He read. = सः अपठत्। </p>
+<p>Strictly in a grammatical sense अनद्यतन भूत refers to events in the past that are not recent but not ancient. अद्यतन is a 24 hour period - sunrise to sunrise, or midnight to mid-night, or end of day to end of next day. So अनद्यतन भूत  are events that happened in the past but not during the अद्यतन. </p>
+<p>However, in present day usage लङ् लकार is used generally as past tense.</p>
+<p><strong>Distant/ancient past:</strong>
+Events in the distant past that have not been witnessed  by the speaker/listener  (<strong>परोक्ष भूत</strong>) are called <strong>लिट् लकार</strong>. Usually लिट् लकार is encountered in old treatises and texts like Ramayana and Mahabharata. In those texts लङ् लकार is not prominent. Example:</p>
+<p>There was a king named Dasharatha.</p>
+<p>दशरथः नाम राजा बभूव।</p>
+<p><strong>Simple past:</strong>
+Simple past (<strong>सामान्य भूत</strong>), called <strong>लुङ् लकार</strong>, is used for events that happend in the past. </p>
+<table><thead><tr><th>Past Tense</th><th></th></tr></thead><tbody>
+<tr><td>लङ् लकार</td><td>Past events that happened before today but not ancient (अनद्यतन भूत)</td></tr>
+<tr><td>लिट् लकार</td><td>ancient past or events not witnessed by you (परोक्ष भूत)</td></tr>
+<tr><td>लुङ् लकार</td><td>simple past (सामान्य भूत)</td></tr>
+</tbody></table>
+<p>परोक्षः = अक्ष्ण परः - That which is beyond our visibility. i.e. not seen by the speaker but have heard about it.</p>
+<p>लुङ् and लिट् लकार is very common in epics like Ramayana, Mahabharatha, Devi Bhagavatam etc. In that class of poetry and prose लङ् लकार is not usually found.</p>
+<p>Example of लङ् लकार:</p>
+<p>सः ह्यः मन्दिरम् अगच्छत्। - Correct</p>
+<p>सः अद्य प्रातः मन्दिरम् अगच्छत्। - Incorrect from a grammer point of view. But has become generally accepted in spoken Sanskrit. The correct version is सः अद्य प्रातः मन्दितम् अगमत्।</p>
+<p>अगमत् is लुङ् लकार. </p>
+<p>लिट् लकार example: रामः वनं जगाम।</p>
+<p>Note that लिट् can also be used for events that happened yesterday or day before that you did not see. Many people say that लिट् लकार is used for indicating things in the very past <a href="https://youtu.be/bPjs6qyifZk?t=1959">but that is not correct</a>. Anything that you did not see you should use लिट् लकार for indicating it.</p>
+<p>More examples:</p>
+<p>सः वनम् जगाम।</p>
+<p>भवान् किं चकार?</p>
+<p>छात्रः पाठम् पपाठ।</p>
+<p>प्रातः सूर्योदयः बभूव।</p>
+<p>सा उत्तरम् उवाद।</p>
+<p>किं कविः काव्यम् लिलेख?</p>
+<h3 id="लङ-लकार---अनदयतन-भूत-past-imperfect-tense"><a class="header" href="#लङ-लकार---अनदयतन-भूत-past-imperfect-tense">लङ् लकार - अनद्यतन भूत (past imperfect tense)</a></h3>
+<p>Events that happened in the past and prior to one day. This is also referred to as imperfect past and used for events witnessed by the speaker. </p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>लभ् धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>अपठत्</td><td>अपठताम्</td><td>अपठन्</td><td><strong>प्रथम पुरुष</strong></td><td>अलभत</td><td>अलभेताम्</td><td>अलभन्त</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>अपठः</td><td>अपठतम्</td><td>अपठत</td><td><strong>मध्यम पुरुष</strong></td><td>अलभथाः</td><td>अलभेथाम्</td><td>अलभध्वम्</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>अपठम्</td><td>अपठाव</td><td>आपठाम</td><td><strong>उत्तम पुरुष</strong></td><td>अलभे</td><td>अलभावहि</td><td>अलभामहि</td></tr>
+</tbody></table>
+<h3 id="लिट-लकार---परोकष-भूत"><a class="header" href="#लिट-लकार---परोकष-भूत">लिट् लकार - परोक्ष भूत</a></h3>
+<p>The most commonly encountered usage of लिट् लकार will be प्रथम एकवचन and प्रथम बहुवचन. </p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु</strong></td><td></td><td></td><td></td><td><strong>गम् धातु</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>पपाठ</td><td>पेठतुः</td><td>पेठुः</td><td><strong>प्रथम पुरुष</strong></td><td>जगाम</td><td>जग्मतुः</td><td>जग्मुः</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>पेठिथ</td><td>पेठथुः</td><td>पेठ</td><td><strong>मध्यम पुरुष</strong></td><td>जगमिथ</td><td>जग्मथुः</td><td>जग्म</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>पपाठ</td><td>पेठिव</td><td>पेठिम</td><td><strong>उत्तम पुरुष</strong></td><td>जगाम</td><td>जग्मिव</td><td>जग्मिम</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>भू धातु</strong> (to be)</td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>बभूव</td><td>बभूवतुः</td><td>बभूवुः</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>बभूविथ</td><td>बभूवतुः</td><td>बभूव</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>बभूव</td><td>बभूविव</td><td>बभूविम</td></tr>
+</tbody></table>
+<h3 id="लुङ-लकार---सामानय-भूत-simple-past-tense"><a class="header" href="#लुङ-लकार---सामानय-भूत-simple-past-tense">लुङ् लकार - सामान्य भूत (simple past tense)</a></h3>
+<p>सः वनम् अगमत्।</p>
+<p>भवान् किम् अकर्षीत्?</p>
+<p>छात्रः पाठम् अपाठीत्।</p>
+<p>प्रातः सूर्योदयः अभूत्।</p>
+<p>सा उत्तरम् अवादीत्।</p>
+<p>किं कविः काव्यम् अलेखीत्?</p>
+<h2 id="future-tense---भविषयतकाल"><a class="header" href="#future-tense---भविषयतकाल">Future Tense - भविष्यत्काल</a></h2>
+<p>There are two types of future tense in Sanskrit - लृट्लकारः (सामान्यभविष्यत्कालम्) and लुट्लकारः (अनद्यतनभविष्यत्कालम्).</p>
+<p>अनद्यतन = न अद्यतन (not now).</p>
+<p>अनद्यतनभविष्यत्काल are actions that will happen tomorrow or after (day after, next month etc.). If you say &quot;I am going to play cricket in the evening.&quot;, that is not अनद्यतन. </p>
+<p>Example of लुट् लकारः (अनद्यतनभविष्यत्कालः): रामः श्वः वनं गन्ता।</p>
+<p>From a grammer point of view this sentence is incorrect: रामः श्वः वनं गमिष्यति।</p>
+<p>रामः अद्य रात्रौ वनं गमिष्यति। This is correct because the action is happening in the future but today. सामान्यभविष्यत्कालः is used for cases where it is not अनद्यतन or you don't know.</p>
+<p>This sentence is correct: रामः वनं गमिष्यति।</p>
+<p>If there is a reference to when the action is going to happen and that is tomorrow or later then you must use लुट्लकार.</p>
+<p>However, in today's spoken Sanskrit the use of लुट्लकार is almost extinct. लृट् लकार is used universally for future tense.</p>
+<p>प्रयोगशरणाः व्य्याकरणाः। Grammer cannot dicatate the language, the language dictates the grammer. While the grammer recommends using लुट् लकार for events happening after today in practice लृट् लकार is used and accepted in speech and prose.</p>
+<p><strong>लृट् लकार:</strong> </p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>(स्यति - to finish) धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>स्यति</td><td>स्यतः</td><td>स्यन्ति</td><td><strong>प्रथम पुरुष</strong></td><td>स्यते</td><td>स्येते</td><td>स्यन्ते</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>स्यसि</td><td>स्यथः</td><td>स्यथ</td><td><strong>मध्यम पुरुष</strong></td><td>स्यसे</td><td>स्येथे</td><td>स्यध्वे</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>स्यामि</td><td>स्यावः</td><td>स्यामः</td><td><strong>उत्तम पुरुष</strong></td><td>स्ये</td><td>स्यावहे</td><td>स्यामहे</td></tr>
+</tbody></table>
+<p><strong>लुट्लकारः उदाहरणानि</strong></p>
+<p>रामः वनं श्वः गन्ता।</p>
+<p>भवान अग्रिममासे गीतां पठिता वा?</p>
+<p>अहम् परश्वः परीक्षां लेखितास्मि।</p>
+<p>वयम् मङ्लवासरे मिलित्वा यज्ञं कर्तास्मः।</p>
+<p>त्वम् अग्रिमवर्षे कुत्र क्रीडितासि?</p>
+<p>युयम् श्वः परश्वः वा चलचित्रम् द्रष्टास्थ।</p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु आत्मनेपदि</strong> (to read)</td><td></td><td></td><td></td></tr>
+<tr><td>प्रथम पुरुष</td><td>पठिता</td><td>पठितारौ</td><td>पठितारः</td></tr>
+<tr><td>मध्यम पुरुष</td><td>पठितासी</td><td>पठितास्थः</td><td>पठितास्थ</td></tr>
+<tr><td>उत्तम पुरुष</td><td>पठितास्मि</td><td>पठितास्वः</td><td>पठितास्मः</td></tr>
+</tbody></table>
+<h2 id="भाववाचक-लकारः----moods"><a class="header" href="#भाववाचक-लकारः----moods">भाववाचक लकारः  - Moods</a></h2>
+<h3 id="imperative-mood---लोट-लकार"><a class="header" href="#imperative-mood---लोट-लकार">Imperative mood - लोट् लकार</a></h3>
+<p>The imperative mood is used to express a command, advice, a wish. a request etc. A negative command or prohibition is expressed by using मा followed by the imperative form. Example: मा पिबतु (You do not drink).</p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>लभ् धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>पठतु/पठतात्</td><td>पठताम्</td><td>पठन्तु</td><td><strong>प्रथम पुरुष</strong></td><td>लभताम्</td><td>लभेताम्</td><td>लभन्ताम्</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>पठ/पठतात्</td><td>पठतम्</td><td>पठत</td><td><strong>मध्यम पुरुष</strong></td><td>लभस्व</td><td>लभेथाम्</td><td>लभध्वम्</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>पठानि</td><td>पठाव</td><td>पठाम</td><td><strong>उत्तम पुरुष</strong></td><td>लभै</td><td>लभावहै</td><td>लभामहै</td></tr>
+</tbody></table>
+<p>The -तात् forms of प्रथम &amp; मध्यम पुरुष are used in expressing a blessing. Example: सुखं भवतात् - Let there be happiness.</p>
+<BR>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>आस् धातु आत्मनेपदि</strong> (to sit)</td><td></td><td></td><td></td></tr>
+<tr><td>प्रथम पुरुष</td><td>आस्ताम्</td><td>आसाताम्</td><td>आसताम्</td></tr>
+<tr><td>मध्यम पुरुष</td><td>आस्स्व</td><td>आसाथाम्</td><td>आध्वम्</td></tr>
+<tr><td>उत्तम पुरुष</td><td>आसै</td><td>आसावहै</td><td>आसामहै</td></tr>
+</tbody></table>
+<p>Examples:</p>
+<ul>
+<li>सः पठतु। - वह पढे।</li>
+<li>आज्ञा (order) – त्वं गृहं गच्छ। (तुम घर जाओ)</li>
+<li>प्रार्थना (request) – भवान मम गृहं आगच्छतु। (आप मेरे घर मे आयें।)</li>
+<li>अनुमति (permission) – अहं कुत्र गच्छानि? (मै कहाँ जाऊँ?)</li>
+<li>आशीर्वाद (blessing) – त्वं चिरं जीव। (तुम बहुत समय तक जियो।)</li>
+</ul>
+<p><a href="https://www.mycoaching.in/2020/08/lot-lakar.html">Notes from</a></p>
+<p><strong>More examples</strong></p>
+<p>आज्ञा :- शिक्षकः छात्रम् आज्ञापयति - एतत् पुस्तकं पठ।</p>
+<p>प्रश्नः :- छात्रः पृच्छति - किम् अहम् व्याकरणम् पठानि?</p>
+<p>प्रार्थना :- पिता आवार्यं वदति - मम पुत्रं पाठयतु भवान्।</p>
+<p>आमन्त्रणम् :- रामः वदति  - श्वः भवान् मम गृहम् आगच्छतु।</p>
+<p>पद्धतिः (process) :- देहलीनगरं अनेन मार्गेण गच्छतु।</p>
+<p>आशीर्वादः :- विजयी भव।</p>
+<h3 id="potentialoptative-mood---लिङ-लकार"><a class="header" href="#potentialoptative-mood---लिङ-लकार">Potential/Optative mood - लिङ् लकार</a></h3>
+<p>Optative mode is used to indicate wish, advice, a request, a possibility, or the near future. It is also called potential mood. It is also used for conditional clauses, e.g. “If he would go…”. In Sanskrit Optative mood is called लिङ् लकारः (विधिलिङ्)</p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td><strong>पठ् धातु परस्मैपदि</strong></td><td></td><td></td><td></td><td><strong>लभ् धातु आत्मनेपदि</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>प्रथम पुरुष</strong></td><td>पठेत्</td><td>पठेताम्</td><td>पठेयुः</td><td><strong>प्रथम पुरुष</strong></td><td>लभेत</td><td>लभेयाताम्</td><td>लभेरन्</td></tr>
+<tr><td><strong>मध्यम पुरुष</strong></td><td>पठेः</td><td>पठेतम्</td><td>पठेत</td><td><strong>मध्यम पुरुष</strong></td><td>लभेताः</td><td>लभेयाथाम्</td><td>लभेध्वम्</td></tr>
+<tr><td><strong>उत्तम पुरुष</strong></td><td>पठेयम्</td><td>पठेव</td><td>पठेम</td><td><strong>उत्तम पुरुष</strong></td><td>लभेय</td><td>लभेवहि</td><td>लभेमहि</td></tr>
+</tbody></table>
+<p>सः पठेत्। (विधिलिङ्)</p>
+<p>उसे पडना चाहिए।</p>
+<p>विधिनिमन्त्रणामन्त्रणाधीष्टसंप्रश्रप्रार्थनेषु लिङ् – विधि (चाहिए), निमन्त्रण, आदेश, विधान, उपदेश, प्रश्र तथा प्रार्थना आदि अर्थों का बोध कराने के लिये विधि लिङ् लाकार का प्रयोग किया जाता है। जैसे – </p>
+<ul>
+<li>विधि – सत्यं ब्रूयात। (सत्य बोलना चाहिये) प्रियं ब्रूयात्। (प्रिय बोलना चाहिये)</li>
+<li>निमन्त्रण – भवान् अद्य अत्र भक्षयेत्। (आप आज यहाँ भोजन करें)</li>
+<li>आदेश – भृत्यः क्षेत्रे गच्छेत्। (नौकर खेत पर जाये।)</li>
+<li>प्रश्र – त्वं किम कुर्याः? (तुमहे क्या करना चाहिये?)</li>
+<li>इच्छा – यूयं सुखि भवेत्। (तुम खुश रहो।)</li>
+</ul>
+<p><a href="https://www.mycoaching.in/2020/08/Vidhiling-Lakar.html">Notes from</a></p>
+<p>There are two types of लिङ्लकार - विधिलिङ् and आशीर्लिङ्.</p>
+<p>विधिलिङ्लकार can be used in every situation a लोट् लकार can be used. The two are completely interchangeable. </p>
+<p>आशीर्लिङ् is used for अप्राप्यस्य इच्छा - something you want but cannot have easily. Examples: </p>
+<ul>
+<li>अहम् राष्ट्रपतिः भूयासम् (I wish to be the President)</li>
+<li>मम शत्रुः म्रियात् (I wish for my enemy to die.)</li>
+<li>विष्णुः मह्यम् आशीषः देयात्</li>
+<li>सा मया सह विवाहं क्रियात्</li>
+<li>अहम् भगवद्गीता स्मर्यासम्</li>
+</ul>
+<BR>
+<h3 id="लृङ-लकारः---करियातिपततिः"><a class="header" href="#लृङ-लकारः---करियातिपततिः">लृङ् लकारः - क्रियातिपत्तिः</a></h3>
+<p>Example: If this happens then that will happen</p>
+<p>१. यदि वर्षा अभविष्यत्, तर्हि सस्यानि अवर्धिष्यन्त।</p>
+<p>If there is rain then the crops will have flourished.</p>
+<p>२. यदि कृष्णः गीतां न अवदिष्यत् तर्हि अर्जुनः न अयोत्स्यत।</p>
+<p>If Krishna had not told the Geetha, Arjuna would not have fought the battle.</p>
+<p>३. यदि कैकयी वरं न अप्राक्षीत् तर्हि रामः वनं न अगमिष्यत्।</p>
+<p>If Kaikeyi had not got the boon, then Rama would not have gone to the forest.</p>
+<p>४. अहम् अध्ययनम् अकरिष्यम् चेत् परीक्षाम् अपि अलेखिष्यम्।</p>
+<p>If I would have studied then I will would have written the exam.</p>
+<p>OR</p>
+<p>If I will study then I will write the exam.</p>
+<p>Both above meanings are correct. The take away is that लृङ् is not referring to past, present or future. It refers to क्रियातिपत्ति (non-realization of an action).</p>
+<p>५. अभिमन्युः चक्रव्यूहं सम्यक् अज्ञास्यत् वेत् सः कौरवेभ्यः न पराजेष्यत।</p>
+<BR>
+<p><strong>Note:</strong> It is not that only लृङ् लकार should be used with यदि-तर्हि. The लृङ् लकार is for situations where you say if something that did  not happen or is difficult to happen happened
+then blah-blah. Generally when using लृङ् लकार the sentence will have यदि-तर्हि and चेत्.</p>
+<h3 id="लेट-लकारः"><a class="header" href="#लेट-लकारः">लेट् लकारः</a></h3>
+<p><a href="https://youtu.be/bPjs6qyifZk?t=3331">लेट् लकारः from 55:31</a></p>
+<p>लेट् लकारः केवलं <strong>वेदेषु</strong> प्रयुज्यते। लौकिकसंस्कृते अस्य प्रयोगः <strong>न भवति</strong>।</p>
+<p>This <em>lakara</em> cannot be used in any of your sentences. This <em>lakara</em> is used only in the <em>Vedas</em>. The forms used in the <em>Vedas</em> are the only examples of लेट् लकार. You cannot create your own examples. </p>
+<p>वेदेषु अयं लकारः भिन्नेषु अर्थेषु प्रयुज्यते - वर्तमानकालः, आज्ञा, विधिः आदयः। Sometimes as कालवाचक and sometimes as भाववाचक.</p>
+<p>उदाहरणानि - </p>
+<p>१. नेता इन्द्रो नेषत्।</p>
+<p>नेता -  leader इन्द्रो - <em>Indra</em> नेषत् - to sprinkle water </p>
+<p>नेषत् is लेट् लाकारः because it cannot be derived from the other 9 <em>lakaras</em>. </p>
+<p>२. विद्युत् पताति।</p>
+<p>विद्युत् - lightning पताति - falls (पतति)</p>
+<p>So in लट् लकार we say विद्युत् पतति but in लेट् we say विद्युत् पताति</p>
+<p>३. प्रजापतिः उदधिं च्यावयाति।</p>
+<p>च्यावयाति - to force to move</p>
+<p>In classical Sanskrit this will be प्रजापतिः उदधिं च्यावयति</p>
+<p>Key take away: The <em>Panini</em> grammer applies to classical Sanskrit. The grammer of the <em>Vedas</em> including लेट् लकारः cannnot be derived using <em>Panini</em> grammer. To understand the meaning we have to ask <em>Veda</em> experts.</p>
+<BR>
+<p><strong>Table template</strong> - do not erase</p>
+<table><thead><tr><th>पुरुष</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr></thead><tbody>
+<tr><td>प्रथम पुरुष</td><td></td><td></td><td></td></tr>
+<tr><td>मध्यम पुरुष</td><td></td><td></td><td></td></tr>
+<tr><td>उत्तम पुरुष</td><td></td><td></td><td></td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../subashitam/subashitam1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../notes/shabd_roop.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../subashitam/subashitam1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../notes/shabd_roop.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

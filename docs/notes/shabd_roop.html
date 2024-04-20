@@ -1,0 +1,645 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>शब्द रुप - My Sanskrit Notes</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../notes_intro.html"><strong aria-hidden="true">1.</strong> Sanskrit Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/sandhi.html"><strong aria-hidden="true">1.1.</strong> Sandhi</a></li><li class="chapter-item expanded "><a href="../subashitam/subashitam1.html"><strong aria-hidden="true">1.2.</strong> Subashitam</a></li><li class="chapter-item expanded "><a href="../notes/lakaras.html"><strong aria-hidden="true">1.3.</strong> Tenses and Moods - लकार</a></li><li class="chapter-item expanded "><a href="../notes/shabd_roop.html" class="active"><strong aria-hidden="true">1.4.</strong> शब्द रुप</a></li><li class="chapter-item expanded "><a href="../notes/dhatu_roop.html"><strong aria-hidden="true">1.5.</strong> धातु रूप</a></li><li class="chapter-item expanded "><a href="../notes/grammer.html"><strong aria-hidden="true">1.6.</strong> Grammer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/verbs.html"><strong aria-hidden="true">1.6.1.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="../notes/grammer_npa.html"><strong aria-hidden="true">1.6.2.</strong> Nouns, Pronouns, and Adjectives</a></li><li class="chapter-item expanded "><a href="../notes/kridantas.html"><strong aria-hidden="true">1.6.3.</strong> Kridantas</a></li></ol></li><li class="chapter-item expanded "><a href="../notes/using_vibhaktis.html"><strong aria-hidden="true">1.7.</strong> Using Vibhaktis</a></li><li class="chapter-item expanded "><a href="../notes/terminology.html"><strong aria-hidden="true">1.8.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">1.9.</strong> Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Sanskrit Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="शबद-रुप"><a class="header" href="#शबद-रुप">शब्द रुप</a></h1>
+<p>This is a list of commonly used and some uncommon शब्द रुप</p>
+<h2 id="masculine-पुंललिङगः-nouns"><a class="header" href="#masculine-पुंललिङगः-nouns">Masculine (पुंल्लिङ्गः) nouns</a></h2>
+<table><thead><tr><th><strong>अकारान्तः पुंल्लिङ्गः राम शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>रामः</td><td>रामौ</td><td>रामाः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>रामम्</td><td>रामौ</td><td>रामान्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>रामेण</td><td>रामाभ्याम्</td><td>रामैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>रामाय</td><td>रामाभ्याम्</td><td>रामेभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>रामात्</td><td>रामाभ्याम्</td><td>रामेभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>रामस्य</td><td>रामयोः</td><td>रामाणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>रामे</td><td>रामयोः</td><td>रामेषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे राम</td><td>हे रामौ</td><td>हे रामाः</td></tr>
+</tbody></table>
+<p><strong>Note:</strong> All अकारान्तः पुंल्लिङ्गः शब्दाः will be like राम शब्दः</p>
+<BR>
+<table><thead><tr><th><strong>इकारान्तः पुंल्लिङ्गः हरि शब्दः (Vishnu)</strong></th><th></th><th></th><th></th><th><strong>इकारान्तः पुंल्लिङ्गः पति शब्दः (Master, Husband)</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>हरिः</td><td>हरी</td><td>हरयः</td><td><strong>प्रथमा</strong></td><td>पतिः</td><td>पती</td><td>पत्यः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>हरिम्</td><td>हरी</td><td>हरीन्</td><td><strong>द्वितीया</strong></td><td>पतिम्</td><td>पती</td><td>पतीन्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>हरिणा</td><td>हरिभ्याम्</td><td>हरिभिः</td><td><strong>तृतीया</strong></td><td>पत्या</td><td>पतिभ्याम्</td><td>पतिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>हरये</td><td>हरीभ्याम्</td><td>हरिभ्यः</td><td><strong>चतुर्थी</strong></td><td>पत्ये</td><td>पतिभ्याम्</td><td>पतिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>हरेः</td><td>हरीभ्याम्</td><td>हरिभ्यः</td><td><strong>पञ्चमी</strong></td><td>पत्युः</td><td>पतीभ्याम्</td><td>पतिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>हरेः</td><td>हर्योः</td><td>हरीणाम्</td><td><strong>षष्ठी</strong></td><td>पत्युः</td><td>पत्योः</td><td>पतीनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>हरौ</td><td>हर्योः</td><td>हरिषु</td><td><strong>सप्तमी</strong></td><td>पत्यौ</td><td>पत्योः</td><td>पतीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे हरे</td><td>हे हरी</td><td>हे हरयः</td><td><strong>सम्बोधन</strong></td><td>हे पते</td><td>हे पती</td><td>हे पतयः</td></tr>
+</tbody></table>
+<p><strong>Note:</strong> Most इकारान्तः पुंल्लिङ्गः शब्दाः will be like हरि. When पति occurs at the end of compounds like नरपति it behaves in a normal fashion and follows the pattern like हरि. The feminine form of पति is पत्नी and it follows the same form as नदी.</p>
+<br>
+<BR>
+<table><thead><tr><th><strong>इकारान्तः पुंल्लिङ्गः सखि (m) (friend) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>सखा</td><td>सखायौ</td><td>सखायः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>सखायम्</td><td>सखायौ</td><td>सखीन्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>सख्या</td><td>सखिभ्याम्</td><td>सखिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>सख्ये</td><td>सखिभ्याम्</td><td>सखिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>सख्युः</td><td>सखिभ्याम्</td><td>सखिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>सख्युः</td><td>सख्योः</td><td>सखीनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>सख्यौ</td><td>सख्योः</td><td>सखिषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे सखे</td><td>हे सखायौ</td><td>हे सखायः</td></tr>
+</tbody></table>
+<p><strong>Note:</strong> Most इकारान्त पुंल्लिङ्गः are similar to हरि शब्दः. But some, like पति and सखि, are different. The word सखि is masculine a form meaning friend. सखी is a feminine word that also means friend (female). It follows the same form as नदी</p>
+<BR>
+<table><thead><tr><th><strong>उकारान्तः पुंल्लिङ्गः गुरु शब्दः (Teacher)</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>गुरुः</td><td>गुरू</td><td>गुरवः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>गुरुम्</td><td>गुरू</td><td>गुरून्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>गुरुणा</td><td>गुरुभ्यां</td><td>गुरुभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>गुरवे</td><td>गुरुभ्यां</td><td>गुरुभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>गुरोः</td><td>गुरुभ्यां</td><td>गुरुभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>गुरोः</td><td>गुर्वोः</td><td>गुरूणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>गुरौ</td><td>गुर्वौः</td><td>गुरुषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे गुरो</td><td>हे गुरू</td><td>हे गुरवः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऋकारान्तः पुंल्लिङ्गः दातृ शब्दः</strong></th><th></th><th></th><th></th><th><strong>ऋकारान्तः पुंल्लिङ्गः पितृ शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>दाता</td><td>दातारौ</td><td>दातारः</td><td><strong>प्रथमा</strong></td><td>पिता</td><td>पितरौ</td><td>पितरः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>दातारम्</td><td>दातारौ</td><td>दातॄन्</td><td><strong>द्वितीया</strong></td><td>पितरम्</td><td>पितरौ</td><td>पितॄन्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>दात्रा</td><td>दातृभ्यां</td><td>दातृभिः</td><td><strong>तृतीया</strong></td><td>पित्रा</td><td>पितृभ्यां</td><td>पितृभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>दात्रे</td><td>दातृभ्यां</td><td>दातृभ्यः</td><td><strong>चतुर्थी</strong></td><td>पित्रे</td><td>पितृभ्यां</td><td>पितृभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>दातुः</td><td>दातृभ्यां</td><td>दातृभ्यः</td><td><strong>पञ्चमी</strong></td><td>पितुः</td><td>पितृभ्यां</td><td>पितृभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>दातुः</td><td>दात्रोः</td><td>दातॄणाम्</td><td><strong>षष्ठी</strong></td><td>पितुः</td><td>पित्रोः</td><td>पितॄणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>दातरि</td><td>दात्रौः</td><td>दातृषु</td><td><strong>सप्तमी</strong></td><td>पितरि</td><td>पित्रोः</td><td>पितृषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे दातः</td><td>हे दातारौ</td><td>हे दातारः</td><td><strong>सम्बोधन</strong></td><td>हे पितः</td><td>हे पितरौ</td><td>हे पितरः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऐकारान्तः पुंल्लिङ्गः रै शब्दः (wealth)</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>राः</td><td>रायौ</td><td>रायः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>रायम्</td><td>रायौ</td><td>रायः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>राया</td><td>राभ्याम्</td><td>राभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>राये</td><td>राभ्याम्</td><td>राभिः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>रायः</td><td>राभ्याम्</td><td>राभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>रायः</td><td>रायोः</td><td>रायाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>रायि</td><td>रायोः</td><td>रासु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे राः</td><td>हे रायौ</td><td>हे रायः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>There are a few masculine words which end in आ, ई, and ऊ. These are also irregular declinations.</p>
+<table><thead><tr><th><strong>आकारान्तः पुंल्लिङ्गः गोपा (cowherd) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ईकारान्तः पुंल्लिङ्गः सुधी (intelligent) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>गोपाः</td><td>गोपौ</td><td>गोपाः</td><td><strong>प्रथमा</strong></td><td>सुधीः</td><td>सुधियौ</td><td>सुधियः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>गोपाम्</td><td>गोपौ</td><td>गोपः</td><td><strong>द्वितीया</strong></td><td>सुधियम्</td><td>सुधियौ</td><td>सुधियः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>गोपा</td><td>गोपाभ्याम्</td><td>गोपाभिः</td><td><strong>तृतीया</strong></td><td>सुधिया</td><td>सुधीभ्याम्</td><td>सुधीभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>गोपे</td><td>गोपाभ्याम्</td><td>गोपाभ्यः</td><td><strong>चतुर्थी</strong></td><td>सुधिये</td><td>सुधीभ्याम्</td><td>सुधीभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>गोपः</td><td>गोपाभ्याम्</td><td>गोपाभ्यः</td><td><strong>पञ्चमी</strong></td><td>सुधियः</td><td>सुधीभ्याम्</td><td>सुधीभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>गोपः</td><td>गोपोः</td><td>गोपाम्</td><td><strong>षष्ठी</strong></td><td>सुधियः</td><td>सुधियोः</td><td>सुधियाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>गोपि</td><td>गोपोः</td><td>गोपासु</td><td><strong>सप्तमी</strong></td><td>सुधियि</td><td>सुधियोः</td><td>सुधीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>गोपाः</td><td>गोपौ</td><td>गोपाः</td><td><strong>सम्बोधन</strong></td><td>सुधीः</td><td>सु़धियौ</td><td>सुधियः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ईकारान्तः पुंल्लिङ्गः सेनानी (army general) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ईकारान्तः पुंल्लिङ्गः वातप्रमी (antelope) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>सेनानीः</td><td>सेनान्यौ</td><td>सेनान्यः</td><td><strong>प्रथमा</strong></td><td>वातप्रमीः</td><td>वातप्रम्यौ</td><td>वातप्रम्यः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>सेनान्यम्</td><td>सेनान्यौ</td><td>सेनान्यः</td><td><strong>द्वितीया</strong></td><td>वातप्रमीम्</td><td>वातप्रम्यौ</td><td>वातप्रमीन्</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>सेनान्या</td><td>सेनानीभ्याम्</td><td>सेनानीभिः</td><td><strong>तृतीया</strong></td><td>वातप्रम्या</td><td>वातप्रमीभ्याम्</td><td>वातप्रमीभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>सेनान्ये</td><td>सेनानीभ्याम्</td><td>सेनानीभ्यः</td><td><strong>चतुर्थी</strong></td><td>वातप्रम्ये</td><td>वातप्रमीभ्याम्</td><td>वातप्रमीभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>सेनान्यः</td><td>सेनानीभ्याम्</td><td>सेनानीभ्यः</td><td><strong>पञ्चमी</strong></td><td>वातप्रम्यः</td><td>वातप्रमीभ्याम्</td><td>वातप्रमीभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>सेनान्यः</td><td>सेनान्योः</td><td>सेनान्याम्</td><td><strong>षष्ठी</strong></td><td>वातप्रम्यः</td><td>वातप्रम्योः</td><td>वातप्रम्याम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>सेनान्याम्</td><td>सेनान्योः</td><td>सेनानीषु</td><td><strong>सप्तमी</strong></td><td>वातप्रमी</td><td>वातप्रम्योः</td><td>वातप्रमीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>सेनानीः</td><td>सेनान्यौ</td><td>सेनान्यः</td><td><strong>सम्बोधन</strong></td><td>वातप्रमीः</td><td>वातप्रम्यौ</td><td>वातप्रम्यः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऊकारान्तः पुंल्लिङ्गः खलपू (sweeper) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ऊकारान्तः पुंल्लिङ्गः प्रतिभू (guarantor) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>खलपूः</td><td>खलप्वौ</td><td>खलप्वः</td><td><strong>प्रथमा</strong></td><td>प्रतिभूः</td><td>प्रतिभुवौ</td><td>प्रतिभुवः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>खलप्वम्</td><td>खलप्वौ</td><td>खलप्वः</td><td><strong>द्वितीया</strong></td><td>प्रतिभुवम्</td><td>प्रतिभुवौ</td><td>प्रतिभुवः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>खलप्वा</td><td>खलपूभ्याम्</td><td>खलपूभिः</td><td><strong>तृतीया</strong></td><td>प्रतिभुवा</td><td>प्रतिभूभ्याम्</td><td>प्रतिभूभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>खलप्वे</td><td>खलपूभ्याम्</td><td>खलपूभ्यः</td><td><strong>चतुर्थी</strong></td><td>प्रतिभुवे</td><td>प्रतिभूभ्याम्</td><td>प्रतिभूभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>खलप्वः</td><td>खलपूभ्याम्</td><td>खलपूभ्यः</td><td><strong>पञ्चमी</strong></td><td>प्रतिभुवः</td><td>प्रतिभूभ्याम्</td><td>प्रतिभूभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>खलप्वः</td><td>खलप्वोः</td><td>खलप्वाम्</td><td><strong>षष्ठी</strong></td><td>प्रतिभुवः</td><td>प्रतिभुवोः</td><td>प्रतिभुवाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>खलप्वि</td><td>खलप्वोः</td><td>खलपूषु</td><td><strong>सप्तमी</strong></td><td>प्रतिभुवि</td><td>प्रतिभुवोः</td><td>प्रतिभूषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>खलपूः</td><td>खलप्वौ</td><td>खलप्वः</td><td><strong>सम्बोधन</strong></td><td>प्रतिभूः</td><td>प्रतिभुवौ</td><td>प्रतिभुवः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>The word क्रोष्टु (jackal) is irregular in that several of its forms show the base क्रोष्टृ. </p>
+<table><thead><tr><th><strong>उकारान्तः पुंल्लिङ्गः क्रोष्टु (jackal) शब्दः</strong></th><th></th><th></th><th></th><th><strong>अकारान्तः पुंल्लिङ्गः निर्जर (without old age, god) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>क्रोष्टा</td><td>क्ररोष्टारौ</td><td>क्रोष्टारः</td><td><strong>प्रथमा</strong></td><td>निर्जरः</td><td>निर्जरौ / निर्जरसौ</td><td>निर्जराः / निर्जरसः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>क्रोष्टारम्</td><td>क्रोष्टारौ</td><td>क्रोष्टन्</td><td><strong>द्वितीया</strong></td><td>निर्जरम् / निर्जरसम्</td><td>निर्जरौ / निर्जरसौ</td><td>निर्जरान् / निर्जरसः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>क्रोषट्रा / क्रोष्टुना</td><td>क्रोष्टुभ्याम्</td><td>क्रोष्टुभिः</td><td><strong>तृतीया</strong></td><td>निर्यरेण / निर्जरसा</td><td>निर्जराभ्याम्</td><td>निर्जरैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>क्रोष्ट्रे / क्रोष्टवे</td><td>क्रोष्टुभ्याम्</td><td>क्रोष्टुभ्यः</td><td><strong>चतुर्थी</strong></td><td>निर्जराय / निर्जरसे</td><td>निर्जराभ्याम्</td><td>निर्जरेभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>क्रोष्टुः / क्रोष्टोः</td><td>क्रोष्टुभ्याम्</td><td>क्रोष्टुभ्यः</td><td><strong>पञ्चमी</strong></td><td>निर्जरात् / निर्जरसः</td><td>निर्जराभ्याम्</td><td>निर्जरेभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>क्रोष्टुः / क्रोष्टोः</td><td>क्रोष्ट्रोः / क्रोष्ट्वोः</td><td>क्रोष्टूनाम्</td><td><strong>षष्ठी</strong></td><td>निर्जरस्य / निर्जरसः</td><td>निर्जरयोः / सोः</td><td>निर्जराणाम्/ रसाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>क्रोष्टरि</td><td>क्रोष्ट्रोः / क्रोष्ट्वोः</td><td>क्रोष्टुषु</td><td><strong>सप्तमी</strong></td><td>निर्जरे / निर्जरसि</td><td>निर्जरयोः / सोः</td><td>निर्जरेषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>क्रोष्टो</td><td>क्रोष्टारौ</td><td>क्रोष्टारः</td><td><strong>सम्बोधन</strong></td><td>निर्जर</td><td>निर्जरौ / रसौ</td><td>निर्जराः / निर्जरसः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>There are no masculine nouns ending in ए, but there are ones ending in ओ, औ, and ऐ (see रै above)</p>
+<table><thead><tr><th><strong>औकारान्तः पुंल्लिङ्गः ग्लौ (moon) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ओकारान्तः पुंल्लिङ्गः स्त्रीलिङ्गः च गो (bull, cow) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>ग्लौः</td><td>ग्लावौ</td><td>ग्लावः</td><td><strong>प्रथमा</strong></td><td>गौः</td><td>गावौ</td><td>गावः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>ग्लावम्</td><td>ग्लावौ</td><td>ग्लावः</td><td><strong>द्वितीया</strong></td><td>गाम्</td><td>गावौ</td><td>गाः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>ग्लावा</td><td>ग्लौभ्याम्</td><td>ग्लौभिः</td><td><strong>तृतीया</strong></td><td>गवा</td><td>गोभ्याम्</td><td>गोभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>ग्लावे</td><td>ग्लौभ्याम्</td><td>ग्लौभ्यः</td><td><strong>चतुर्थी</strong></td><td>गवे</td><td>गोभ्याम्</td><td>गोभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>ग्लावः</td><td>ग्लौभ्याम्</td><td>ग्लौभ्यः</td><td><strong>पञ्चमी</strong></td><td>गोः</td><td>गोभ्याम्</td><td>गोभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>ग्लावः</td><td>ग्लावोः</td><td>ग्लावाम्</td><td><strong>षष्ठी</strong></td><td>गोः</td><td>गवोः</td><td>गवाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>ग्लावि</td><td>ग्लावोः</td><td>ग्लौषु</td><td><strong>सप्तमी</strong></td><td>गवि</td><td>गवोः</td><td>गोषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>ग्लौः</td><td>ग्लावौ</td><td>ग्लावः</td><td><strong>सम्बोधन</strong></td><td>गौः</td><td>गावौ</td><td>गावः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>नकारान्तः पुंल्लिङ्गः राजन् शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>राजा</td><td>राजानौ</td><td>राजानः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>राजानम्</td><td>राजानौ</td><td>राज्ञः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>राज्ञा</td><td>राजभ्याम्</td><td>राजभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>राज्ञे</td><td>राजभ्याम्</td><td>राजभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>राज्ञः</td><td>राजभ्याम्</td><td>राजभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>राज्ञः</td><td>राज्ञोः</td><td>राज्ञाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>राज्ञि / राजनि</td><td>राज्ञोः</td><td>राजसु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे राजन</td><td>हे राजानौ</td><td>हे राजानः</td></tr>
+</tbody></table>
+<h2 id="feminine-सतरीलिङगः-nouns"><a class="header" href="#feminine-सतरीलिङगः-nouns">Feminine (स्त्रीलिङ्गः) nouns</a></h2>
+<table><thead><tr><th><strong>आकारान्तः स्त्रीलिङ्गः रमा (Lakshmi) शब्दः</strong></th><th></th><th></th><th></th><th><strong>इकारान्तः स्त्रीलिङ्गः मति (intellect) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>रमा</td><td>रमे</td><td>रमाः</td><td><strong>प्रथमा</strong></td><td>मतिः</td><td>मती</td><td>मतयः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>रमाम्</td><td>रमे</td><td>रमाः</td><td><strong>द्वितीया</strong></td><td>मतिम्</td><td>मती</td><td>मतीः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>रमया</td><td>रमाभ्याम्</td><td>रमाभिः</td><td><strong>तृतीया</strong></td><td>मत्या</td><td>मतिभ्याम्</td><td>मतिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>रमायै</td><td>रमाभ्याम्</td><td>रमाभ्यः</td><td><strong>चतुर्थी</strong></td><td>मत्यै / मत्ये</td><td>मतिभ्याम्</td><td>मतिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>रमायाः</td><td>रमाभ्याम्</td><td>रमाभ्यः</td><td><strong>पञ्चमी</strong></td><td>मत्याः / मतेः</td><td>मतिभ्याम्</td><td>मतिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>रमायाः</td><td>रमयोः</td><td>रमाणाम्</td><td><strong>षष्ठी</strong></td><td>मत्याः / मतेः</td><td>मत्योः</td><td>मतीनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>रमायाम्</td><td>रमयोः</td><td>रमासु</td><td><strong>सप्तमी</strong></td><td>मत्याम् / मतौ</td><td>मत्योः</td><td>मतिषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे रमा</td><td>हे रमे</td><td>हे रमाः</td><td><strong>सम्बोधन</strong></td><td>हे मते</td><td>हे मती</td><td>हे मतयः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>The feminine paradigm जरा &quot;old age&quot; is mixed with alternating forms of जरस्. The same mixture is carried into the masculine paradigms of निर्जर &quot;without old age, gods&quot; (above).</p>
+<table><thead><tr><th><strong>आकारान्तः स्त्रीलिङ्गः जरा (old age) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>जरा</td><td>जरे/जरसौ</td><td>जराः / जरसः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>जराम् / जरसम्</td><td>जरे / जरसौ</td><td>जराः / जरसः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>जरया / जरसा</td><td>जराभ्याम्</td><td>जराभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>जरायै / जरसे</td><td>जराभ्याम्</td><td>जराभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>जरायाः / जरसः</td><td>जराभ्याम्</td><td>जराभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>जरायाः/ जरसः</td><td>जरयोः / जरसोः</td><td>जराणाम् / जरसाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>जरायाम् / जरसि</td><td>जरयोः / जरसोः</td><td>जरासु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>जरे</td><td>जरे / जरसौ</td><td>जराः / जरसः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th>ईकारान्तः स्त्रीलिङ्गः नदी (river) शब्दः</th><th></th><th></th><th></th><th>उकारान्तः स्त्रीलिङ्गः धेनु (cow) शब्दः</th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>नदी</td><td>नद्यौ</td><td>नद्यः</td><td><strong>प्रथमा</strong></td><td>धेनुः</td><td>धेनू</td><td>धेनवः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>नदीम्</td><td>नद्यौ</td><td>नदीः</td><td><strong>द्वितीया</strong></td><td>धेनुम्</td><td>धेनू</td><td>धेनूः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>नद्या</td><td>नदीभ्याम्</td><td>नदीभिः</td><td><strong>तृतीया</strong></td><td>धेन्वा</td><td>धेनुभ्याम्</td><td>धेनुभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>नद्यै</td><td>नदीभ्याम्</td><td>नदीभ्यः</td><td><strong>चतुर्थी</strong></td><td>धेन्वै/धेनवे</td><td>धेनुभ्याम्</td><td>धेनुभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>नद्याः</td><td>नदीभ्याम्</td><td>नदीभ्यः</td><td><strong>पञ्चमी</strong></td><td>धेन्वाः/धेनोः</td><td>धेनुभ्याम्</td><td>धेनुभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>नद्याः</td><td>नद्योः</td><td>नदीनाम्</td><td><strong>षष्ठी</strong></td><td>धेन्वाः/धेनोः</td><td>धेन्वोः</td><td>धेनूनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>नद्याम्</td><td>नद्योः</td><td>नदीषु</td><td><strong>सप्तमी</strong></td><td>धेन्वाम्/धेनौ</td><td>धेनवोः</td><td>धेनुषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे नदि</td><td>हे नद्यौ</td><td>हे नद्यः</td><td><strong>सम्बोधन</strong></td><td>हे धेनो</td><td>हे धेनू</td><td>हे धेनवः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<p>While नदी represents the normal paradigm for feminine nours in ई, several feminine nominals in ई differ from this paradigm. Words like लक्ष्मी (wealth) तरी (boat), तन्त्री (lute) are declined like नदी, <strong>except that their nominative singular ends in Visarga</strong> i.e. लक्ष्मीः, तरीः, and तन्त्रीः. This class includes monosyllabic words धी (intellect), श्री (wealth), भी (fear) and ह्री (shame). These monosyllabic words also differ in some other aspects (see table below, compare with नदी शब्द रूप). The word स्त्री (woman) has its peculiar forms.</p>
+<table><thead><tr><th><strong>ईकारान्तः स्त्रीलिङ्गः धी (intellect) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ईकारान्तः स्त्रीलिङ्गः स्त्री (woman) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>धीः</td><td>धियौ</td><td>धियः</td><td><strong>प्रथमा</strong></td><td>स्त्री</td><td>स्त्रियौ</td><td>स्त्रियः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>धियम्</td><td>धियौ</td><td>धियः</td><td><strong>द्वितीया</strong></td><td>स्त्रियम्/स्त्रीम्</td><td>स्त्रियौ</td><td>स्त्रियः/स्त्रीः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>धिया</td><td>धीभ्याम्</td><td>धीभिः</td><td><strong>तृतीया</strong></td><td>स्त्रिया</td><td>स्त्रिभ्याम्</td><td>स्त्रीभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>धिये/धियै</td><td>धीभ्याम्</td><td>धीभ्यः</td><td><strong>चतुर्थी</strong></td><td>स्त्रियै</td><td>स्त्रीभ्याम्</td><td>स्त्रीभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>धियः/धियाः</td><td>धीभ्याम्</td><td>धीभ्यः</td><td><strong>पञ्चमी</strong></td><td>स्त्रियाः</td><td>स्त्रीभ्याम्</td><td>स्त्रीभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>धियः/धियाः</td><td>धियोः</td><td>धियाम्/धीनाम्</td><td><strong>षष्ठी</strong></td><td>स्त्रियाः</td><td>स्त्रियोः</td><td>स्त्रीणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>धयि/धियाम्</td><td>धियोः</td><td>धीषु</td><td><strong>सप्तमी</strong></td><td>स्त्रियाम्</td><td>स्त्रियोः</td><td>स्त्रीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>धीः</td><td>धियौ</td><td>धियः</td><td><strong>सम्बोधन</strong></td><td>स्त्रि</td><td>स्त्रियौ</td><td>स्त्रियः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऋकारान्तः स्त्रीलिङ्गः मातृ (mother) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>माता</td><td>मातरौ</td><td>मातरः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>मातरम्</td><td>मातरौ</td><td>मातॄः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>मात्रा</td><td>मातृभ्याम्</td><td>मातृभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>मात्रे</td><td>मातृभ्याम्</td><td>मातृभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>मातुः</td><td>मातृभ्याम्</td><td>मातृभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>मातुः</td><td>मात्रोः</td><td>मातॄणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>मातरि</td><td>मात्रोः</td><td>मातृषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे मातः</td><td>हे मातरौ</td><td>हे मातरः</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>ऊकारान्तः स्त्रीलिङ्गः भू (earth) शब्दः</strong></th><th></th><th></th><th></th><th><strong>ऊकारान्तः स्त्रीलिङ्गः पुनर्भू (remarried widow शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>भूः</td><td>भुवौ</td><td>भुवः</td><td><strong>प्रथमा</strong></td><td>पुनर्भूः</td><td>पुनर्भ्वौ</td><td>पुनर्भ्वः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>भुवम्</td><td>भुवौ</td><td>भुवः</td><td><strong>द्वितीया</strong></td><td>पुनर्भ्वम्</td><td>पुनर्भ्वौ</td><td>पुनर्भ्वः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>भुवा</td><td>भूभ्याम्</td><td>भूभिः</td><td><strong>तृतीया</strong></td><td>पुनर्भ्वा</td><td>पुनर्भूभ्याम्</td><td>पुनर्भूभीः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>भुवे/भुवै</td><td>भूभ्याम्</td><td>भूभ्यः</td><td><strong>चतुर्थी</strong></td><td>पुनर्भ्वै</td><td>पुनर्भूभ्याम्</td><td>पुनर्भूभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>भुवः/भुवाः</td><td>भूभ्याम्</td><td>भूभ्यः</td><td><strong>पञ्चमी</strong></td><td>पुनर्भ्वाः</td><td>पुनर्भूभ्याम्</td><td>पुनर्भूभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>भुवः/भुवाः</td><td>भुवोः</td><td>भुवाम्/भूनाम्</td><td><strong>षष्ठी</strong></td><td>पुनर्भ्वाः</td><td>पुनर्भ्वोः</td><td>पुनर्भूणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>भुवि/भुवाम्</td><td>भुवोः</td><td>भूषु</td><td><strong>सप्तमी</strong></td><td>पुनर्भ्वाम्</td><td>पुनर्भ्वोः</td><td>पुनर्भूषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>भूः</td><td>भुवौ</td><td>भुवः</td><td><strong>सम्बोधन</strong></td><td>पुनर्भु</td><td>पुनर्भ्वौ</td><td>पुनर्भ्वः</td></tr>
+</tbody></table>
+<table><thead><tr><th><strong>वकारान्त स्त्रीलिङ्गः दिव् शब्दः</strong></th><th></th><th></th><th></th><th><strong>ओकारांत स्त्रीलिङ्गः द्यो शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td></td><td></td><td></td><td><strong>प्रथमा</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>द्वितीया</strong></td><td></td><td></td><td></td><td><strong>द्वितीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>तृतीया</strong></td><td></td><td></td><td></td><td><strong>तृतीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>षष्ठी</strong></td><td></td><td></td><td></td><td><strong>षष्ठी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सप्तमी</strong></td><td></td><td></td><td></td><td><strong>सप्तमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h2 id="neuter-नपुंसकलिङगः-nouns"><a class="header" href="#neuter-नपुंसकलिङगः-nouns">Neuter (नपुंसकलिङ्गः) nouns</a></h2>
+<table><thead><tr><th><strong>अकारान्तः नपुंसकलिङ्गः फल (fruit) शब्दः</strong></th><th></th><th></th><th></th><th><strong>उकारान्तः नपुंसकलिङ्गः मधु (honey) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>फलम्</td><td>फले</td><td>फलानि</td><td><strong>प्रथमा</strong></td><td>मधु</td><td>मधुनि</td><td>मधूनि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>फलम्</td><td>फले</td><td>फलानि</td><td><strong>द्वितीया</strong></td><td>मधु</td><td>मधुनि</td><td>मधूनि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>फलेन</td><td>फलाभ्याम्</td><td>फलैः</td><td><strong>तृतीया</strong></td><td>मधुना</td><td>मधुभ्याम्</td><td>मधुभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>फलाय</td><td>फलाभ्याम्</td><td>फलेभ्यः</td><td><strong>चतुर्थी</strong></td><td>मधुने</td><td>मधुभ्याम्</td><td>मधुभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>फलात्</td><td>फलाभ्याम्</td><td>फलेभ्यः</td><td><strong>पञ्चमी</strong></td><td>मधुनः</td><td>मधुभ्याम्</td><td>मधुभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>फलस्य</td><td>फलयोः</td><td>फलानाम्</td><td><strong>षष्ठी</strong></td><td>मधुनः</td><td>मधुनोः</td><td>मधूनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>फले</td><td>फलयोः</td><td>फलेषु</td><td><strong>सप्तमी</strong></td><td>मधुनि</td><td>मधुनोः</td><td>मधुषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे फल</td><td>हे फले</td><td>हे फलानि</td><td><strong>सम्बोधन</strong></td><td>हे मधो/हे मधु</td><td>हे मधुनी</td><td>हे मधूनि</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>इकारान्तः नपुंसकलिङ्गः शुचि (pure) शब्दः</strong></th><th></th><th></th><th></th><th><strong>इकारान्तः नपुंसकलिङ्गः दधि (curd) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>शुचि</td><td>शुचिनी</td><td>शुचीनि</td><td><strong>प्रथमा</strong></td><td>दधि</td><td>दधिनी</td><td>दधीनि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>शुचि</td><td>शुचिनी</td><td>शुचीनि</td><td><strong>द्वितीया</strong></td><td>दधि</td><td>सधिनी</td><td>दधीनि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>शुचिना</td><td>शुचिभ्याम्</td><td>शुचिभिः</td><td><strong>तृतीया</strong></td><td>दध्ना</td><td>दधिभ्याम्</td><td>दधिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>शुचिने / शुचये</td><td>शुचिभ्याम्</td><td>शुचिभ्यः</td><td><strong>चतुर्थी</strong></td><td>दध्ने</td><td>दधिभ्याम्</td><td>दधिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>शुचिनः / शुचेः</td><td>शुचिभ्याम्</td><td>शुचिभ्यः</td><td><strong>पञ्चमी</strong></td><td>दध्नः</td><td>दधिभ्याम्</td><td>दधिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>शुचिनः / शुचेः</td><td>शुचिनोः / शुच्योः</td><td>शुचीनाम्</td><td><strong>षष्ठी</strong></td><td>दध्नः</td><td>दध्नोः</td><td>दध्नाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>शुचिनि / शुचौ</td><td>शुचिनोः / शुच्योः</td><td>शुचिषु</td><td><strong>सप्तमी</strong></td><td>दध्नि / दधनि</td><td>दध्नोः</td><td>दधिषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे शुचे / हे शुचि</td><td>हे शुचिनी</td><td>हे शुचीनि</td><td><strong>सम्बोधन</strong></td><td>हे दधे / हे दधि</td><td>हे दधिनी</td><td>हे दधीनि</td></tr>
+</tbody></table>
+<p><strong>Note:</strong> Most इकारान्तः नपुंसकलिङ्गः शब्दाः will be similar to शुचिशब्दः. The major exceptions are अक्षि, सक्थि, अस्थि which are similar to दधि शब्दः. Another exception is वारि which has its own form.</p>
+<BR>
+<BR>
+<table><thead><tr><th><strong>इकारान्तः नपुंसकलिङ्गः वारि (water) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>वारि</td><td>वारिणी</td><td>वारीणि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>वारि</td><td>वारिणी</td><td>वारीणि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>वारिणा</td><td>वारिभ्याम्</td><td>वारिभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>वारिणे</td><td>वारिभ्याम्</td><td>वारिभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>वारिणः</td><td>वारिभ्याम्</td><td>वारिभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>वारिणः</td><td>वारिणोः</td><td>वारीणाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>वारिणि</td><td>वारिणोः</td><td>वारिषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे वारे / हे वारि</td><td>हे वारिणी</td><td>हे वारीणि</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>सकारान्तः नपुंसकलिङ्गः मनस् (mind) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>मनः</td><td>मनसी</td><td>मनांसि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>मनः</td><td>मनसी</td><td>मनांसि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>मनसा</td><td>मनोभ्याम्</td><td>मनोभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>मनसे</td><td>मनोभ्याम्</td><td>मनोभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>मनसः</td><td>मनोभ्याम्</td><td>मनोभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>मनसः</td><td>मनसोः</td><td>मनसाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>मनसि</td><td>मनसोः</td><td>मनस्सु, मनःसु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>हे मनः</td><td>मनसी</td><td>हे मनांसि</td></tr>
+</tbody></table>
+<br>
+<br>
+<h2 id="सरवनामशबदाः-pronouns"><a class="header" href="#सरवनामशबदाः-pronouns">सर्वनामशब्दाः (Pronouns)</a></h2>
+<table><thead><tr><th><strong>दकारान्तः पुंल्लिङ्गः तद् शब्दः</strong> (He)</th><th></th><th></th><th></th><th><strong>दकारान्तः स्त्रीलिङ्गः तद् शब्दः</strong> (She)</th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>सः</td><td>तौ</td><td>ते</td><td><strong>प्रथमा</strong></td><td>सा</td><td>ते</td><td>ताः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>तम्</td><td>तौ</td><td>तान्</td><td><strong>द्वितीया</strong></td><td>ताम्</td><td>ते</td><td>ताः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>तेन</td><td>ताभ्याम्</td><td>तैः</td><td><strong>तृतीया</strong></td><td>तया</td><td>ताभ्याम्</td><td>ताभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>तस्मै</td><td>ताभ्याम्</td><td>तेभ्यः</td><td><strong>चतुर्थी</strong></td><td>तस्यै</td><td>ताभ्याम्</td><td>ताभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>तस्मात्</td><td>ताभ्याम्</td><td>तेभ्यः</td><td><strong>पञ्चमी</strong></td><td>तस्याः</td><td>ताभ्याम्</td><td>ताभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>तस्य</td><td>तयोः</td><td>तेषाम्</td><td><strong>षष्ठी</strong></td><td>तस्याः</td><td>तयोः</td><td>तासाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>तस्मिन</td><td>तयोः</td><td>तेषु</td><td><strong>सप्तमी</strong></td><td>तस्याम्</td><td>तयोः</td><td>तासु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः नपुंसकलिङ्गः तद् शब्दः</strong> (That)</th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>तत्</td><td>ते</td><td>तानि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>तत्</td><td>ते</td><td>तानि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>तेन</td><td>ताभ्याम्</td><td>तैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>तस्मै</td><td>ताभ्याम्</td><td>तेभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>तस्मात्</td><td>ताभ्याम्</td><td>तेभयः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>तस्य</td><td>तयोः</td><td>तेषाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>तस्मिन्</td><td>तयोः</td><td>तेषु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः पुंल्लिङ्गः एतद् (This) शब्दः</strong></th><th></th><th></th><th></th><th><strong>दकारान्तः स्त्रीलिङ्गः एतद् (This) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>एषः</td><td>एतौ</td><td>एते</td><td><strong>प्रथमा</strong></td><td>एषा</td><td>एते</td><td>एताः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>एतम्/एनम्</td><td>एतौ/एनौ</td><td>एतान्/एनान्</td><td><strong>द्वितीया</strong></td><td>एताम्/एनाम्</td><td>एते/एने</td><td>एताः/एनाः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>एतेन/एनेन</td><td>एताभ्याम्</td><td>एतैः</td><td><strong>तृतीया</strong></td><td>एतया/एनया</td><td>एताभ्याम्</td><td>एताभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>एतस्मै</td><td>एताभ्याम्</td><td>एतेभ्यः</td><td><strong>चतुर्थी</strong></td><td>एतस्यै</td><td>एताभ्याम्</td><td>एताभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>एतस्मात्</td><td>एताभ्याम्</td><td>एतेभ्यः</td><td><strong>पञ्चमी</strong></td><td>एतास्याः</td><td>एताभ्याम्</td><td>एताभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>एतस्य</td><td>एतयोः/एनयोः</td><td>एतेषाम्</td><td><strong>षष्ठी</strong></td><td>एतस्याः</td><td>एतयोः/एनयोः</td><td>एतासाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>एतस्मिन्</td><td>एतयोः/एनयोः</td><td>एतेषु</td><td><strong>सप्तमी</strong></td><td>एतस्याम्</td><td>एतयोः/एनयोः</td><td>एतासु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः नपुंसकलिङ्गः एतद् (This) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>एतत्</td><td>एते</td><td>एतानि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>एतत्/एनत्</td><td>एते/एने</td><td>एतानि/एनानि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>एतेन/एनेन</td><td>एताभ्याम्</td><td>एतैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>एतस्मै</td><td>एताभ्याम्</td><td>एतेभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>एतस्मात्</td><td>एताभ्याम्</td><td>एतेभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>एतस्य</td><td>एतयोः/एनयोः</td><td>एतेषाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>एते</td><td>एतयोः/एनयोः</td><td>एतेषु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः पुंल्लिङ्गः यद् (Who) शब्दः</strong></th><th></th><th></th><th></th><th><strong>दकारान्तः स्त्रीलिङ्गः यद् (Who) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>यः</td><td>यौ</td><td>ये</td><td><strong>प्रथमा</strong></td><td>या</td><td>ये</td><td>याः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>यम्</td><td>यौ</td><td>यान्</td><td><strong>द्वितीया</strong></td><td>याम्</td><td>ये</td><td>याः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>येन</td><td>याभ्याम्</td><td>याभिः</td><td><strong>तृतीया</strong></td><td>यया</td><td>याभ्याम्</td><td>याभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>यस्मै</td><td>याभ्याम्</td><td>याभ्यः</td><td><strong>चतुर्थी</strong></td><td>यस्यै</td><td>याभ्याम्</td><td>याभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>यस्मात्</td><td>याभ्याम्</td><td>याभ्यः</td><td><strong>पञ्चमी</strong></td><td>यस्याः</td><td>याभ्याम्</td><td>याभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>यस्य</td><td>ययोः</td><td>येषाम्</td><td><strong>षष्ठी</strong></td><td>यस्याः</td><td>ययोः</td><td>यासाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>यस्मिन्</td><td>ययोः</td><td>यैषु</td><td><strong>सप्तमी</strong></td><td>यस्याम्</td><td>ययोः</td><td>यासु</td></tr>
+</tbody></table>
+<BR>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः नपुंसकलिङ्गः यद् (Who) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>यत्</td><td>ये</td><td>यानि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>यत्</td><td>ये</td><td>यानि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>येन</td><td>याभ्याम्</td><td>याभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>यस्मै</td><td>याभ्याम्</td><td>याभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>यस्मात्</td><td>याभ्याम्</td><td>याभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>यस्य</td><td>ययोः</td><td>येषाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>यस्मिन्</td><td>ययोः</td><td>यैषु</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th><strong>दकारान्तः अस्मद् (I) शब्दः त्रीषु लिङ्गेषु</strong></th><th></th><th></th><th></th><th><strong>दकारान्तः युष्मद् (You) शब्दः त्रीषु लिङ्गेषु</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>अहम्</td><td>आवाम्</td><td>वयम्</td><td><strong>प्रथमा</strong></td><td>त्वम्</td><td>युवाम्</td><td>यूयम्</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>माम्/मा</td><td>आवाम्/नौ</td><td>अस्मान्/नः</td><td><strong>द्वितीया</strong></td><td>त्वाम्/त्वा</td><td>युवाम्/वाम्</td><td>युष्मान्/नः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>मया</td><td>आवाभ्याम्</td><td>अस्माभिः</td><td><strong>तृतीया</strong></td><td>त्वया</td><td>युवाभ्याम्</td><td>युष्माभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>मह्यम्/मे</td><td>आवाभ्याम्/नौ</td><td>अस्मभ्यम्/नः</td><td><strong>चतुर्थी</strong></td><td>तुभ्यम्/ते</td><td>युवाभ्याम्/वाम्</td><td>युष्मभ्यम्/वः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>मत्</td><td>आवाभ्यम्</td><td>अस्मत्</td><td><strong>पञ्चमी</strong></td><td>त्वत्</td><td>युवाभ्याम्</td><td>युष्मत</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>मम/मे</td><td>आवयोः/नौ</td><td>अस्माकम्/नः</td><td><strong>षष्ठी</strong></td><td>तव/ते</td><td>युवयोः/वाम्</td><td>युष्माकम्/वः</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>मयि</td><td>आवयोः</td><td>अस्मासु</td><td><strong>सप्तमी</strong></td><td>त्वयि</td><td>युवयोः</td><td>युष्मासु</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th><strong>मकारान्तः पुंल्लिङ्गः किम् (Who?) शब्दः</strong></th><th></th><th></th><th></th><th><strong>मकारान्तः स्त्रीलिङ्गः किम् (Who?) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>कः</td><td>कौ</td><td>के</td><td><strong>प्रथमा</strong></td><td>का</td><td>के</td><td>काः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>किम्</td><td>कौ</td><td>कान्</td><td><strong>द्वितीया</strong></td><td>काम्</td><td>के</td><td>काः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>केन्</td><td>काभ्याम्</td><td>कैः</td><td><strong>तृतीया</strong></td><td>कया</td><td>काभ्याम्</td><td>काभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>कस्मै</td><td>काभ्याम्</td><td>केभ्यः</td><td><strong>चतुर्थी</strong></td><td>कस्यै</td><td>काभ्याम्</td><td>काभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>कस्मात्</td><td>काभ्याम्</td><td>केभ्यः</td><td><strong>पञ्चमी</strong></td><td>कस्याः</td><td>काभ्याम्</td><td>काभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>कस्य</td><td>कयोः</td><td>केषाम्</td><td><strong>षष्ठी</strong></td><td>कस्य</td><td>कयोः</td><td>कासाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>कस्मिन्</td><td>कयोः</td><td>केषु</td><td><strong>सप्तमी</strong></td><td>कस्याम्</td><td>कयोः</td><td>कासु</td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th><strong>मकारान्तः नपुंसकलिङ्गः किम् (Who?) शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>किम्</td><td>के</td><td>कानि</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>किम्</td><td>के</td><td>कानि</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>केन्</td><td>काभ्याम्</td><td>कैः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>कस्मै</td><td>काभ्याम्</td><td>केभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>कस्मात्</td><td>काभ्याम्</td><td>केभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>कस्य</td><td>कयोः</td><td>केषाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>कस्मिन्</td><td>कयोः</td><td>केषु</td></tr>
+</tbody></table>
+<BR>
+<h2 id="present-active-participles"><a class="header" href="#present-active-participles">Present active participles</a></h2>
+<p>Though these are verbs they are declined as nouns. For example, गच्छन् रामः means the Rama who is going. So in a sentence, structurally, they behave like adjectives. The meaning of the previous sentence is &quot;The going Rama&quot;. This type of expression is not present in English but it is in Sanskrit.</p>
+<p>Active <strong>verbs</strong> form their present active participles with the affix अत्. A simple way to form the present active participle stem is to replace the affix अन्ति in the present 3rd pl by the affix अत्.</p>
+<p>गच्छन्ति -&gt; गच्छत्</p>
+<p>दीव्यन्ति -&gt; दीव्यत्</p>
+<p>तुदन्ति -&gt; तुदत्</p>
+<p>चोरयन्ति -&gt; चोरयत्</p>
+<p>Since these words are like adjectives/nouns they are declined like nouns.</p>
+<table><thead><tr><th>*<strong>तकारान्त पुंल्लिङ्गः गच्छत् m. (He who is) going</strong></th><th></th><th></th><th></th><th><strong>स्त्रीलिङ्गः गच्छन्ती शब्दः f. (She who is) going</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td>गच्छन्</td><td>गच्छन्तौ</td><td>गच्छन्तः</td><td><strong>प्रथमा</strong></td><td>गच्छन्ती</td><td>गच्छन्त्यौ</td><td>गच्छन्त्यः</td></tr>
+<tr><td><strong>द्वितीया</strong></td><td>गच्छन्तम्</td><td>गच्छन्तौ</td><td>गच्छन्तः</td><td><strong>द्वितीया</strong></td><td>गच्छन्तीम्</td><td>गच्छन्त्यौ</td><td>गच्छन्तीः</td></tr>
+<tr><td><strong>तृतीया</strong></td><td>गच्छन्ता</td><td>गच्छद्भ्याम्</td><td>गच्छद्भिः</td><td><strong>तृतीया</strong></td><td>गच्छन्त्या</td><td>गच्छन्तीभ्याम्</td><td>गच्छन्तीभिः</td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td>गच्छते</td><td>गच्छद्भ्याम्</td><td>गच्छद्भ्यः</td><td><strong>चतुर्थी</strong></td><td>गच्छन्त्यै</td><td>गच्छन्तीभ्याम्</td><td>गच्छन्तीभ्यः</td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td>गच्छतः</td><td>गच्छद्भ्याम्</td><td>गच्छद्भ्यः</td><td><strong>पञ्चमी</strong></td><td>गच्छन्त्याः</td><td>गच्छन्तीभ्याम्</td><td>गच्छन्तीभ्यः</td></tr>
+<tr><td><strong>षष्ठी</strong></td><td>गच्छतः</td><td>गच्छतोः</td><td>गच्छताम्</td><td><strong>षष्ठी</strong></td><td>गच्छन्त्याः</td><td>गच्छन्त्योः</td><td>गच्छन्तीनाम्</td></tr>
+<tr><td><strong>सप्तमी</strong></td><td>गच्छति</td><td>गच्छतोः</td><td>गच्छत्सु</td><td><strong>सप्तमी</strong></td><td>गच्छन्त्याम्</td><td>गच्छन्त्योः</td><td>गच्छन्तीषु</td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td>गच्छन्</td><td>गच्छन्तौ</td><td>गच्छन्तः</td><td><strong>सम्बोधन</strong></td><td>गच्छन्ति</td><td>गच्छन्त्यौ</td><td>गच्छन्त्यः</td></tr>
+</tbody></table>
+<BR>
+<hr />
+<p>Template - Do not use/delete</p>
+<table><thead><tr><th><strong>अकारान्तः पुंल्लिङ्गः राम शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>द्वितीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>तृतीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>षष्ठी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सप्तमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<BR>
+<table><thead><tr><th><strong>ऋकारान्तः पुंल्लिङ्गः दातृ शब्दः</strong></th><th></th><th></th><th></th><th><strong>ऋकारान्तः पुंल्लिङ्गः पितृ शब्दः</strong></th><th></th><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td><td><strong>विभक्ति</strong></td><td><strong>एकवचन</strong></td><td><strong>द्विवचन</strong></td><td><strong>बहुवचन</strong></td></tr>
+<tr><td><strong>प्रथमा</strong></td><td></td><td></td><td></td><td><strong>प्रथमा</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>द्वितीया</strong></td><td></td><td></td><td></td><td><strong>द्वितीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>तृतीया</strong></td><td></td><td></td><td></td><td><strong>तृतीया</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td><td><strong>चतुर्थी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td><td><strong>पञ्चमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>षष्ठी</strong></td><td></td><td></td><td></td><td><strong>षष्ठी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सप्तमी</strong></td><td></td><td></td><td></td><td><strong>सप्तमी</strong></td><td></td><td></td><td></td></tr>
+<tr><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td><td><strong>सम्बोधन</strong></td><td></td><td></td><td></td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../notes/lakaras.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../notes/dhatu_roop.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../notes/lakaras.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../notes/dhatu_roop.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

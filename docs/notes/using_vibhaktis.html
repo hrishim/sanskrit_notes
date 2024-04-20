@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Using Vibhaktis - My Sanskrit Notes</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../notes_intro.html"><strong aria-hidden="true">1.</strong> Sanskrit Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/sandhi.html"><strong aria-hidden="true">1.1.</strong> Sandhi</a></li><li class="chapter-item expanded "><a href="../subashitam/subashitam1.html"><strong aria-hidden="true">1.2.</strong> Subashitam</a></li><li class="chapter-item expanded "><a href="../notes/lakaras.html"><strong aria-hidden="true">1.3.</strong> Tenses and Moods - लकार</a></li><li class="chapter-item expanded "><a href="../notes/shabd_roop.html"><strong aria-hidden="true">1.4.</strong> शब्द रुप</a></li><li class="chapter-item expanded "><a href="../notes/dhatu_roop.html"><strong aria-hidden="true">1.5.</strong> धातु रूप</a></li><li class="chapter-item expanded "><a href="../notes/grammer.html"><strong aria-hidden="true">1.6.</strong> Grammer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../notes/verbs.html"><strong aria-hidden="true">1.6.1.</strong> Verbs</a></li><li class="chapter-item expanded "><a href="../notes/grammer_npa.html"><strong aria-hidden="true">1.6.2.</strong> Nouns, Pronouns, and Adjectives</a></li><li class="chapter-item expanded "><a href="../notes/kridantas.html"><strong aria-hidden="true">1.6.3.</strong> Kridantas</a></li></ol></li><li class="chapter-item expanded "><a href="../notes/using_vibhaktis.html" class="active"><strong aria-hidden="true">1.7.</strong> Using Vibhaktis</a></li><li class="chapter-item expanded "><a href="../notes/terminology.html"><strong aria-hidden="true">1.8.</strong> Terminology</a></li><li class="chapter-item expanded "><a href="../resources.html"><strong aria-hidden="true">1.9.</strong> Resources</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Sanskrit Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="using-vibhaktis"><a class="header" href="#using-vibhaktis">Using Vibhaktis</a></h1>
+<p>The nominative case (प्रथम विभक्ति) is used then the noun is the subject of a sentence in active voice.</p>
+<h2 id="दवितीया-विभकति-accusative-case"><a class="header" href="#दवितीया-विभकति-accusative-case">द्वितीया विभक्ति (accusative case)</a></h2>
+<p>This form is used for the following:</p>
+<ol>
+<li>To indicate the direct object of a transitive verb</li>
+<li>To indicate the object of verbs for actions such as &quot;going&quot;, which are transitive in Sanskrit</li>
+<li>With the word धिक् (&quot;curse upon X&quot;) and with the prepositions below</li>
+</ol>
+<table><thead><tr><th><strong>Preposition</strong></th><th><strong>Meaning</strong></th><th><strong>Preposition</strong></th><th><strong>Meaning</strong></th></tr></thead><tbody>
+<tr><td>अनु</td><td>after, along</td><td>परितः</td><td>around</td></tr>
+<tr><td>अभितः</td><td>near, in front of</td><td>विना</td><td>without</td></tr>
+<tr><td>सर्वतः</td><td>on all sodes of</td><td>अन्तरा</td><td>between</td></tr>
+<tr><td>उभयतः</td><td>on both sides</td><td>प्रति</td><td>to, towards</td></tr>
+<tr><td>अन्तरेण</td><td>without, concerning</td><td></td><td></td></tr>
+</tbody></table>
+<h2 id="तृतीया-विभकति-aka-instrumental-case"><a class="header" href="#तृतीया-विभकति-aka-instrumental-case">तृतीया विभक्ति aka Instrumental Case</a></h2>
+<p><strong>To indicate the instrument of an action</strong>. Example: सः पात्रेण जलं बिबति। He drinks water from a vessel. नरः फलेन तुष्यति। In Sanskrit, the instrument of an action is called करणम्.</p>
+<p>Example:</p>
+<p>छात्रः लेखन्या पाठं लिखति।</p>
+<p>लिखति - क्रियापदम्</p>
+<p>कः लिखति - छात्रः - कर्ता - प्रथमा बिभक्तिः</p>
+<p>किम् लिखति - पाठं - कर्मपदम् - द्वितीया विभक्ति</p>
+<p>केन लिखति - लेखन्या - करणम् - तृतीया विभक्ति</p>
+<p><strong>To indicate the person or thing accompanying an action</strong> where the association is indicated by prepositions like सह (with). Example: दासेन सः नृपः गच्छति। The king goes accompanied by the servant.</p>
+<p>The preposition is optional. So दासेन नृपः गच्छति। Is also correct usage.</p>
+<p><strong>To indicate cause or reason</strong> दुःखेन ग्रामं त्यजामि। I abandon the village out of sorrow/misery.</p>
+<p><strong>With विना and अलम्</strong>. Example: जलेन विना कमलं नश्यति। A lotus perishes without water. अलं दुःखेन। Enough with misery.</p>
+<p><strong>To indicate the agent of a passive verb.</strong></p>
+<h2 id="चतुरथी-विभकति-aka-dative-case"><a class="header" href="#चतुरथी-विभकति-aka-dative-case">चतुर्थी विभक्ति aka Dative Case</a></h2>
+<p>तृतीया विभक्ति is used for the following</p>
+<p><strong>1.</strong> To indicate the indirect object of the verbs meaning &quot;to give&quot;, &quot;to show&quot;, &quot;to send&quot; etc. </p>
+<p>Example: नृपो दासाय कनकं यच्छति। The king gioves gold to the student.</p>
+<BR>
+<p><strong>2.</strong> With verbs meaning &quot;to be angry with&quot;, &quot;to long for&quot;, &quot;to please&quot;/&quot;to like&quot; etc.</p>
+<p>Examples:</p>
+<ul>
+<li>जनकः पुत्राय कुप्यति। The father is angry with the son.</li>
+<li>जनकः पुत्राय स्पृहयति। The father longs for the son.</li>
+<li>कुसुमानि नृपाय रोचन्ते। Flowers please the king.</li>
+</ul>
+<BR>
+<p><strong>3.</strong> With verbs of movement. Example: दासो ग्रामाय गच्छति। </p>
+<p>In this case दासो ग्रामं गच्छति। Is also correct (i.e. द्वितीया विभक्ति)</p>
+<BR>
+<p><strong>4.</strong> To express the purpose of an action. Example: सः सुखाय वनं गच्छति। He goes to the forest for the same of happiness.</p>
+<BR>
+<p><strong>5.</strong> With the particles नमः (salutation to) and स्वस्ति (hail to). Example: नृपाय नमः/स्वस्ति।</p>
+<p><strong>6.</strong> With the particle अलं. Example: अलं मल्लो मल्लाय। Wrestler is able to face (another) wrestler.</p>
+<h2 id="पञचमी-विभकति-aka-ablative-case"><a class="header" href="#पञचमी-विभकति-aka-ablative-case">पञ्चमी विभक्ति aka Ablative Case</a></h2>
+<p>This case is used to indicate the point from where the action begins - नरो ग्रामात् वनं गच्छति। The man goes from the village to the forest.</p>
+<p>It is used to express cause or reason: नृपो दासं दुःखात् तुदति। On account of misery the king strikes the servant. The तृतीया विभक्ति (instrumental case) can also be used for this purpose.</p>
+<p>It is used with the prepositions प्राक् (before, to the east of), पूर्वम् (before), अनन्तरम् (after), आ (until, since), बहिः (outside), ऋते (except) and (विना). The first four prepositions are used in both temporal and spatial sense.</p>
+<h2 id="षषठी-विभकति-aka-genitive-case"><a class="header" href="#षषठी-विभकति-aka-genitive-case">षष्ठी विभक्ति aka Genitive Case</a></h2>
+<p>To indicate the equivalent of possesive case in English. अहं रामस्य दासं अस्मि।  I am Rama's servant.</p>
+<p>The equivalent of &quot;have&quot; in English. The king has gold. नृपस्य कनकं भवति।</p>
+<p>With the prepositions - उपरी (above), अधः (below), पुरतः (in front of), पश्चात् (behind), परतः (beyond), अग्रे, समक्ष् (in the presence of), कृते (for the sake of), and समीपम् (in the vicinity of)</p>
+<h2 id="सपतमी-विभकति-aka-locative-case"><a class="header" href="#सपतमी-विभकति-aka-locative-case">सप्तमी विभक्ति aka Locative Case</a></h2>
+<p>This is used to indicate the place or time where the action takes place. Ex. in, at, on, upon, above, among, etc. फलम् कूपे पतति। The fruit falls in the well.</p>
+<p>For expressions like &quot;concerning&quot;, &quot;in the matter of&quot; etc. पुत्रे जनकः तुष्यति। The father is happy about the son.</p>
+<p>To indicate the object of emotions and feelings. Example जनकः पुत्रे स्निह्यति। The father feels affection for the son.</p>
+<h2 id="समबोधन-aka-vocative-case"><a class="header" href="#समबोधन-aka-vocative-case">सम्बोधन aka Vocative Case</a></h2>
+<p>When addressing. हे नृपे। O King!</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../notes/kridantas.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../notes/terminology.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../notes/kridantas.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../notes/terminology.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
