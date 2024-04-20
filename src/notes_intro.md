@@ -8,7 +8,7 @@ These pages are a collection of my notes, my translations, and other useful thin
 1. [Resources](./resources.html)
 
 ## Translations
-1. Exercises from [Samskrta-Subodhini: A Sanskrit Primer" by Madhav Deshpande](./deshpande/intro.html)
+1. Exercises from [Samskrta-Subodhini: A Sanskrit Primer" by Madhav Deshpande](https://hrishim.github.io/UnofficialKey_SanskritPrimer_MadhavDeshpande/notes_intro.html)
 1. Translations of lessons in [संस्कृतप्रथमादर्शः Reader - I](https://hrishim.github.io/sanskrit_reader1/reader1/r1_intro.html)
 
 
