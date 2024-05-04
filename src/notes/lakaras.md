@@ -412,6 +412,34 @@ Key take away: The *Panini* grammer applies to classical Sanskrit. The grammer o
 
 <BR>
 
+## Passive Voice
+
+There are two types of passive voice in Sanskrit - Transitive Passive (कर्मणि) and Intransitive Passive (भावे).
+
+
+**Intransitive Passive (भावे):** 
+
+One can have intransitive passive construction for any intransitive verb, and for transitive verbs used without objects. In this type of sentence there is no object. The focus of the sentence is on the action (भाव). In these sentences the agents takes the instrumental case (तृतीया) and the passive verb is always in 3rd person singular.
+
+Active: त्वम् गच्छसि। You go.
+
+भावे : त्वया गम्यते। Going is done by you.
+
+Active: देवाः खादन्ति। Gods eat.
+
+भावे : देवैः खाद्यते। The eating is done by Gods.
+
+Active: अहम् अपतम्। I fell.
+
+भावे : मया अपत्यत। Falling was done by me.
+
+Active: यूयम् गच्छत।
+
+भावे : युष्माभिः गम्यताम्।
+
+
+
+
 **Table template** - do not erase
 
 | पुरुष | एकवचन | द्विवचन | बहुवचन |
