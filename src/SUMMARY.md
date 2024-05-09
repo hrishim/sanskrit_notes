@@ -11,5 +11,6 @@
     - [Nouns, Pronouns, and Adjectives](./notes/grammer_npa.md)
     - [Kridantas](./notes/kridantas.md)
   - [Using Vibhaktis](./notes/using_vibhaktis.md)
+  - [Active and Passive Voice](./notes/active_passive.md)
   - [Terminology](./notes/terminology.md)
   - [Resources](./resources.md)
