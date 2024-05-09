@@ -67,3 +67,26 @@ One can have intransitive passive construction for any intransitive verb, and fo
 **Active:** यूयम् गच्छत।
 
 **भावे :** युष्माभिः गम्यताम्।
+
+## Passive constructions in the context of gerunds and infinitives (क्त्वा and तुमुन प्रत्यय)
+
+
+As long as the gerund/infinitive has the same object and agent as the main finite verb, the case of the object and the agent is determined by the voice of the main verb.
+
+**Active:** पक्त्वा रामः ओदनं खादति। Having cooked (it), Rama eats rice.
+
+**Passive:** पक्त्वा ओदनः खाद्यते रामेण। Having (been) cooked, the rice is eaten by Rama.
+
+**Active:** रामः खादितुम् ओदनम् पचति। Rama cooks rice in order to eat it.
+
+**Passive:** खादितुम ओदनः पच्यते रामेण। Rice has been cooked byy Rama to (be) eaten.
+
+However, if the gerund/infinitive has a different object, then that object will always be expressed in accusative case (द्वितीया विभक्ति)
+
+**Active:** गृहं गत्वा रामः ओदनं खादति। Having gone home, Rama eats rice.
+
+**Passive:** गृहं गत्वा रामेण ओदनः खाद्यते। Having gone home, rice is eaten by Rama.
+
+**Active:** रामः ओदनं खादितुम् गृहं गच्छति। Rama goes home to eat rice.
+
+**Passive:** ओदनं खादितुम रामेण गृहं गम्यते। Home is gone to by Rama, to eat rice.
