@@ -14,3 +14,5 @@
   - [Active and Passive Voice](./notes/active_passive.md)
   - [Terminology](./notes/terminology.md)
   - [Resources](./resources.md)
+- [Subashitam](./subashitam/subashitam1.md)
+- [Srimad Bhagavad Gita](./srimad_bhagavad_gita.md)
