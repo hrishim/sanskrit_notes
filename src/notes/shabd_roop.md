@@ -50,8 +50,6 @@ This is a list of commonly used and some uncommon शब्द रुप
 | **सप्तमी** | सख्यौ | सख्योः | सखिषु |
 | **सम्बोधन** | हे सखे | हे सखायौ | हे सखायः |
 
-**Note:** Most इकारान्त पुंल्लिङ्गः are similar to हरि शब्दः. But some, like पति and सखि, are different. The word सखि is masculine a form meaning friend. सखी is a feminine word that also means friend (female). It follows the same form as नदी
-
 <BR>
 
 | **उकारान्तः पुंल्लिङ्गः गुरु शब्दः (Teacher)** | | | |
