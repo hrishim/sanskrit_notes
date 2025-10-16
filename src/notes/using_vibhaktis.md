@@ -13,7 +13,7 @@ This form is used for the following:
 | --- | --- | --- | --- |
 | अनु | after, along | परितः | around |
 | अभितः | near, in front of | विना | without |
-| सर्वतः | on all sodes of | अन्तरा | between |
+| सर्वतः | on all sides of | अन्तरा | between |
 | उभयतः | on both sides | प्रति | to, towards |
 | अन्तरेण | without, concerning | | |
 
