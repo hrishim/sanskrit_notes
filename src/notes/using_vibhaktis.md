@@ -19,7 +19,7 @@ This form is used for the following:
 
 ## तृतीया विभक्ति aka Instrumental Case
 
-**To indicate the instrument of an action**. Example: सः पात्रेण जलं बिबति। He drinks water from a vessel. नरः फलेन तुष्यति। In Sanskrit, the instrument of an action is called करणम्.
+**To indicate the instrument of an action**. Example: सः पात्रेण जलं पिबति। He drinks water from a vessel. नरः फलेन तुष्यति। In Sanskrit, the instrument of an action is called करणम्.
 
 Example:
 
@@ -33,7 +33,7 @@ Example:
 
 केन लिखति - लेखन्या - करणम् - तृतीया विभक्ति
 
-**To indicate the person or thing accompanying an action** where the association is indicated by prepositions like सह (with). Example: दासेन सः नृपः गच्छति। The king goes accompanied by the servant.
+**To indicate the person or thing accompanying an action** where the association is indicated by prepositions like सह (with). Example: दासेन सह नृपः गच्छति। The king goes accompanied by the servant.
 
 The preposition is optional. So दासेन नृपः गच्छति। Is also correct usage.
 
